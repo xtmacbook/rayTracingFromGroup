@@ -1,0 +1,276 @@
+#---------------------------------------------------------------------------------------------------
+# CMake Build Configuration for the Ray Tracing 
+#
+# See README.md for guidance.
+#---------------------------------------------------------------------------------------------------
+
+cmake_minimum_required ( VERSION 3.1.0...3.27.0 )
+
+set (prjName ht_master_sec)
+
+project ( ht_master_sec LANGUAGES CXX )
+
+# Set to C++11
+set ( CMAKE_CXX_STANDARD          11 )
+set ( CMAKE_CXX_STANDARD_REQUIRED ON )
+set ( CMAKE_CXX_EXTENSIONS        OFF )
+
+
+include (cmake/findSDL.cmake)
+
+# Source
+set (SOURCE_BRDF_Source
+  source/BRDF/BRDF.cpp
+  source/BRDF/BRDF.hpp
+  source/BRDF/GlossySpecular.hpp
+  source/BRDF/GlossySpecular.cpp
+  source/BRDF/Lambertian.hpp
+  source/BRDF/Lambertian.cpp
+  source/BRDF/PerfectSpecular.hpp
+  source/BRDF/PerfectSpecular.cpp
+)
+SOURCE_GROUP("source\\BRDF" FILES ${SOURCE_BRDF_Source})
+
+set (SOURCE_build_Source
+  source/build/BuildAmbientOcclusion.hpp
+  source/build/BuildAreaLight.hpp
+  source/build/BuildBBCoverPicLight.hpp
+  source/build/BuildBox.hpp
+  source/build/BuildGlossy.hpp
+  source/build/BuildHorizontalPlane.hpp
+  source/build/BuildMirrorHall.hpp
+  source/build/BuildMultipleObjects.hpp
+  source/build/BuildReflective.hpp
+  source/build/BuildShadedTest.hpp
+  source/build/BuildShadowsTest.hpp
+  source/build/BuildSimpleMesh.hpp
+  source/build/BuildSingleSphere.hpp
+  source/build/BuildSingleSphereLight.hpp
+  source/build/BuildSinusoid.hpp
+  source/build/BuildSphereGrid.hpp
+  source/build/BuildSpheresQueue.hpp
+)
+SOURCE_GROUP("source//build" FILES ${SOURCE_build_Source})
+
+set (SOURCE_Cameras_Source
+  source/Cameras/Camera.cpp 
+  source/Cameras/Camera.hpp 
+  source/Cameras/Orthographic.cpp 
+  source/Cameras/Orthographic.hpp 
+  source/Cameras/Pinhole.cpp 
+  source/Cameras/Pinhole.hpp 
+  source/Cameras/ThinLens.cpp 
+  source/Cameras/ThinLens.hpp 
+)
+SOURCE_GROUP("source//camera" FILES ${SOURCE_Cameras_Source})
+
+set (SOURCE_Light_Soruce
+  source/Light/Ambient.cpp 
+  source/Light/Ambient.hpp 
+  source/Light/AmbientOccluder.cpp 
+  source/Light/AmbientOccluder.hpp 
+  source/Light/AreaLight.cpp 
+  source/Light/AreaLight.hpp 
+  source/Light/Directional.cpp 
+  source/Light/Directional.hpp 
+  source/Light/Light.cpp 
+  source/Light/Light.hpp 
+  source/Light/PointLight.cpp 
+  source/Light/PointLight.hpp 
+)
+SOURCE_GROUP("source//light" FILES ${SOURCE_Light_Soruce})
+
+
+set (SOURCE_Materials_Source
+  source/Materials/Emissive.cpp 
+  source/Materials/Emissive.hpp 
+  source/Materials/Material.cpp 
+  source/Materials/Material.hpp 
+  source/Materials/Matte.cpp 
+  source/Materials/Matte.hpp 
+  source/Materials/Phong.cpp 
+  source/Materials/Phong.hpp 
+  source/Materials/Reflective.cpp 
+  source/Materials/Reflective.hpp  
+)
+SOURCE_GROUP("source//materials" FILES ${SOURCE_Materials_Source})
+
+
+set ( SOURCE_Samplers_Source
+  source/Samplers/Jittered.cpp 
+  source/Samplers/Jittered.hpp
+  source/Samplers/MultiJittered.cpp 
+  source/Samplers/MultiJittered.hpp   
+  source/Samplers/NRooks.cpp 
+  source/Samplers/NRooks.hpp   
+  source/Samplers/Regular.cpp 
+  source/Samplers/Regular.hpp   
+  source/Samplers/NRooks.cpp 
+  source/Samplers/NRooks.hpp    
+  source/Samplers/Sampler.cpp 
+  source/Samplers/Sampler.hpp    
+)
+SOURCE_GROUP("source//samplers" FILES ${SOURCE_Samplers_Source})
+
+set ( SOURCE_Tracers_Source
+  source/Tracers/AreaLighting.cpp 
+  source/Tracers/AreaLighting.hpp    
+  source/Tracers/RayCast.hpp   
+  source/Tracers/RayCast.cpp 
+  source/Tracers/Tracer.hpp    
+  source/Tracers/Tracer.cpp 
+  source/Tracers/Whitted.hpp   
+  source/Tracers/Whitted.cpp  
+)
+SOURCE_GROUP("source//tracers" FILES ${SOURCE_Tracers_Source})
+
+
+set ( SOURCE_Utilities_Source
+  source/Utilities/Constants.hpp 
+  source/Utilities/Debug.hpp 
+  source/Utilities/Maths.hpp  
+  source/Utilities/Matrix.cpp 
+  source/Utilities/Matrix.hpp 
+  source/Utilities/Normal.cpp 
+  source/Utilities/Normal.hpp   
+  source/Utilities/Point2D.cpp 
+  source/Utilities/Point2D.hpp
+   source/Utilities/Point3D.cpp 
+  source/Utilities/Point3D.hpp 
+   source/Utilities/Ray.cpp 
+  source/Utilities/Ray.hpp       
+   source/Utilities/RGBColor.cpp 
+  source/Utilities/RGBColor.hpp 
+   source/Utilities/ShadeRec.cpp 
+  source/Utilities/ShadeRec.hpp 
+   source/Utilities/Vector3D.cpp 
+  source/Utilities/Vector3D.hpp 
+)
+SOURCE_GROUP("source//utilities" FILES ${SOURCE_Utilities_Source})
+
+
+set (SOURCE_Window_Source
+  source/Window/Window.cpp 
+  source/Window/Window.hpp  
+  source/Window/Window-NOTHREAD.cpp 
+  source/Window/Window-NOTHREAD.hpp  
+  source/Window/Window-THREAD.cpp 
+  source/Window/Window-THREAD.hpp
+)
+SOURCE_GROUP("source//window" FILES ${SOURCE_Window_Source})
+
+set (SOURCE_World_Source
+  source/World/ViewPlane.cpp 
+  source/World/ViewPlane.hpp  
+  source/World/World.cpp 
+  source/World/World.hpp     
+)
+SOURCE_GROUP("source//world" FILES ${SOURCE_World_Source})
+ 
+
+set (SOURCE_GeometricObjects_Source
+  source/GeometricObjects/BBox.cpp  
+  source/GeometricObjects/BBox.hpp
+  source/GeometricObjects/Box.cpp  
+  source/GeometricObjects/Box.hpp    
+  source/GeometricObjects/Compound.cpp  
+  source/GeometricObjects/Compound.hpp   
+  source/GeometricObjects/Cylinder.cpp  
+  source/GeometricObjects/Cylinder.hpp 
+  source/GeometricObjects/Disk.cpp  
+  source/GeometricObjects/Disk.hpp 
+  source/GeometricObjects/FlatMeshTriangle.cpp  
+  source/GeometricObjects/FlatMeshTriangle.hpp 
+  source/GeometricObjects/GeometricObject.cpp  
+  source/GeometricObjects/GeometricObject.hpp  
+  source/GeometricObjects/Mesh.cpp  
+  source/GeometricObjects/Mesh.hpp  
+  source/GeometricObjects/MeshTriangle.cpp  
+  source/GeometricObjects/MeshTriangle.hpp  
+  source/GeometricObjects/OpenCylinder.cpp  
+  source/GeometricObjects/OpenCylinder.hpp  
+  source/GeometricObjects/Plane.cpp  
+  source/GeometricObjects/Plane.hpp 
+  source/GeometricObjects/Rectangle.cpp  
+  source/GeometricObjects/Rectangle.hpp 
+  source/GeometricObjects/SmoothMeshTriangle.cpp  
+  source/GeometricObjects/SmoothMeshTriangle.hpp 
+  source/GeometricObjects/Sphere.cpp  
+  source/GeometricObjects/Sphere.hpp 
+  source/GeometricObjects/Torus.cpp  
+  source/GeometricObjects/Torus.hpp       
+  source/GeometricObjects/Triangle.cpp  
+  source/GeometricObjects/Triangle.hpp 
+)
+SOURCE_GROUP("source//GeometricObjects" FILES ${SOURCE_GeometricObjects_Source})
+ 
+
+SET(RayTracing_SRCS
+  ${SOURCE_BRDF_Source}
+  ${SOURCE_build_Source}
+  ${SOURCE_Cameras_Source}
+  ${SOURCE_Light_Soruce}
+  ${SOURCE_Materials_Source}
+  ${SOURCE_Samplers_Source}
+  ${SOURCE_Tracers_Source}
+  ${SOURCE_Utilities_Source}
+  ${SOURCE_Window_Source}
+  ${SOURCE_World_Source}
+  ${SOURCE_GeometricObjects_Source}
+  source/Main/main.cpp 
+)
+
+# Executables
+add_executable(${prjName}      ${EXTERNAL} ${RayTracing_SRCS})
+
+if(SDL_FOUND)
+	target_link_libraries(${prjName} ${SDL_LIBRARY})
+	target_include_directories(${prjName} PUBLIC ${SDL_INCLUDE_PATH})
+endif()
+
+include_directories(src/include/)
+
+# Specific compiler flags below. We're not going to add options for all possible compilers, but if
+# you're new to CMake (like we are), the following may be a helpful example if you're using a
+# different compiler or want to set different compiler options.
+
+message (STATUS "Compiler ID: " ${CMAKE_CXX_COMPILER_ID})
+message (STATUS "Release flags: " ${CMAKE_CXX_FLAGS_RELEASE})
+message (STATUS "Debug flags: " ${CMAKE_CXX_FLAGS_DEBUG})
+
+if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    # /wd #### - Disable warning
+    # /we #### - treat warning as error
+    add_compile_options("/W4")      # Enable level-4 warnings
+    add_compile_options("/we 4265") # Class has virtual functions, but its non-trivial destructor is not virtual
+    add_compile_options("/we 5204") # Class has virtual functions, but its trivial destructor is not virtual
+    add_compile_options("/wd 4100") # unreferenced formal parameter
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    add_compile_options(-Wnon-virtual-dtor) # Class has virtual functions, but its destructor is not virtual
+    add_compile_options(-Wreorder) # Data member will be initialized after [other] data member
+    add_compile_options(-Wmaybe-uninitialized) # Variable improperly initialized
+    add_compile_options(-Wunused-variable) # Variable is defined but unused
+elseif (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    add_compile_options(-Wnon-virtual-dtor) # Class has virtual functions, but its destructor is not virtual
+    add_compile_options(-Wreorder) # Data member will be initialized after [other] data member
+    add_compile_options(-Wsometimes-uninitialized) # Variable improperly initialized
+    add_compile_options(-Wunused-variable) # Variable is defined but unused
+endif()
+
+
+IF (WIN32)
+	FIND_PATH(SDL_INCLUDE_PATH SDL/SDL.h
+		DOC "The directory where GL/glew.h resides")
+
+    FIND_LIBRARY( SDL_LIBRARY
+        NAMES SDL SDL2
+        PATHS
+        DOC "The SDL library")
+ELSE (WIN32)
+ENDIF (WIN32)
+
+SET(SDL_FOUND "NO")
+IF (SDL_INCLUDE_PATH AND SDL_LIBRARY)
+	SET(SDL_LIBRARIES ${SDL_LIBRARY} )
+	SET(SDL_FOUND "YES")
+ENDIF (SDL_INCLUDE_PATH AND SDL_LIBRARY)
