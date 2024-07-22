@@ -1,0 +1,3 @@
+/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/CMakeFiles/ht_master_sec.dir
+/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/CMakeFiles/ALL_BUILD.dir
+/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/CMakeFiles/ZERO_CHECK.dir

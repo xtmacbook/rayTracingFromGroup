@@ -1,0 +1,1257 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		5904BE57EBA646128CA8DA98 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 173D84FCE3024D00A5753B86 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				C9105781164D85ECDB62C870 /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		5C535753FF2148B28CF30C79 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EFC82E7C465E45A4A165BEF0 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				186F40E2C9B8D430918EF15A /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				20C5B8C9D1F741F4A2DF8251 /* PBXTargetDependency */,
+				6287103205384DB689DD2528 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		016C6A3E86A440B1B4390B73 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/ShadeRec.hpp */ = {isa = PBXBuildFile; fileRef = 6536672EAF9B4012AA118551 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/ShadeRec.hpp */; };
+		02B3246F663947FA9CADA2BF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point2D.cpp */ = {isa = PBXBuildFile; fileRef = E223A081842C4F2D9889DB58 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point2D.cpp */; };
+		05814B8DE7F24898A2C90D56 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Tracer.hpp */ = {isa = PBXBuildFile; fileRef = 0B07E76A0BE746788EE03261 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Tracer.hpp */; };
+		059DFDA7CB724020862C1674 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Pinhole.cpp */ = {isa = PBXBuildFile; fileRef = EE98F4E0D6B54BC1AC1CC807 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Pinhole.cpp */; };
+		0610B7D4A8BA4E96B706D559 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Tracer.cpp */ = {isa = PBXBuildFile; fileRef = 2FA31B526E6D42F48F3FBEA4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Tracer.cpp */; };
+		0681DE31E8644C17BA2D608C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 7F7CA1387289409B8762A505 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/CMakeLists.txt */; };
+		0D0AD5898B774F2C85D399AA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Camera.cpp */ = {isa = PBXBuildFile; fileRef = 3D4D2E1BBE7B471F87BEDD19 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Camera.cpp */; };
+		0FB644FF5E354838A8C8B858 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Triangle.hpp */ = {isa = PBXBuildFile; fileRef = 513E02AC21FD4B60A16C2C94 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Triangle.hpp */; };
+		10B458F179BB4434AB7B42BA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/PointLight.hpp */ = {isa = PBXBuildFile; fileRef = E1231480EEEB449EAD17A0DF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/PointLight.hpp */; };
+		13CDC253A0E64A64A10D50CA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/OpenCylinder.hpp */ = {isa = PBXBuildFile; fileRef = 98A4504C483E49A6B924AC54 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/OpenCylinder.hpp */; };
+		174B380A1A4F482B84D7CABF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Sampler.hpp */ = {isa = PBXBuildFile; fileRef = 6CFAEB0CDA7042DC8A88CD7F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Sampler.hpp */; };
+		17DDF11E310847CA9270ECD2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Whitted.hpp */ = {isa = PBXBuildFile; fileRef = A5B2E6D5771B401696F8063C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Whitted.hpp */; };
+		19C8ED1CC9094C39A263E780 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildMultipleObjects.hpp */ = {isa = PBXBuildFile; fileRef = AB91E78624AF4421B21BF194 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildMultipleObjects.hpp */; };
+		1AE77901B7C649F08910E755 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Sphere.cpp */ = {isa = PBXBuildFile; fileRef = 827D187AC50E40A8A6D7D764 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Sphere.cpp */; };
+		1AFEED2CF74946A6BD45917D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/FlatMeshTriangle.hpp */ = {isa = PBXBuildFile; fileRef = 18D1A15C5093437A8DD86792 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/FlatMeshTriangle.hpp */; };
+		1BE20E44C4B04696B6533BBD /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AmbientOccluder.cpp */ = {isa = PBXBuildFile; fileRef = 3E798B14B8D84D4C88680B86 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AmbientOccluder.cpp */; };
+		1BFF2471EDAB4E929839F188 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point2D.hpp */ = {isa = PBXBuildFile; fileRef = 4E6D5F5BE0F14C37BB9A4982 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point2D.hpp */; };
+		1D232C9614F844DAA527CD1F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Cylinder.hpp */ = {isa = PBXBuildFile; fileRef = 73AAD827F85F46B193C6C635 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Cylinder.hpp */; };
+		257252E9921440A48606C89E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/SmoothMeshTriangle.cpp */ = {isa = PBXBuildFile; fileRef = EF4DAB124A2C4019A0EC7EC8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/SmoothMeshTriangle.cpp */; };
+		26DD6B5DE2C74C44AE3F95EE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Material.cpp */ = {isa = PBXBuildFile; fileRef = 19EBB38F2F8749F58F68D259 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Material.cpp */; };
+		2B42C13843F84DC790D60565 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Disk.hpp */ = {isa = PBXBuildFile; fileRef = 12731C482F87402985C5793D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Disk.hpp */; };
+		337C912B088A4D028C8C3D15 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/AreaLighting.hpp */ = {isa = PBXBuildFile; fileRef = 174FE494DED24A15946042D5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/AreaLighting.hpp */; };
+		340C4EBD408C4A01BD112181 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Ambient.cpp */ = {isa = PBXBuildFile; fileRef = 675C52CF98864CA1B37592B3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Ambient.cpp */; };
+		381126A5A9F04112936B1BDA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-NOTHREAD.hpp */ = {isa = PBXBuildFile; fileRef = 0817D6B8D2844032B838A5C2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-NOTHREAD.hpp */; };
+		386BD3947DCD4485BCD94C2C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/World.cpp */ = {isa = PBXBuildFile; fileRef = 8E9BBE31EDB246099B0435BC /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/World.cpp */; };
+		3C1EE5D7B25B44C8AF0C3EA0 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Plane.cpp */ = {isa = PBXBuildFile; fileRef = D9326FDDC8E443B28AD8C330 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Plane.cpp */; };
+		3CE864BABAC7443C98A15D1C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Orthographic.hpp */ = {isa = PBXBuildFile; fileRef = E2A0BBD2F4C44992AF2F9FAB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Orthographic.hpp */; };
+		3DD4112371DF4AB59D4D122E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/ThinLens.cpp */ = {isa = PBXBuildFile; fileRef = 181793662E134F629341B866 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/ThinLens.cpp */; };
+		40E762E848E848BC9370153C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Triangle.cpp */ = {isa = PBXBuildFile; fileRef = 22AF927B7D2944FEB15AF8B2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Triangle.cpp */; };
+		420AF4C62F134B62BAE080C5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Regular.cpp */ = {isa = PBXBuildFile; fileRef = F075D5DD2B684EFCBC58F6E8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Regular.cpp */; };
+		44024D056AF64C48979259E8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/BRDF.cpp */ = {isa = PBXBuildFile; fileRef = D9A02C8AF89C43CFAA5064B9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/BRDF.cpp */; };
+		458216F88DC74DDEBD170D5D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Orthographic.cpp */ = {isa = PBXBuildFile; fileRef = DC08C17B2F944FEAA4BF4E9C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Orthographic.cpp */; };
+		46552F29C4F34FB7AABE08B5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Mesh.hpp */ = {isa = PBXBuildFile; fileRef = 9FD45643F1EC4D12A569E7A5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Mesh.hpp */; };
+		47B8A52C38214713B235964A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Emissive.cpp */ = {isa = PBXBuildFile; fileRef = 789F996F8C1E4E2E9E9178D4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Emissive.cpp */; };
+		4BF9C4DFB4F944BE88624B0A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Ray.cpp */ = {isa = PBXBuildFile; fileRef = C637B743C7DF477FBD7AF3C3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Ray.cpp */; };
+		4CE6D961568544C09D05A356 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Jittered.cpp */ = {isa = PBXBuildFile; fileRef = 6233AB3CCA1844C7BBD8601A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Jittered.cpp */; };
+		4E1D9F8DF30D45DDA455FADD /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Vector3D.cpp */ = {isa = PBXBuildFile; fileRef = 375B6C48066940D1B271E136 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Vector3D.cpp */; };
+		4EFA3D68E29741D5931F5B0F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Main/main.cpp */ = {isa = PBXBuildFile; fileRef = EEFE2393942547DD8CD037C6 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Main/main.cpp */; };
+		5570F63F093E4F479610460F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/ThinLens.hpp */ = {isa = PBXBuildFile; fileRef = C4FD161489FC43CFA045766A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/ThinLens.hpp */; };
+		580E884B72EF41B897F5AAF7 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/GeometricObject.hpp */ = {isa = PBXBuildFile; fileRef = 3FF91CABFA614403AB9492F8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/GeometricObject.hpp */; };
+		5BA57AA26136404E98965693 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window.cpp */ = {isa = PBXBuildFile; fileRef = E85BEAE76387434DB802A4A2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window.cpp */; };
+		5CC98792BA354E6286B694BC /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/RGBColor.cpp */ = {isa = PBXBuildFile; fileRef = C8106BDB80E94FD2912C7111 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/RGBColor.cpp */; };
+		5D9321D37C164B4C8BCD9230 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/PointLight.cpp */ = {isa = PBXBuildFile; fileRef = D90E0A00521042C0B62C450F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/PointLight.cpp */; };
+		608C00BD12FA4F2EABDE56DD /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Matrix.cpp */ = {isa = PBXBuildFile; fileRef = E197C0B18BF740DD963D2DBC /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Matrix.cpp */; };
+		6194DFB25C4D441FA4BF379A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-THREAD.cpp */ = {isa = PBXBuildFile; fileRef = BBDC496E463C4CC1B2B9D7E2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-THREAD.cpp */; };
+		654525D107C34169BAF1F4DC /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildReflective.hpp */ = {isa = PBXBuildFile; fileRef = 780A1222DC3A47A8B6166299 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildReflective.hpp */; };
+		659FF91E6797476F84BBB2C8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Compound.hpp */ = {isa = PBXBuildFile; fileRef = 9263C9148863488A8FB7F9AA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Compound.hpp */; };
+		65BC8F63E86547BEBEB61353 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildBBCoverPicLight.hpp */ = {isa = PBXBuildFile; fileRef = 9D8D2129B86F4ADD8E17D881 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildBBCoverPicLight.hpp */; };
+		691B3F8D94264FC0B7C1FAB1 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/RayCast.hpp */ = {isa = PBXBuildFile; fileRef = 0DAD2D41E0CC421F94571F64 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/RayCast.hpp */; };
+		6BAB2C36C4414829BEA7F7EF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/PerfectSpecular.cpp */ = {isa = PBXBuildFile; fileRef = 5ABD3B0C8DA64D6388668C89 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/PerfectSpecular.cpp */; };
+		6E199836656941349258B6FE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Camera.hpp */ = {isa = PBXBuildFile; fileRef = BCA52148975B4DC0BA22B329 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Camera.hpp */; };
+		6E6BBCFEF18B4B6DBCABC8B2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window.hpp */ = {isa = PBXBuildFile; fileRef = 3E1B0841C870478BB83A61B6 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window.hpp */; };
+		6EA1F9E26B0F40728A67EE93 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point3D.cpp */ = {isa = PBXBuildFile; fileRef = 49A132AC17EE415594AA752E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point3D.cpp */; };
+		6FE474CA384346D789EA6FA3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Phong.cpp */ = {isa = PBXBuildFile; fileRef = 55C83E37EAED4480B82FDD3B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Phong.cpp */; };
+		72DB0040233041A991EE4984 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSingleSphereLight.hpp */ = {isa = PBXBuildFile; fileRef = 4D67686AC5634EAE8341813B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSingleSphereLight.hpp */; };
+		74BDBA0430B74D22A6B5F7B7 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point3D.hpp */ = {isa = PBXBuildFile; fileRef = 80A7E89A03F34ADC9555482D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point3D.hpp */; };
+		79381EC183614FD5AA524B64 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSpheresQueue.hpp */ = {isa = PBXBuildFile; fileRef = 3587F3C1550E40AFA3CF5668 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSpheresQueue.hpp */; };
+		7A1EAAB62AE94CED8513AB0C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildShadowsTest.hpp */ = {isa = PBXBuildFile; fileRef = B50D7F55D33247039B904223 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildShadowsTest.hpp */; };
+		7A30D10202974DD2ACDA4530 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Mesh.cpp */ = {isa = PBXBuildFile; fileRef = 620470502A4F46E08BC4B835 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Mesh.cpp */; };
+		7A90616539C34618AAC851EE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/MeshTriangle.cpp */ = {isa = PBXBuildFile; fileRef = A0F08DE2DD9E4EF9A6382DD5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/MeshTriangle.cpp */; };
+		7B38AD76D0DB4206B38D16F8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/AreaLighting.cpp */ = {isa = PBXBuildFile; fileRef = 35DDA808F9E1404DBD87B93D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/AreaLighting.cpp */; };
+		7CAC356113D84A08AFF0088F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Directional.hpp */ = {isa = PBXBuildFile; fileRef = A58CB5ED745D40CE9ED6B594 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Directional.hpp */; };
+		805E7C4AEEF44547805765D2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Reflective.cpp */ = {isa = PBXBuildFile; fileRef = 237E529CC07C4507A3DBD210 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Reflective.cpp */; };
+		80BC9E87DDF54B3F94A4C562 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Debug.hpp */ = {isa = PBXBuildFile; fileRef = 8AD246FEF2ED4191A27F6437 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Debug.hpp */; };
+		81A8766850964F439102B2E5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Rectangle.cpp */ = {isa = PBXBuildFile; fileRef = FE2EEC7B1411443A821767B4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Rectangle.cpp */; };
+		82CA47AEB1044D8E80CCF3F8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Torus.hpp */ = {isa = PBXBuildFile; fileRef = 2FF827F539C9422193ACF2A4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Torus.hpp */; };
+		855ACD213CD54BCFBC54978D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/GlossySpecular.cpp */ = {isa = PBXBuildFile; fileRef = E8432BBB18E1460E8EFE3C7C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/GlossySpecular.cpp */; };
+		90BD5403EECF42F99B45D307 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Compound.cpp */ = {isa = PBXBuildFile; fileRef = 1ADF75A920B84AA7BB97F072 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Compound.cpp */; };
+		955C95108E84471CBD2A04F2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Normal.hpp */ = {isa = PBXBuildFile; fileRef = 969643B4481C4255AA657834 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Normal.hpp */; };
+		968B0B0A01374C0C981E69B0 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Material.hpp */ = {isa = PBXBuildFile; fileRef = 8C735702838848A5A3B01F8E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Material.hpp */; };
+		96A852B06F0849CAB6116DA8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSimpleMesh.hpp */ = {isa = PBXBuildFile; fileRef = C9F3F3CA770643FBBE399629 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSimpleMesh.hpp */; };
+		9863FCD608C74E68B09A6168 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Cylinder.cpp */ = {isa = PBXBuildFile; fileRef = 39F4B3AE17BF4146B48C3547 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Cylinder.cpp */; };
+		9A4CF5ABE41F4EC0BC2264BA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Regular.hpp */ = {isa = PBXBuildFile; fileRef = BB1DE732FEA3460980F049F9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Regular.hpp */; };
+		9B2AAFE561AA415ABA8FD486 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSinusoid.hpp */ = {isa = PBXBuildFile; fileRef = B920082CCE664AFD92F2E106 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSinusoid.hpp */; };
+		9B8F332D1BC4436DB5AF536B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-THREAD.hpp */ = {isa = PBXBuildFile; fileRef = 0B0D93DA357248AB80EAD0B7 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-THREAD.hpp */; };
+		9CCF674A0B7F4D43BBC6A080 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildHorizontalPlane.hpp */ = {isa = PBXBuildFile; fileRef = CB1C284B76804505A47C6B9D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildHorizontalPlane.hpp */; };
+		9CECBBB5BD6F466B890C97CE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/BRDF.hpp */ = {isa = PBXBuildFile; fileRef = 10608E41E8744FC9BF10D8A5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/BRDF.hpp */; };
+		9D3B735CA8BA45B3BB4345CD /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Matte.cpp */ = {isa = PBXBuildFile; fileRef = D34F00FA26844C03B9390169 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Matte.cpp */; };
+		9E8570F1BA4B463DB130B21C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Directional.cpp */ = {isa = PBXBuildFile; fileRef = 1311122622A945BB9E9EAF6A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Directional.cpp */; };
+		9EB0B39B02D1496689546338 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Pinhole.hpp */ = {isa = PBXBuildFile; fileRef = 6BCD06B1BB7743B29FBB162E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Pinhole.hpp */; };
+		9EB8C630631F4695B229AB31 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Sphere.hpp */ = {isa = PBXBuildFile; fileRef = 742EBD51605646E8A18478BB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Sphere.hpp */; };
+		A2B7549514E04ED5A94E5D6D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Constants.hpp */ = {isa = PBXBuildFile; fileRef = 61695E0A55894CA2B2F70FDD /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Constants.hpp */; };
+		A2F2C76161A24E9CBE2EF32F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/RGBColor.hpp */ = {isa = PBXBuildFile; fileRef = F7F8A76414FE424C830F2F2D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/RGBColor.hpp */; };
+		A5C222A6A01640DCBE4B9FBF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/RayCast.cpp */ = {isa = PBXBuildFile; fileRef = 9BD57CBC456B44F29CDF01C2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/RayCast.cpp */; };
+		A60BF35089BB46E49C5301CF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Vector3D.hpp */ = {isa = PBXBuildFile; fileRef = A3703A4C4C8F4F3B9F1978D1 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Vector3D.hpp */; };
+		A61B56CD583A448E9E6145DB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildShadedTest.hpp */ = {isa = PBXBuildFile; fileRef = 445EBF6329C84184A1359030 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildShadedTest.hpp */; };
+		ACDB8FE25AFA4A64A02BF431 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-NOTHREAD.cpp */ = {isa = PBXBuildFile; fileRef = 68B0D3AC26A84F5EA9D0C140 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-NOTHREAD.cpp */; };
+		AD14DA4DC9FD462A9152686D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildGlossy.hpp */ = {isa = PBXBuildFile; fileRef = 99495EA887674CD0BBDC7146 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildGlossy.hpp */; };
+		AE64677B94C048B8A839EFFF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/Lambertian.hpp */ = {isa = PBXBuildFile; fileRef = 6FA94DD8CA484656BDF4D0B9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/Lambertian.hpp */; };
+		AFA9947DA6254AA99767138E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Box.hpp */ = {isa = PBXBuildFile; fileRef = 4AA8B19621B54765BCDA52DA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Box.hpp */; };
+		B450D38DE04646AD9EB5065F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Plane.hpp */ = {isa = PBXBuildFile; fileRef = 54EDB2A0480949A9AACC39DB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Plane.hpp */; };
+		B47268F18EFC478494451EBF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/Lambertian.cpp */ = {isa = PBXBuildFile; fileRef = 3FCE04992878410D8B15A4B3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/Lambertian.cpp */; };
+		B8B782837ABD4358BE377F52 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildAreaLight.hpp */ = {isa = PBXBuildFile; fileRef = 35777A6890C845BA833CC6B3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildAreaLight.hpp */; };
+		B9BD3333BEA24779B40B48B9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/FlatMeshTriangle.cpp */ = {isa = PBXBuildFile; fileRef = E3769AC19ABB4DAF93F5E09E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/FlatMeshTriangle.cpp */; };
+		BA28D84CAAE54FCD94072F7C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/NRooks.cpp */ = {isa = PBXBuildFile; fileRef = 8B2A7913AFCA45C7AA8D4A43 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/NRooks.cpp */; };
+		BB1B029624E843E79696A830 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Ray.hpp */ = {isa = PBXBuildFile; fileRef = CE35AEA963F64BC5A9E9D21A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Ray.hpp */; };
+		BD5FAAE5DB4D4F4F95BF264E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Jittered.hpp */ = {isa = PBXBuildFile; fileRef = B5423EB56C8B43EAA35220FB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Jittered.hpp */; };
+		BFED413C894A46D6B3B269C4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Phong.hpp */ = {isa = PBXBuildFile; fileRef = 8720142C365B45F5997AA793 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Phong.hpp */; };
+		C0DC2E72B9A34B0BB10BE718 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Box.cpp */ = {isa = PBXBuildFile; fileRef = 84F600E14C6A4D35B7E22EEB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Box.cpp */; };
+		C123BF5A36304A44AD4FB83E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Matrix.hpp */ = {isa = PBXBuildFile; fileRef = 891B6F708725408D9EE855DE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Matrix.hpp */; };
+		C3403C2CCC8744119B36095B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Normal.cpp */ = {isa = PBXBuildFile; fileRef = D45950D5932B49A5A5BD5088 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Normal.cpp */; };
+		C40875D90FA64008B8DE59BE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Light.hpp */ = {isa = PBXBuildFile; fileRef = A13E6629163D4A2FBB5E105D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Light.hpp */; };
+		C64DB69FF51E4CC0A21D873C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Rectangle.hpp */ = {isa = PBXBuildFile; fileRef = E64E85A89763480A8159943C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Rectangle.hpp */; };
+		C86D35B2CD5B439AB5510F59 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Reflective.hpp */ = {isa = PBXBuildFile; fileRef = B2235E0615A84174BAFDC420 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Reflective.hpp */; };
+		CA883FC463ED44E0BD2912F1 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Whitted.cpp */ = {isa = PBXBuildFile; fileRef = 635D261A87B14B5BBC806A8C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Whitted.cpp */; };
+		CC61A8325868435CBDAC1CE0 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Ambient.hpp */ = {isa = PBXBuildFile; fileRef = 6DDB55D12D244FA893B4B811 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Ambient.hpp */; };
+		CC8E8C1CA8A8489282C8A855 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/GlossySpecular.hpp */ = {isa = PBXBuildFile; fileRef = 6BE85259FE0F47469B14C93B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/GlossySpecular.hpp */; };
+		CCB62A79149D47B39E4B555F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/GeometricObject.cpp */ = {isa = PBXBuildFile; fileRef = 634EED095C6B47FFBA629779 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/GeometricObject.cpp */; };
+		CDA4601DE25C4C5E8CB5DEC0 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/BBox.cpp */ = {isa = PBXBuildFile; fileRef = 61449234CDC94BFC854861C9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/BBox.cpp */; };
+		CEAC9B6B4809490287104511 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Maths.hpp */ = {isa = PBXBuildFile; fileRef = D1EF8C6DF64346D09AA1EBC7 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Maths.hpp */; };
+		CF205D939EE64225835BAE71 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/ViewPlane.hpp */ = {isa = PBXBuildFile; fileRef = DA588F26C372422398AA152A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/ViewPlane.hpp */; };
+		D61AC704D2744D4EA0A4005A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/PerfectSpecular.hpp */ = {isa = PBXBuildFile; fileRef = 0BEF0BD2E748439588F93010 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/PerfectSpecular.hpp */; };
+		D7F2F7EDA2F743F794D64857 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/OpenCylinder.cpp */ = {isa = PBXBuildFile; fileRef = 81DD19C9E04F4980838E25A4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/OpenCylinder.cpp */; };
+		D8CB56A140A141A1AEB21B45 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/ViewPlane.cpp */ = {isa = PBXBuildFile; fileRef = 353EFF56BD734D708B4498E3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/ViewPlane.cpp */; };
+		D969261DEFE2422FAC43BD30 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/SmoothMeshTriangle.hpp */ = {isa = PBXBuildFile; fileRef = 7EA1267662E54110A8B4F5FF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/SmoothMeshTriangle.hpp */; };
+		DEA2802EF3614F039EBAD4ED /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Emissive.hpp */ = {isa = PBXBuildFile; fileRef = 6F123A803AE8415CBC7870B5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Emissive.hpp */; };
+		E13858327FCC43658553F088 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildBox.hpp */ = {isa = PBXBuildFile; fileRef = D6904D94FDFA4943B43A2B6B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildBox.hpp */; };
+		E30F0019A3B949AEA1C62857 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Disk.cpp */ = {isa = PBXBuildFile; fileRef = 815157FC6AE542B2AF60AC96 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Disk.cpp */; };
+		E311611E657A4B50809083B1 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Sampler.cpp */ = {isa = PBXBuildFile; fileRef = 0FAB95F0D6344785805A7660 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Sampler.cpp */; };
+		E3244F34B267403289468B2D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildAmbientOcclusion.hpp */ = {isa = PBXBuildFile; fileRef = 07009B7280E346BFB54AA631 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildAmbientOcclusion.hpp */; };
+		E42E6BF94492400F9A865431 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSphereGrid.hpp */ = {isa = PBXBuildFile; fileRef = 9B3BED3654F7440FADC12149 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSphereGrid.hpp */; };
+		E46B35FCFB6A4BBB8289C37F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/ShadeRec.cpp */ = {isa = PBXBuildFile; fileRef = 88E4ADC2C1424722AAB7950B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/ShadeRec.cpp */; };
+		E70CB6AF41EF4F119001F1EE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Torus.cpp */ = {isa = PBXBuildFile; fileRef = D9CE7ACBF87E4CF18E550011 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Torus.cpp */; };
+		EB9D20A91C8A48D494516565 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Light.cpp */ = {isa = PBXBuildFile; fileRef = 8B84BE1405B846AE893C6FDA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Light.cpp */; };
+		ED007A09F81545F8A4355936 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Matte.hpp */ = {isa = PBXBuildFile; fileRef = 0B89CCC59BF54952A4C210C0 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Matte.hpp */; };
+		ED73F52A34F84FF8AF9473AA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AreaLight.hpp */ = {isa = PBXBuildFile; fileRef = 91EA76A56A504039B233C0B7 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AreaLight.hpp */; };
+		EF92B905778B4A7A871A24DE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/MultiJittered.cpp */ = {isa = PBXBuildFile; fileRef = 575C65C8D2E343668416089A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/MultiJittered.cpp */; };
+		F0A4ACF1817B471BB01CC920 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildMirrorHall.hpp */ = {isa = PBXBuildFile; fileRef = 5634D4982D4A4911AFD303D5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildMirrorHall.hpp */; };
+		F79E125BC71B418BAB2E3DAF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/World.hpp */ = {isa = PBXBuildFile; fileRef = 30DBA3BC5B70440892E80581 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/World.hpp */; };
+		FA6EAC6AFECA48618B513168 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/BBox.hpp */ = {isa = PBXBuildFile; fileRef = C61FDFFFC13C425FB70BA797 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/BBox.hpp */; };
+		FAB950436FD7405FBCCDDA21 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AreaLight.cpp */ = {isa = PBXBuildFile; fileRef = B267B5085BEB49B2A79138B9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AreaLight.cpp */; };
+		FBC38604EC5742F09139C253 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/MultiJittered.hpp */ = {isa = PBXBuildFile; fileRef = 7DB1C4F94382464E8FB86F8D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/MultiJittered.hpp */; };
+		FCAADE6EAE7D4585A06A12BB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/MeshTriangle.hpp */ = {isa = PBXBuildFile; fileRef = 1AC83B2A448641499CC28805 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/MeshTriangle.hpp */; };
+		FDC94E717F6F40E182213348 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSingleSphere.hpp */ = {isa = PBXBuildFile; fileRef = CAFE2316256A4D8A9238D1DA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSingleSphere.hpp */; };
+		FEE5FE8EE6EA40EBA09A0031 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/NRooks.hpp */ = {isa = PBXBuildFile; fileRef = 52A5327BBED94D2783347863 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/NRooks.hpp */; };
+		FFEBE8A4744C4BAD8CE2E024 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AmbientOccluder.hpp */ = {isa = PBXBuildFile; fileRef = 423C863D6E6A4094BC47CDB6 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AmbientOccluder.hpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		0ACEF07580DA42BEBECBE50C /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		3DD3289063E44290BB3F54BB /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		65E63524817C4F6BAF3F48A4 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		9168E0C9F62542E89116169E /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		90C0A844025D4EE1973B8C5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 122CEB56B1F04DDDA753E514 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5904BE57EBA646128CA8DA98;
+			remoteInfo = ZERO_CHECK;
+		};
+		B5526D64D65D4263A9792841 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 122CEB56B1F04DDDA753E514 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5904BE57EBA646128CA8DA98;
+			remoteInfo = ZERO_CHECK;
+		};
+		CFDAFE4BCAD94198B316B59D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 122CEB56B1F04DDDA753E514 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5112B743B59C444C856C1158;
+			remoteInfo = ht_master_sec;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07009B7280E346BFB54AA631 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildAmbientOcclusion.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildAmbientOcclusion.hpp; path = source/build/BuildAmbientOcclusion.hpp; sourceTree = SOURCE_ROOT; };
+		0817D6B8D2844032B838A5C2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-NOTHREAD.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = "Window-NOTHREAD.hpp"; path = "source/Window/Window-NOTHREAD.hpp"; sourceTree = SOURCE_ROOT; };
+		0B07E76A0BE746788EE03261 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Tracer.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Tracer.hpp; path = source/Tracers/Tracer.hpp; sourceTree = SOURCE_ROOT; };
+		0B0D93DA357248AB80EAD0B7 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-THREAD.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = "Window-THREAD.hpp"; path = "source/Window/Window-THREAD.hpp"; sourceTree = SOURCE_ROOT; };
+		0B89CCC59BF54952A4C210C0 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Matte.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Matte.hpp; path = source/Materials/Matte.hpp; sourceTree = SOURCE_ROOT; };
+		0BEF0BD2E748439588F93010 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/PerfectSpecular.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = PerfectSpecular.hpp; path = source/BRDF/PerfectSpecular.hpp; sourceTree = SOURCE_ROOT; };
+		0DAD2D41E0CC421F94571F64 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/RayCast.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = RayCast.hpp; path = source/Tracers/RayCast.hpp; sourceTree = SOURCE_ROOT; };
+		0FAB95F0D6344785805A7660 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Sampler.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Sampler.cpp; path = source/Samplers/Sampler.cpp; sourceTree = SOURCE_ROOT; };
+		10608E41E8744FC9BF10D8A5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/BRDF.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BRDF.hpp; path = source/BRDF/BRDF.hpp; sourceTree = SOURCE_ROOT; };
+		12731C482F87402985C5793D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Disk.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Disk.hpp; path = source/GeometricObjects/Disk.hpp; sourceTree = SOURCE_ROOT; };
+		1311122622A945BB9E9EAF6A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Directional.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Directional.cpp; path = source/Light/Directional.cpp; sourceTree = SOURCE_ROOT; };
+		174FE494DED24A15946042D5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/AreaLighting.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = AreaLighting.hpp; path = source/Tracers/AreaLighting.hpp; sourceTree = SOURCE_ROOT; };
+		181793662E134F629341B866 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/ThinLens.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ThinLens.cpp; path = source/Cameras/ThinLens.cpp; sourceTree = SOURCE_ROOT; };
+		18D1A15C5093437A8DD86792 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/FlatMeshTriangle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = FlatMeshTriangle.hpp; path = source/GeometricObjects/FlatMeshTriangle.hpp; sourceTree = SOURCE_ROOT; };
+		19EBB38F2F8749F58F68D259 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Material.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Material.cpp; path = source/Materials/Material.cpp; sourceTree = SOURCE_ROOT; };
+		1AC83B2A448641499CC28805 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/MeshTriangle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = MeshTriangle.hpp; path = source/GeometricObjects/MeshTriangle.hpp; sourceTree = SOURCE_ROOT; };
+		1ADF75A920B84AA7BB97F072 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Compound.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Compound.cpp; path = source/GeometricObjects/Compound.cpp; sourceTree = SOURCE_ROOT; };
+		1C2CE063344543F288BEC1EB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		22AF927B7D2944FEB15AF8B2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Triangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Triangle.cpp; path = source/GeometricObjects/Triangle.cpp; sourceTree = SOURCE_ROOT; };
+		237E529CC07C4507A3DBD210 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Reflective.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Reflective.cpp; path = source/Materials/Reflective.cpp; sourceTree = SOURCE_ROOT; };
+		2FA31B526E6D42F48F3FBEA4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Tracer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Tracer.cpp; path = source/Tracers/Tracer.cpp; sourceTree = SOURCE_ROOT; };
+		2FF827F539C9422193ACF2A4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Torus.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Torus.hpp; path = source/GeometricObjects/Torus.hpp; sourceTree = SOURCE_ROOT; };
+		30DBA3BC5B70440892E80581 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/World.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = World.hpp; path = source/World/World.hpp; sourceTree = SOURCE_ROOT; };
+		353EFF56BD734D708B4498E3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/ViewPlane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ViewPlane.cpp; path = source/World/ViewPlane.cpp; sourceTree = SOURCE_ROOT; };
+		35777A6890C845BA833CC6B3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildAreaLight.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildAreaLight.hpp; path = source/build/BuildAreaLight.hpp; sourceTree = SOURCE_ROOT; };
+		3587F3C1550E40AFA3CF5668 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSpheresQueue.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildSpheresQueue.hpp; path = source/build/BuildSpheresQueue.hpp; sourceTree = SOURCE_ROOT; };
+		35DDA808F9E1404DBD87B93D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/AreaLighting.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AreaLighting.cpp; path = source/Tracers/AreaLighting.cpp; sourceTree = SOURCE_ROOT; };
+		375B6C48066940D1B271E136 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Vector3D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Vector3D.cpp; path = source/Utilities/Vector3D.cpp; sourceTree = SOURCE_ROOT; };
+		39F4B3AE17BF4146B48C3547 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Cylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Cylinder.cpp; path = source/GeometricObjects/Cylinder.cpp; sourceTree = SOURCE_ROOT; };
+		3D4D2E1BBE7B471F87BEDD19 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Camera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Camera.cpp; path = source/Cameras/Camera.cpp; sourceTree = SOURCE_ROOT; };
+		3E1B0841C870478BB83A61B6 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Window.hpp; path = source/Window/Window.hpp; sourceTree = SOURCE_ROOT; };
+		3E798B14B8D84D4C88680B86 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AmbientOccluder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AmbientOccluder.cpp; path = source/Light/AmbientOccluder.cpp; sourceTree = SOURCE_ROOT; };
+		3FCE04992878410D8B15A4B3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/Lambertian.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Lambertian.cpp; path = source/BRDF/Lambertian.cpp; sourceTree = SOURCE_ROOT; };
+		3FF91CABFA614403AB9492F8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/GeometricObject.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = GeometricObject.hpp; path = source/GeometricObjects/GeometricObject.hpp; sourceTree = SOURCE_ROOT; };
+		423C863D6E6A4094BC47CDB6 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AmbientOccluder.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = AmbientOccluder.hpp; path = source/Light/AmbientOccluder.hpp; sourceTree = SOURCE_ROOT; };
+		445EBF6329C84184A1359030 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildShadedTest.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildShadedTest.hpp; path = source/build/BuildShadedTest.hpp; sourceTree = SOURCE_ROOT; };
+		49A132AC17EE415594AA752E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point3D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Point3D.cpp; path = source/Utilities/Point3D.cpp; sourceTree = SOURCE_ROOT; };
+		4AA8B19621B54765BCDA52DA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Box.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Box.hpp; path = source/GeometricObjects/Box.hpp; sourceTree = SOURCE_ROOT; };
+		4D67686AC5634EAE8341813B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSingleSphereLight.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildSingleSphereLight.hpp; path = source/build/BuildSingleSphereLight.hpp; sourceTree = SOURCE_ROOT; };
+		4E6D5F5BE0F14C37BB9A4982 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point2D.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Point2D.hpp; path = source/Utilities/Point2D.hpp; sourceTree = SOURCE_ROOT; };
+		513E02AC21FD4B60A16C2C94 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Triangle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Triangle.hpp; path = source/GeometricObjects/Triangle.hpp; sourceTree = SOURCE_ROOT; };
+		52A5327BBED94D2783347863 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/NRooks.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = NRooks.hpp; path = source/Samplers/NRooks.hpp; sourceTree = SOURCE_ROOT; };
+		54EDB2A0480949A9AACC39DB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Plane.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Plane.hpp; path = source/GeometricObjects/Plane.hpp; sourceTree = SOURCE_ROOT; };
+		55C83E37EAED4480B82FDD3B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Phong.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Phong.cpp; path = source/Materials/Phong.cpp; sourceTree = SOURCE_ROOT; };
+		5634D4982D4A4911AFD303D5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildMirrorHall.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildMirrorHall.hpp; path = source/build/BuildMirrorHall.hpp; sourceTree = SOURCE_ROOT; };
+		575C65C8D2E343668416089A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/MultiJittered.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MultiJittered.cpp; path = source/Samplers/MultiJittered.cpp; sourceTree = SOURCE_ROOT; };
+		5ABD3B0C8DA64D6388668C89 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/PerfectSpecular.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = PerfectSpecular.cpp; path = source/BRDF/PerfectSpecular.cpp; sourceTree = SOURCE_ROOT; };
+		61449234CDC94BFC854861C9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/BBox.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BBox.cpp; path = source/GeometricObjects/BBox.cpp; sourceTree = SOURCE_ROOT; };
+		61695E0A55894CA2B2F70FDD /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Constants.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Constants.hpp; path = source/Utilities/Constants.hpp; sourceTree = SOURCE_ROOT; };
+		620470502A4F46E08BC4B835 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Mesh.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Mesh.cpp; path = source/GeometricObjects/Mesh.cpp; sourceTree = SOURCE_ROOT; };
+		6233AB3CCA1844C7BBD8601A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Jittered.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Jittered.cpp; path = source/Samplers/Jittered.cpp; sourceTree = SOURCE_ROOT; };
+		634EED095C6B47FFBA629779 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/GeometricObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GeometricObject.cpp; path = source/GeometricObjects/GeometricObject.cpp; sourceTree = SOURCE_ROOT; };
+		635D261A87B14B5BBC806A8C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Whitted.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Whitted.cpp; path = source/Tracers/Whitted.cpp; sourceTree = SOURCE_ROOT; };
+		6536672EAF9B4012AA118551 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/ShadeRec.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ShadeRec.hpp; path = source/Utilities/ShadeRec.hpp; sourceTree = SOURCE_ROOT; };
+		675C52CF98864CA1B37592B3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Ambient.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Ambient.cpp; path = source/Light/Ambient.cpp; sourceTree = SOURCE_ROOT; };
+		68B0D3AC26A84F5EA9D0C140 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-NOTHREAD.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "Window-NOTHREAD.cpp"; path = "source/Window/Window-NOTHREAD.cpp"; sourceTree = SOURCE_ROOT; };
+		6BCD06B1BB7743B29FBB162E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Pinhole.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Pinhole.hpp; path = source/Cameras/Pinhole.hpp; sourceTree = SOURCE_ROOT; };
+		6BE85259FE0F47469B14C93B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/GlossySpecular.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = GlossySpecular.hpp; path = source/BRDF/GlossySpecular.hpp; sourceTree = SOURCE_ROOT; };
+		6CFAEB0CDA7042DC8A88CD7F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Sampler.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Sampler.hpp; path = source/Samplers/Sampler.hpp; sourceTree = SOURCE_ROOT; };
+		6DDB55D12D244FA893B4B811 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Ambient.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Ambient.hpp; path = source/Light/Ambient.hpp; sourceTree = SOURCE_ROOT; };
+		6F123A803AE8415CBC7870B5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Emissive.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Emissive.hpp; path = source/Materials/Emissive.hpp; sourceTree = SOURCE_ROOT; };
+		6FA94DD8CA484656BDF4D0B9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/Lambertian.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Lambertian.hpp; path = source/BRDF/Lambertian.hpp; sourceTree = SOURCE_ROOT; };
+		7153D68D280849019F5F1942 /* ht_master_sec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = ht_master_sec; sourceTree = BUILT_PRODUCTS_DIR; };
+		73AAD827F85F46B193C6C635 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Cylinder.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Cylinder.hpp; path = source/GeometricObjects/Cylinder.hpp; sourceTree = SOURCE_ROOT; };
+		742EBD51605646E8A18478BB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Sphere.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Sphere.hpp; path = source/GeometricObjects/Sphere.hpp; sourceTree = SOURCE_ROOT; };
+		780A1222DC3A47A8B6166299 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildReflective.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildReflective.hpp; path = source/build/BuildReflective.hpp; sourceTree = SOURCE_ROOT; };
+		789F996F8C1E4E2E9E9178D4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Emissive.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Emissive.cpp; path = source/Materials/Emissive.cpp; sourceTree = SOURCE_ROOT; };
+		7DB1C4F94382464E8FB86F8D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/MultiJittered.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = MultiJittered.hpp; path = source/Samplers/MultiJittered.hpp; sourceTree = SOURCE_ROOT; };
+		7EA1267662E54110A8B4F5FF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/SmoothMeshTriangle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = SmoothMeshTriangle.hpp; path = source/GeometricObjects/SmoothMeshTriangle.hpp; sourceTree = SOURCE_ROOT; };
+		7F7CA1387289409B8762A505 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		80A7E89A03F34ADC9555482D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point3D.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Point3D.hpp; path = source/Utilities/Point3D.hpp; sourceTree = SOURCE_ROOT; };
+		815157FC6AE542B2AF60AC96 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Disk.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Disk.cpp; path = source/GeometricObjects/Disk.cpp; sourceTree = SOURCE_ROOT; };
+		81DD19C9E04F4980838E25A4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/OpenCylinder.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = OpenCylinder.cpp; path = source/GeometricObjects/OpenCylinder.cpp; sourceTree = SOURCE_ROOT; };
+		827D187AC50E40A8A6D7D764 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Sphere.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Sphere.cpp; path = source/GeometricObjects/Sphere.cpp; sourceTree = SOURCE_ROOT; };
+		84F600E14C6A4D35B7E22EEB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Box.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Box.cpp; path = source/GeometricObjects/Box.cpp; sourceTree = SOURCE_ROOT; };
+		8720142C365B45F5997AA793 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Phong.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Phong.hpp; path = source/Materials/Phong.hpp; sourceTree = SOURCE_ROOT; };
+		88E4ADC2C1424722AAB7950B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/ShadeRec.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ShadeRec.cpp; path = source/Utilities/ShadeRec.cpp; sourceTree = SOURCE_ROOT; };
+		891B6F708725408D9EE855DE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Matrix.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Matrix.hpp; path = source/Utilities/Matrix.hpp; sourceTree = SOURCE_ROOT; };
+		8AD246FEF2ED4191A27F6437 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Debug.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Debug.hpp; path = source/Utilities/Debug.hpp; sourceTree = SOURCE_ROOT; };
+		8B2A7913AFCA45C7AA8D4A43 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/NRooks.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = NRooks.cpp; path = source/Samplers/NRooks.cpp; sourceTree = SOURCE_ROOT; };
+		8B84BE1405B846AE893C6FDA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Light.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Light.cpp; path = source/Light/Light.cpp; sourceTree = SOURCE_ROOT; };
+		8C735702838848A5A3B01F8E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Material.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Material.hpp; path = source/Materials/Material.hpp; sourceTree = SOURCE_ROOT; };
+		8E9BBE31EDB246099B0435BC /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/World.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = World.cpp; path = source/World/World.cpp; sourceTree = SOURCE_ROOT; };
+		91EA76A56A504039B233C0B7 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AreaLight.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = AreaLight.hpp; path = source/Light/AreaLight.hpp; sourceTree = SOURCE_ROOT; };
+		9263C9148863488A8FB7F9AA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Compound.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Compound.hpp; path = source/GeometricObjects/Compound.hpp; sourceTree = SOURCE_ROOT; };
+		969643B4481C4255AA657834 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Normal.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Normal.hpp; path = source/Utilities/Normal.hpp; sourceTree = SOURCE_ROOT; };
+		98A4504C483E49A6B924AC54 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/OpenCylinder.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = OpenCylinder.hpp; path = source/GeometricObjects/OpenCylinder.hpp; sourceTree = SOURCE_ROOT; };
+		99495EA887674CD0BBDC7146 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildGlossy.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildGlossy.hpp; path = source/build/BuildGlossy.hpp; sourceTree = SOURCE_ROOT; };
+		9B3BED3654F7440FADC12149 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSphereGrid.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildSphereGrid.hpp; path = source/build/BuildSphereGrid.hpp; sourceTree = SOURCE_ROOT; };
+		9BD57CBC456B44F29CDF01C2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/RayCast.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = RayCast.cpp; path = source/Tracers/RayCast.cpp; sourceTree = SOURCE_ROOT; };
+		9D8D2129B86F4ADD8E17D881 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildBBCoverPicLight.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildBBCoverPicLight.hpp; path = source/build/BuildBBCoverPicLight.hpp; sourceTree = SOURCE_ROOT; };
+		9FD45643F1EC4D12A569E7A5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Mesh.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Mesh.hpp; path = source/GeometricObjects/Mesh.hpp; sourceTree = SOURCE_ROOT; };
+		A0F08DE2DD9E4EF9A6382DD5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/MeshTriangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MeshTriangle.cpp; path = source/GeometricObjects/MeshTriangle.cpp; sourceTree = SOURCE_ROOT; };
+		A13E6629163D4A2FBB5E105D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Light.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Light.hpp; path = source/Light/Light.hpp; sourceTree = SOURCE_ROOT; };
+		A3703A4C4C8F4F3B9F1978D1 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Vector3D.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Vector3D.hpp; path = source/Utilities/Vector3D.hpp; sourceTree = SOURCE_ROOT; };
+		A58CB5ED745D40CE9ED6B594 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Directional.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Directional.hpp; path = source/Light/Directional.hpp; sourceTree = SOURCE_ROOT; };
+		A5B2E6D5771B401696F8063C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Whitted.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Whitted.hpp; path = source/Tracers/Whitted.hpp; sourceTree = SOURCE_ROOT; };
+		AB91E78624AF4421B21BF194 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildMultipleObjects.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildMultipleObjects.hpp; path = source/build/BuildMultipleObjects.hpp; sourceTree = SOURCE_ROOT; };
+		B2235E0615A84174BAFDC420 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Reflective.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Reflective.hpp; path = source/Materials/Reflective.hpp; sourceTree = SOURCE_ROOT; };
+		B267B5085BEB49B2A79138B9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AreaLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AreaLight.cpp; path = source/Light/AreaLight.cpp; sourceTree = SOURCE_ROOT; };
+		B50D7F55D33247039B904223 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildShadowsTest.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildShadowsTest.hpp; path = source/build/BuildShadowsTest.hpp; sourceTree = SOURCE_ROOT; };
+		B5423EB56C8B43EAA35220FB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Jittered.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Jittered.hpp; path = source/Samplers/Jittered.hpp; sourceTree = SOURCE_ROOT; };
+		B920082CCE664AFD92F2E106 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSinusoid.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildSinusoid.hpp; path = source/build/BuildSinusoid.hpp; sourceTree = SOURCE_ROOT; };
+		BB1DE732FEA3460980F049F9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Regular.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Regular.hpp; path = source/Samplers/Regular.hpp; sourceTree = SOURCE_ROOT; };
+		BBDC496E463C4CC1B2B9D7E2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-THREAD.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = "Window-THREAD.cpp"; path = "source/Window/Window-THREAD.cpp"; sourceTree = SOURCE_ROOT; };
+		BCA52148975B4DC0BA22B329 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Camera.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Camera.hpp; path = source/Cameras/Camera.hpp; sourceTree = SOURCE_ROOT; };
+		C4FD161489FC43CFA045766A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/ThinLens.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ThinLens.hpp; path = source/Cameras/ThinLens.hpp; sourceTree = SOURCE_ROOT; };
+		C61FDFFFC13C425FB70BA797 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/BBox.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BBox.hpp; path = source/GeometricObjects/BBox.hpp; sourceTree = SOURCE_ROOT; };
+		C637B743C7DF477FBD7AF3C3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Ray.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Ray.cpp; path = source/Utilities/Ray.cpp; sourceTree = SOURCE_ROOT; };
+		C8106BDB80E94FD2912C7111 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/RGBColor.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = RGBColor.cpp; path = source/Utilities/RGBColor.cpp; sourceTree = SOURCE_ROOT; };
+		C9F3F3CA770643FBBE399629 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSimpleMesh.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildSimpleMesh.hpp; path = source/build/BuildSimpleMesh.hpp; sourceTree = SOURCE_ROOT; };
+		CAFE2316256A4D8A9238D1DA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSingleSphere.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildSingleSphere.hpp; path = source/build/BuildSingleSphere.hpp; sourceTree = SOURCE_ROOT; };
+		CB1C284B76804505A47C6B9D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildHorizontalPlane.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildHorizontalPlane.hpp; path = source/build/BuildHorizontalPlane.hpp; sourceTree = SOURCE_ROOT; };
+		CE35AEA963F64BC5A9E9D21A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Ray.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Ray.hpp; path = source/Utilities/Ray.hpp; sourceTree = SOURCE_ROOT; };
+		D1EF8C6DF64346D09AA1EBC7 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Maths.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Maths.hpp; path = source/Utilities/Maths.hpp; sourceTree = SOURCE_ROOT; };
+		D34F00FA26844C03B9390169 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Matte.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Matte.cpp; path = source/Materials/Matte.cpp; sourceTree = SOURCE_ROOT; };
+		D45950D5932B49A5A5BD5088 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Normal.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Normal.cpp; path = source/Utilities/Normal.cpp; sourceTree = SOURCE_ROOT; };
+		D6904D94FDFA4943B43A2B6B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildBox.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = BuildBox.hpp; path = source/build/BuildBox.hpp; sourceTree = SOURCE_ROOT; };
+		D90E0A00521042C0B62C450F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/PointLight.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = PointLight.cpp; path = source/Light/PointLight.cpp; sourceTree = SOURCE_ROOT; };
+		D9326FDDC8E443B28AD8C330 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Plane.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Plane.cpp; path = source/GeometricObjects/Plane.cpp; sourceTree = SOURCE_ROOT; };
+		D9A02C8AF89C43CFAA5064B9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/BRDF.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BRDF.cpp; path = source/BRDF/BRDF.cpp; sourceTree = SOURCE_ROOT; };
+		D9CE7ACBF87E4CF18E550011 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Torus.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Torus.cpp; path = source/GeometricObjects/Torus.cpp; sourceTree = SOURCE_ROOT; };
+		DA588F26C372422398AA152A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/ViewPlane.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = ViewPlane.hpp; path = source/World/ViewPlane.hpp; sourceTree = SOURCE_ROOT; };
+		DC08C17B2F944FEAA4BF4E9C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Orthographic.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Orthographic.cpp; path = source/Cameras/Orthographic.cpp; sourceTree = SOURCE_ROOT; };
+		E1231480EEEB449EAD17A0DF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/PointLight.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = PointLight.hpp; path = source/Light/PointLight.hpp; sourceTree = SOURCE_ROOT; };
+		E197C0B18BF740DD963D2DBC /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Matrix.cpp; path = source/Utilities/Matrix.cpp; sourceTree = SOURCE_ROOT; };
+		E223A081842C4F2D9889DB58 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point2D.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Point2D.cpp; path = source/Utilities/Point2D.cpp; sourceTree = SOURCE_ROOT; };
+		E2A0BBD2F4C44992AF2F9FAB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Orthographic.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Orthographic.hpp; path = source/Cameras/Orthographic.hpp; sourceTree = SOURCE_ROOT; };
+		E3769AC19ABB4DAF93F5E09E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/FlatMeshTriangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = FlatMeshTriangle.cpp; path = source/GeometricObjects/FlatMeshTriangle.cpp; sourceTree = SOURCE_ROOT; };
+		E64E85A89763480A8159943C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Rectangle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Rectangle.hpp; path = source/GeometricObjects/Rectangle.hpp; sourceTree = SOURCE_ROOT; };
+		E8432BBB18E1460E8EFE3C7C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/GlossySpecular.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = GlossySpecular.cpp; path = source/BRDF/GlossySpecular.cpp; sourceTree = SOURCE_ROOT; };
+		E85BEAE76387434DB802A4A2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Window.cpp; path = source/Window/Window.cpp; sourceTree = SOURCE_ROOT; };
+		EE98F4E0D6B54BC1AC1CC807 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Pinhole.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Pinhole.cpp; path = source/Cameras/Pinhole.cpp; sourceTree = SOURCE_ROOT; };
+		EEFE2393942547DD8CD037C6 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Main/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = source/Main/main.cpp; sourceTree = SOURCE_ROOT; };
+		EF4DAB124A2C4019A0EC7EC8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/SmoothMeshTriangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SmoothMeshTriangle.cpp; path = source/GeometricObjects/SmoothMeshTriangle.cpp; sourceTree = SOURCE_ROOT; };
+		F075D5DD2B684EFCBC58F6E8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Regular.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Regular.cpp; path = source/Samplers/Regular.cpp; sourceTree = SOURCE_ROOT; };
+		F7F8A76414FE424C830F2F2D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/RGBColor.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = RGBColor.hpp; path = source/Utilities/RGBColor.hpp; sourceTree = SOURCE_ROOT; };
+		FE2EEC7B1411443A821767B4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Rectangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Rectangle.cpp; path = source/GeometricObjects/Rectangle.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49D060D33519444FBF773DB2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		13D399BE2A104A1ABE9CD216 /* tracers */ = {
+			isa = PBXGroup;
+			children = (
+				35DDA808F9E1404DBD87B93D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/AreaLighting.cpp */,
+				174FE494DED24A15946042D5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/AreaLighting.hpp */,
+				9BD57CBC456B44F29CDF01C2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/RayCast.cpp */,
+				0DAD2D41E0CC421F94571F64 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/RayCast.hpp */,
+				2FA31B526E6D42F48F3FBEA4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Tracer.cpp */,
+				0B07E76A0BE746788EE03261 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Tracer.hpp */,
+				635D261A87B14B5BBC806A8C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Whitted.cpp */,
+				A5B2E6D5771B401696F8063C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Whitted.hpp */,
+			);
+			name = tracers;
+			sourceTree = "<group>";
+		};
+		1DFE64BE06ED4863B944170A /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				3D4D2E1BBE7B471F87BEDD19 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Camera.cpp */,
+				BCA52148975B4DC0BA22B329 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Camera.hpp */,
+				DC08C17B2F944FEAA4BF4E9C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Orthographic.cpp */,
+				E2A0BBD2F4C44992AF2F9FAB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Orthographic.hpp */,
+				EE98F4E0D6B54BC1AC1CC807 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Pinhole.cpp */,
+				6BCD06B1BB7743B29FBB162E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Pinhole.hpp */,
+				181793662E134F629341B866 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/ThinLens.cpp */,
+				C4FD161489FC43CFA045766A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/ThinLens.hpp */,
+			);
+			name = camera;
+			sourceTree = "<group>";
+		};
+		261B7FBFCFFB4BDC949A5274 /* source */ = {
+			isa = PBXGroup;
+			children = (
+				7C0AE5EB28174B5DA6E011DD /* BRDF */,
+				ECFAF1B958E64D5FA298B74F /* build */,
+				1DFE64BE06ED4863B944170A /* camera */,
+				478C1806A9724BF2866024F2 /* light */,
+				5D6DE84ABC1B4F249E0CE3DD /* materials */,
+				D752153629BB44539EDEDF2D /* samplers */,
+				13D399BE2A104A1ABE9CD216 /* tracers */,
+				FA79B5F285E949C8A0583478 /* utilities */,
+				C3708E455FD34A9D9040C478 /* window */,
+				40F3292768A748BABD4DC015 /* world */,
+				F883D770A1D941AD805864AB /* GeometricObjects */,
+			);
+			name = source;
+			sourceTree = "<group>";
+		};
+		364303C7D55A4A6FBF67C01C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		40F3292768A748BABD4DC015 /* world */ = {
+			isa = PBXGroup;
+			children = (
+				353EFF56BD734D708B4498E3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/ViewPlane.cpp */,
+				DA588F26C372422398AA152A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/ViewPlane.hpp */,
+				8E9BBE31EDB246099B0435BC /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/World.cpp */,
+				30DBA3BC5B70440892E80581 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/World.hpp */,
+			);
+			name = world;
+			sourceTree = "<group>";
+		};
+		478C1806A9724BF2866024F2 /* light */ = {
+			isa = PBXGroup;
+			children = (
+				675C52CF98864CA1B37592B3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Ambient.cpp */,
+				6DDB55D12D244FA893B4B811 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Ambient.hpp */,
+				3E798B14B8D84D4C88680B86 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AmbientOccluder.cpp */,
+				423C863D6E6A4094BC47CDB6 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AmbientOccluder.hpp */,
+				B267B5085BEB49B2A79138B9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AreaLight.cpp */,
+				91EA76A56A504039B233C0B7 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AreaLight.hpp */,
+				1311122622A945BB9E9EAF6A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Directional.cpp */,
+				A58CB5ED745D40CE9ED6B594 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Directional.hpp */,
+				8B84BE1405B846AE893C6FDA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Light.cpp */,
+				A13E6629163D4A2FBB5E105D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Light.hpp */,
+				D90E0A00521042C0B62C450F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/PointLight.cpp */,
+				E1231480EEEB449EAD17A0DF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/PointLight.hpp */,
+			);
+			name = light;
+			sourceTree = "<group>";
+		};
+		5D6DE84ABC1B4F249E0CE3DD /* materials */ = {
+			isa = PBXGroup;
+			children = (
+				789F996F8C1E4E2E9E9178D4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Emissive.cpp */,
+				6F123A803AE8415CBC7870B5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Emissive.hpp */,
+				19EBB38F2F8749F58F68D259 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Material.cpp */,
+				8C735702838848A5A3B01F8E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Material.hpp */,
+				D34F00FA26844C03B9390169 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Matte.cpp */,
+				0B89CCC59BF54952A4C210C0 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Matte.hpp */,
+				55C83E37EAED4480B82FDD3B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Phong.cpp */,
+				8720142C365B45F5997AA793 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Phong.hpp */,
+				237E529CC07C4507A3DBD210 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Reflective.cpp */,
+				B2235E0615A84174BAFDC420 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Reflective.hpp */,
+			);
+			name = materials;
+			sourceTree = "<group>";
+		};
+		7C0AE5EB28174B5DA6E011DD /* BRDF */ = {
+			isa = PBXGroup;
+			children = (
+				D9A02C8AF89C43CFAA5064B9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/BRDF.cpp */,
+				10608E41E8744FC9BF10D8A5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/BRDF.hpp */,
+				E8432BBB18E1460E8EFE3C7C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/GlossySpecular.cpp */,
+				6BE85259FE0F47469B14C93B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/GlossySpecular.hpp */,
+				3FCE04992878410D8B15A4B3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/Lambertian.cpp */,
+				6FA94DD8CA484656BDF4D0B9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/Lambertian.hpp */,
+				5ABD3B0C8DA64D6388668C89 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/PerfectSpecular.cpp */,
+				0BEF0BD2E748439588F93010 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/PerfectSpecular.hpp */,
+			);
+			name = BRDF;
+			sourceTree = "<group>";
+		};
+		978B3680E3E74A2197F60A3A = {
+			isa = PBXGroup;
+			children = (
+				DC17CCCCF972473083402BE6 /* ht_master_sec */,
+				EC628E8A8FF2405ABFF21485 /* ALL_BUILD */,
+				A9B4E09166554623868123F7 /* Products */,
+				364303C7D55A4A6FBF67C01C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A9B4E09166554623868123F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7153D68D280849019F5F1942 /* ht_master_sec */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C3708E455FD34A9D9040C478 /* window */ = {
+			isa = PBXGroup;
+			children = (
+				68B0D3AC26A84F5EA9D0C140 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-NOTHREAD.cpp */,
+				0817D6B8D2844032B838A5C2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-NOTHREAD.hpp */,
+				BBDC496E463C4CC1B2B9D7E2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-THREAD.cpp */,
+				0B0D93DA357248AB80EAD0B7 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-THREAD.hpp */,
+				E85BEAE76387434DB802A4A2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window.cpp */,
+				3E1B0841C870478BB83A61B6 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window.hpp */,
+			);
+			name = window;
+			sourceTree = "<group>";
+		};
+		D752153629BB44539EDEDF2D /* samplers */ = {
+			isa = PBXGroup;
+			children = (
+				6233AB3CCA1844C7BBD8601A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Jittered.cpp */,
+				B5423EB56C8B43EAA35220FB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Jittered.hpp */,
+				575C65C8D2E343668416089A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/MultiJittered.cpp */,
+				7DB1C4F94382464E8FB86F8D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/MultiJittered.hpp */,
+				8B2A7913AFCA45C7AA8D4A43 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/NRooks.cpp */,
+				52A5327BBED94D2783347863 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/NRooks.hpp */,
+				F075D5DD2B684EFCBC58F6E8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Regular.cpp */,
+				BB1DE732FEA3460980F049F9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Regular.hpp */,
+				0FAB95F0D6344785805A7660 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Sampler.cpp */,
+				6CFAEB0CDA7042DC8A88CD7F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Sampler.hpp */,
+			);
+			name = samplers;
+			sourceTree = "<group>";
+		};
+		DC17CCCCF972473083402BE6 /* ht_master_sec */ = {
+			isa = PBXGroup;
+			children = (
+				261B7FBFCFFB4BDC949A5274 /* source */,
+				DD5857EC5C08465988811ABB /* Source Files */,
+				7F7CA1387289409B8762A505 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/CMakeLists.txt */,
+			);
+			name = ht_master_sec;
+			sourceTree = "<group>";
+		};
+		DD5857EC5C08465988811ABB /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				EEFE2393942547DD8CD037C6 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Main/main.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		E669FB661EDE42A28560A8B9 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		EC628E8A8FF2405ABFF21485 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				E669FB661EDE42A28560A8B9 /* CMake Rules */,
+				1C2CE063344543F288BEC1EB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		ECFAF1B958E64D5FA298B74F /* build */ = {
+			isa = PBXGroup;
+			children = (
+				07009B7280E346BFB54AA631 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildAmbientOcclusion.hpp */,
+				35777A6890C845BA833CC6B3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildAreaLight.hpp */,
+				9D8D2129B86F4ADD8E17D881 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildBBCoverPicLight.hpp */,
+				D6904D94FDFA4943B43A2B6B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildBox.hpp */,
+				99495EA887674CD0BBDC7146 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildGlossy.hpp */,
+				CB1C284B76804505A47C6B9D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildHorizontalPlane.hpp */,
+				5634D4982D4A4911AFD303D5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildMirrorHall.hpp */,
+				AB91E78624AF4421B21BF194 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildMultipleObjects.hpp */,
+				780A1222DC3A47A8B6166299 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildReflective.hpp */,
+				445EBF6329C84184A1359030 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildShadedTest.hpp */,
+				B50D7F55D33247039B904223 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildShadowsTest.hpp */,
+				C9F3F3CA770643FBBE399629 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSimpleMesh.hpp */,
+				CAFE2316256A4D8A9238D1DA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSingleSphere.hpp */,
+				4D67686AC5634EAE8341813B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSingleSphereLight.hpp */,
+				B920082CCE664AFD92F2E106 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSinusoid.hpp */,
+				9B3BED3654F7440FADC12149 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSphereGrid.hpp */,
+				3587F3C1550E40AFA3CF5668 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/build/BuildSpheresQueue.hpp */,
+			);
+			name = build;
+			sourceTree = "<group>";
+		};
+		F883D770A1D941AD805864AB /* GeometricObjects */ = {
+			isa = PBXGroup;
+			children = (
+				61449234CDC94BFC854861C9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/BBox.cpp */,
+				C61FDFFFC13C425FB70BA797 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/BBox.hpp */,
+				84F600E14C6A4D35B7E22EEB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Box.cpp */,
+				4AA8B19621B54765BCDA52DA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Box.hpp */,
+				1ADF75A920B84AA7BB97F072 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Compound.cpp */,
+				9263C9148863488A8FB7F9AA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Compound.hpp */,
+				39F4B3AE17BF4146B48C3547 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Cylinder.cpp */,
+				73AAD827F85F46B193C6C635 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Cylinder.hpp */,
+				815157FC6AE542B2AF60AC96 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Disk.cpp */,
+				12731C482F87402985C5793D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Disk.hpp */,
+				E3769AC19ABB4DAF93F5E09E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/FlatMeshTriangle.cpp */,
+				18D1A15C5093437A8DD86792 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/FlatMeshTriangle.hpp */,
+				634EED095C6B47FFBA629779 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/GeometricObject.cpp */,
+				3FF91CABFA614403AB9492F8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/GeometricObject.hpp */,
+				620470502A4F46E08BC4B835 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Mesh.cpp */,
+				9FD45643F1EC4D12A569E7A5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Mesh.hpp */,
+				A0F08DE2DD9E4EF9A6382DD5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/MeshTriangle.cpp */,
+				1AC83B2A448641499CC28805 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/MeshTriangle.hpp */,
+				81DD19C9E04F4980838E25A4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/OpenCylinder.cpp */,
+				98A4504C483E49A6B924AC54 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/OpenCylinder.hpp */,
+				D9326FDDC8E443B28AD8C330 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Plane.cpp */,
+				54EDB2A0480949A9AACC39DB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Plane.hpp */,
+				FE2EEC7B1411443A821767B4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Rectangle.cpp */,
+				E64E85A89763480A8159943C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Rectangle.hpp */,
+				EF4DAB124A2C4019A0EC7EC8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/SmoothMeshTriangle.cpp */,
+				7EA1267662E54110A8B4F5FF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/SmoothMeshTriangle.hpp */,
+				827D187AC50E40A8A6D7D764 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Sphere.cpp */,
+				742EBD51605646E8A18478BB /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Sphere.hpp */,
+				D9CE7ACBF87E4CF18E550011 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Torus.cpp */,
+				2FF827F539C9422193ACF2A4 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Torus.hpp */,
+				22AF927B7D2944FEB15AF8B2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Triangle.cpp */,
+				513E02AC21FD4B60A16C2C94 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Triangle.hpp */,
+			);
+			name = GeometricObjects;
+			sourceTree = "<group>";
+		};
+		FA79B5F285E949C8A0583478 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				61695E0A55894CA2B2F70FDD /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Constants.hpp */,
+				8AD246FEF2ED4191A27F6437 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Debug.hpp */,
+				D1EF8C6DF64346D09AA1EBC7 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Maths.hpp */,
+				E197C0B18BF740DD963D2DBC /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Matrix.cpp */,
+				891B6F708725408D9EE855DE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Matrix.hpp */,
+				D45950D5932B49A5A5BD5088 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Normal.cpp */,
+				969643B4481C4255AA657834 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Normal.hpp */,
+				E223A081842C4F2D9889DB58 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point2D.cpp */,
+				4E6D5F5BE0F14C37BB9A4982 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point2D.hpp */,
+				49A132AC17EE415594AA752E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point3D.cpp */,
+				80A7E89A03F34ADC9555482D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point3D.hpp */,
+				C8106BDB80E94FD2912C7111 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/RGBColor.cpp */,
+				F7F8A76414FE424C830F2F2D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/RGBColor.hpp */,
+				C637B743C7DF477FBD7AF3C3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Ray.cpp */,
+				CE35AEA963F64BC5A9E9D21A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Ray.hpp */,
+				88E4ADC2C1424722AAB7950B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/ShadeRec.cpp */,
+				6536672EAF9B4012AA118551 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/ShadeRec.hpp */,
+				375B6C48066940D1B271E136 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Vector3D.cpp */,
+				A3703A4C4C8F4F3B9F1978D1 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Vector3D.hpp */,
+			);
+			name = utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5112B743B59C444C856C1158 /* ht_master_sec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 558048895CA84666B800D7CE /* Build configuration list for PBXNativeTarget "ht_master_sec" */;
+			buildPhases = (
+				EF2CA4B747FD46B399040977 /* Sources */,
+				49D060D33519444FBF773DB2 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8E943B1457C430CA09C2C83 /* PBXTargetDependency */,
+			);
+			name = ht_master_sec;
+			productName = ht_master_sec;
+			productReference = 7153D68D280849019F5F1942 /* ht_master_sec */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		122CEB56B1F04DDDA753E514 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 419F183DED4446F297CFD5E9 /* Build configuration list for PBXProject "ht_master_sec" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				9168E0C9F62542E89116169E /* Debug */,
+				0ACEF07580DA42BEBECBE50C /* Release */,
+				65E63524817C4F6BAF3F48A4 /* MinSizeRel */,
+				3DD3289063E44290BB3F54BB /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 978B3680E3E74A2197F60A3A;
+			projectDirPath = ../;
+			projectRoot = "";
+			targets = (
+				5C535753FF2148B28CF30C79 /* ALL_BUILD */,
+				5904BE57EBA646128CA8DA98 /* ZERO_CHECK */,
+				5112B743B59C444C856C1158 /* ht_master_sec */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		186F40E2C9B8D430918EF15A /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+"/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/CMakeFiles/ALL_BUILD"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		C9105781164D85ECDB62C870 /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+"/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/CMakeFiles/ZERO_CHECK"			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build
+  make -f /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build
+  make -f /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build
+  make -f /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build
+  make -f /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF2CA4B747FD46B399040977 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44024D056AF64C48979259E8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/BRDF.cpp */,
+				855ACD213CD54BCFBC54978D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/GlossySpecular.cpp */,
+				B47268F18EFC478494451EBF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/Lambertian.cpp */,
+				6BAB2C36C4414829BEA7F7EF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/BRDF/PerfectSpecular.cpp */,
+				0D0AD5898B774F2C85D399AA /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Camera.cpp */,
+				458216F88DC74DDEBD170D5D /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Orthographic.cpp */,
+				059DFDA7CB724020862C1674 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/Pinhole.cpp */,
+				3DD4112371DF4AB59D4D122E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Cameras/ThinLens.cpp */,
+				CDA4601DE25C4C5E8CB5DEC0 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/BBox.cpp */,
+				C0DC2E72B9A34B0BB10BE718 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Box.cpp */,
+				90BD5403EECF42F99B45D307 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Compound.cpp */,
+				9863FCD608C74E68B09A6168 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Cylinder.cpp */,
+				E30F0019A3B949AEA1C62857 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Disk.cpp */,
+				B9BD3333BEA24779B40B48B9 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/FlatMeshTriangle.cpp */,
+				CCB62A79149D47B39E4B555F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/GeometricObject.cpp */,
+				7A30D10202974DD2ACDA4530 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Mesh.cpp */,
+				7A90616539C34618AAC851EE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/MeshTriangle.cpp */,
+				D7F2F7EDA2F743F794D64857 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/OpenCylinder.cpp */,
+				3C1EE5D7B25B44C8AF0C3EA0 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Plane.cpp */,
+				81A8766850964F439102B2E5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Rectangle.cpp */,
+				257252E9921440A48606C89E /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/SmoothMeshTriangle.cpp */,
+				1AE77901B7C649F08910E755 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Sphere.cpp */,
+				E70CB6AF41EF4F119001F1EE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Torus.cpp */,
+				40E762E848E848BC9370153C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Triangle.cpp */,
+				340C4EBD408C4A01BD112181 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Ambient.cpp */,
+				1BE20E44C4B04696B6533BBD /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AmbientOccluder.cpp */,
+				FAB950436FD7405FBCCDDA21 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/AreaLight.cpp */,
+				9E8570F1BA4B463DB130B21C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Directional.cpp */,
+				EB9D20A91C8A48D494516565 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/Light.cpp */,
+				5D9321D37C164B4C8BCD9230 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Light/PointLight.cpp */,
+				4EFA3D68E29741D5931F5B0F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Main/main.cpp */,
+				47B8A52C38214713B235964A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Emissive.cpp */,
+				26DD6B5DE2C74C44AE3F95EE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Material.cpp */,
+				9D3B735CA8BA45B3BB4345CD /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Matte.cpp */,
+				6FE474CA384346D789EA6FA3 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Phong.cpp */,
+				805E7C4AEEF44547805765D2 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Materials/Reflective.cpp */,
+				4CE6D961568544C09D05A356 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Jittered.cpp */,
+				EF92B905778B4A7A871A24DE /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/MultiJittered.cpp */,
+				BA28D84CAAE54FCD94072F7C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/NRooks.cpp */,
+				420AF4C62F134B62BAE080C5 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Regular.cpp */,
+				E311611E657A4B50809083B1 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Samplers/Sampler.cpp */,
+				7B38AD76D0DB4206B38D16F8 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/AreaLighting.cpp */,
+				A5C222A6A01640DCBE4B9FBF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/RayCast.cpp */,
+				0610B7D4A8BA4E96B706D559 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Tracer.cpp */,
+				CA883FC463ED44E0BD2912F1 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Tracers/Whitted.cpp */,
+				608C00BD12FA4F2EABDE56DD /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Matrix.cpp */,
+				C3403C2CCC8744119B36095B /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Normal.cpp */,
+				02B3246F663947FA9CADA2BF /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point2D.cpp */,
+				6EA1F9E26B0F40728A67EE93 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Point3D.cpp */,
+				5CC98792BA354E6286B694BC /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/RGBColor.cpp */,
+				4BF9C4DFB4F944BE88624B0A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Ray.cpp */,
+				E46B35FCFB6A4BBB8289C37F /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/ShadeRec.cpp */,
+				4E1D9F8DF30D45DDA455FADD /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Utilities/Vector3D.cpp */,
+				ACDB8FE25AFA4A64A02BF431 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-NOTHREAD.cpp */,
+				6194DFB25C4D441FA4BF379A /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window-THREAD.cpp */,
+				5BA57AA26136404E98965693 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/Window/Window.cpp */,
+				D8CB56A140A141A1AEB21B45 /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/ViewPlane.cpp */,
+				386BD3947DCD4485BCD94C2C /* /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/World/World.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		20C5B8C9D1F741F4A2DF8251 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5904BE57EBA646128CA8DA98 /* ZERO_CHECK */;
+			targetProxy = 90C0A844025D4EE1973B8C5B /* PBXContainerItemProxy */;
+		};
+		6287103205384DB689DD2528 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5112B743B59C444C856C1158 /* ht_master_sec */;
+			targetProxy = CFDAFE4BCAD94198B316B59D /* PBXContainerItemProxy */;
+		};
+		B8E943B1457C430CA09C2C83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5904BE57EBA646128CA8DA98 /* ZERO_CHECK */;
+			targetProxy = B5526D64D65D4263A9792841 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		233F52C5AB5B4725B3F22A7C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/build";
+			};
+			name = Debug;
+		};
+		23BCE3520C3F48188D3E04DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/usr/local/include,"/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/src/include","$(inherited)");
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++11' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/usr/local/lib/libSDL2.dylib,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ht_master_sec;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		288D1F53962B41A2BA0DB3AB /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/build";
+			};
+			name = RelWithDebInfo;
+		};
+		2A7205DE743243499D2CCDAE /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		5396F5A206054532AFEB0A2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		53FD055E3B5641D0AB62F8FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		675280418FF54A469727D530 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		69C8165A9756408CA5B92761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/usr/local/include,"/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/src/include","$(inherited)");
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "   '-std=c++11' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/usr/local/lib/libSDL2.dylib,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ht_master_sec;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		9E4C6EA482484ECAA3D030B4 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/usr/local/include,"/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/src/include","$(inherited)");
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=c++11' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/usr/local/lib/libSDL2.dylib,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ht_master_sec;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		A8D996B3A07F43C6BF58FDB0 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		B2CDB4E982854D0A8B012E6F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/build";
+			};
+			name = MinSizeRel;
+		};
+		B355BDA4B6274EEE95335CA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		BBD53E9029044F22B2FFC530 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		BFB235BB1F3342E1A196FE2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk;
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build/build";
+			};
+			name = Release;
+		};
+		CCEE5E39C78641BEBEBDFE50 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		DC48BD81C3054D17ADFC4866 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/usr/local/include,"/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/src/include","$(inherited)");
+				INSTALL_PATH = "";
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++11' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names",/usr/local/lib/libSDL2.dylib,"$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ht_master_sec;
+				SECTORDER_FLAGS = "";
+				SYMROOT = "/Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/build";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		173D84FCE3024D00A5753B86 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53FD055E3B5641D0AB62F8FC /* Debug */,
+				675280418FF54A469727D530 /* Release */,
+				A8D996B3A07F43C6BF58FDB0 /* MinSizeRel */,
+				2A7205DE743243499D2CCDAE /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		419F183DED4446F297CFD5E9 /* Build configuration list for PBXProject "ht_master_sec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				233F52C5AB5B4725B3F22A7C /* Debug */,
+				BFB235BB1F3342E1A196FE2E /* Release */,
+				B2CDB4E982854D0A8B012E6F /* MinSizeRel */,
+				288D1F53962B41A2BA0DB3AB /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		558048895CA84666B800D7CE /* Build configuration list for PBXNativeTarget "ht_master_sec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69C8165A9756408CA5B92761 /* Debug */,
+				23BCE3520C3F48188D3E04DC /* Release */,
+				DC48BD81C3054D17ADFC4866 /* MinSizeRel */,
+				9E4C6EA482484ECAA3D030B4 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EFC82E7C465E45A4A165BEF0 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5396F5A206054532AFEB0A2D /* Debug */,
+				B355BDA4B6274EEE95335CA6 /* Release */,
+				CCEE5E39C78641BEBEBDFE50 /* MinSizeRel */,
+				BBD53E9029044F22B2FFC530 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 122CEB56B1F04DDDA753E514 /* Project object */;
+}

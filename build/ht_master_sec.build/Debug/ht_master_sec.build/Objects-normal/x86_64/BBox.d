@@ -1,0 +1,9 @@
+dependencies: \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/BBox.cpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/BBox.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/Ray.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/Point3D.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/Matrix.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/Vector3D.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/Constants.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/RGBColor.hpp

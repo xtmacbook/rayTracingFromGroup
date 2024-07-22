@@ -1,0 +1,19 @@
+dependencies: \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Rectangle.cpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/Rectangle.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/GeometricObject.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/Point3D.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/Matrix.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/Vector3D.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/Ray.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/ShadeRec.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/Normal.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/RGBColor.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../GeometricObjects/BBox.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Utilities/Constants.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Samplers/Regular.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Samplers/Sampler.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Samplers/../Utilities/Point2D.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Samplers/../Utilities/Point3D.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Samplers/../Utilities/Maths.hpp \
+  /Users/xtdoudou/Documents/workspace/ray-tracing-from-the-ground-up/source/GeometricObjects/../Samplers/../Utilities/Constants.hpp
