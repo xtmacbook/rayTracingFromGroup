@@ -5,6 +5,7 @@
 #include "../Utilities/Vector3D.hpp"
 #include "../Utilities/Debug.hpp"
 #include <math.h>
+#include "../Utilities/util.hpp"
 
 Pinhole::Pinhole(Point3D eye_p, Point3D lookat):
     Camera(eye_p, lookat),
@@ -46,7 +47,7 @@ void Pinhole::render_scene(World& w){
 	struct timespec start_processing;
 	struct timespec start_displaying;
 	struct timespec now;
-	clock_gettime(CLOCK_MONOTONIC, &start_processing);
+	clock_gettime( &start_processing);
 	float time_displaying = 0;
 
 	debug_print("Joining entering 2d-for.\n");
@@ -68,7 +69,7 @@ void Pinhole::render_scene(World& w){
 			debug_print("Anti aliasing samples get.\n");
 			L /= vp->num_samples;
 					
-			clock_gettime(CLOCK_MONOTONIC, &start_displaying); 			
+			clock_gettime( &start_displaying); 			
 			
 			// DISPLAYING STUFF
 			w.display_pixel(r, c, L);
@@ -78,7 +79,7 @@ void Pinhole::render_scene(World& w){
 			}
 
             // TIME MANAGER
-			clock_gettime(CLOCK_MONOTONIC, &now); 			
+			clock_gettime( &now); 			
 			time_displaying += (now.tv_sec - start_displaying.tv_sec);
 			time_displaying += (now.tv_nsec - start_displaying.tv_nsec)/1000000000.0;
 		}	

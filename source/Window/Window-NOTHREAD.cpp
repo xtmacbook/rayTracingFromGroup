@@ -1,4 +1,5 @@
 #include "Window-NOTHREAD.hpp"
+#include "../Utilities/util.hpp"
 
 Window_NOTHREAD::Window_NOTHREAD(int width, int height):
     Window(width, height) {
@@ -18,18 +19,18 @@ void Window_NOTHREAD::init(){
 		SDL_TEXTUREACCESS_STREAMING, w, h);
 
     running = true;
-    clock_gettime(CLOCK_MONOTONIC, &start);
+    clock_gettime( &start);
 }
 
 void Window_NOTHREAD::update(){
 
-    clock_gettime(CLOCK_MONOTONIC, &finish);
+    clock_gettime( &finish);
     elapsed = (finish.tv_sec - start.tv_sec);
     elapsed += (finish.tv_nsec - start.tv_nsec) / 1000000000.0;
 
     if(running && elapsed > 1.0f/60.0f){
 
-        clock_gettime(CLOCK_MONOTONIC, &start);
+        clock_gettime( &start);
         
         while( SDL_PollEvent( &event ) )
         {

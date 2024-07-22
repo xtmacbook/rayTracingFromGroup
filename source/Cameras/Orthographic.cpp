@@ -1,5 +1,6 @@
 #include "Orthographic.hpp"
 #include "../World/World.hpp"
+#include "../Utilities/util.hpp"
 
 Orthographic::Orthographic(Point3D eye, Point3D lookat):
     Camera(eye, lookat)
@@ -21,7 +22,7 @@ void Orthographic::render_scene(World& w){
 	struct timespec start_processing;
 	struct timespec start_displaying;
 	struct timespec now;
-	clock_gettime(CLOCK_MONOTONIC, &start_processing);
+	clock_gettime( &start_processing);
 
 	float time_displaying = 0;
 	
@@ -40,7 +41,7 @@ void Orthographic::render_scene(World& w){
 			}
 			pixel_color /= vp->num_samples;
 				
-			clock_gettime(CLOCK_MONOTONIC, &start_displaying); 			
+			clock_gettime( &start_displaying); 			
 			
 			// DISPLAYING STUFF
 			w.display_pixel(r, c, pixel_color);
@@ -48,7 +49,7 @@ void Orthographic::render_scene(World& w){
 			if(!w.window->isOpen()){
 				return;
 			}
-			clock_gettime(CLOCK_MONOTONIC, &now); 			
+			clock_gettime( &now); 			
 			time_displaying += (now.tv_sec - start_displaying.tv_sec);
 			time_displaying += (now.tv_nsec - start_displaying.tv_nsec)/1000000000.0;
 		}	

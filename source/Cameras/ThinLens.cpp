@@ -1,5 +1,6 @@
 #include "ThinLens.hpp"
 #include "../World/World.hpp"
+#include "../Utilities/util.hpp"
 
 ThinLens::ThinLens(Point3D eye_p, Point3D lookat):
     Pinhole(eye_p, lookat),
@@ -72,7 +73,7 @@ void ThinLens::render_scene(World& w){
 	struct timespec start_processing;
 	struct timespec start_displaying;
 	struct timespec now;
-	clock_gettime(CLOCK_MONOTONIC, &start_processing);
+	clock_gettime( &start_processing);
 	float time_displaying = 0;
     for (int r = 0; r < vp->vres; r++) {	
 		for (int c = 0; c <= vp->hres; c++) {					
@@ -99,7 +100,7 @@ void ThinLens::render_scene(World& w){
 			L /= vp->num_samples;
             L *= exposure_time;
 				
-			clock_gettime(CLOCK_MONOTONIC, &start_displaying); 			
+			clock_gettime( &start_displaying); 			
 			
 			// DISPLAYING STUFF
 			w.display_pixel(r, c, L);
@@ -109,7 +110,7 @@ void ThinLens::render_scene(World& w){
 			}
 
             // TIME MANAGER
-			clock_gettime(CLOCK_MONOTONIC, &now); 			
+			clock_gettime( &now); 			
 			time_displaying += (now.tv_sec - start_displaying.tv_sec);
 			time_displaying += (now.tv_nsec - start_displaying.tv_nsec)/1000000000.0;
 		}	

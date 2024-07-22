@@ -1,3 +1,5 @@
+#define SDL_MAIN_HANDLED
+
 #include "../World/World.hpp"
 
 int main(){
