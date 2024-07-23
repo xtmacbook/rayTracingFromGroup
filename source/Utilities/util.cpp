@@ -2,10 +2,6 @@
 
 int clock_gettime( struct timespec* tv)
 {
-    struct timespec ts;
-    timespec_get(&ts, TIME_UTC);
-    char buff[100];
-    strftime(buff, sizeof buff, "%D %T", gmtime(&ts.tv_sec));
-
+    timespec_get(tv, TIME_UTC);
     return (0);
 }
