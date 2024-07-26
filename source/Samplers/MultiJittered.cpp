@@ -26,6 +26,7 @@ MultiJittered* MultiJittered::clone() const {
 MultiJittered::~MultiJittered() 
 {}
 
+ 
 void MultiJittered::generate_samples() {
 	int n = (int)sqrt(num_samples);
 	float subcell_width = 1.0 / ((float) num_samples);
@@ -45,6 +46,13 @@ void MultiJittered::generate_samples() {
 		for (int i = 0; i < n; i++)		
 			for (int j = 0; j < n; j++) {
 				int k = j + rand_int()%n;
+
+				auto val = i * n + j + p * num_samples;
+				auto val2 = i * n + k + p * num_samples;
+
+				if (val >= samples.size()) continue;
+				if (val2 >= samples.size()) continue;
+
 				float t = samples[i * n + j + p * num_samples].x;
 				samples[i * n + j + p * num_samples].x = samples[i * n + k + p * num_samples].x;
 				samples[i * n + k + p * num_samples].x = t;
@@ -54,6 +62,13 @@ void MultiJittered::generate_samples() {
 		for (int i = 0; i < n; i++)		
 			for (int j = 0; j < n; j++) {
 				int k = j + rand_int()%n;
+
+				auto val = j * n + i + p * num_samples;
+				auto val2 = k * n + i + p * num_samples;
+
+				if (val >= samples.size()) continue;
+				if (val2 >= samples.size()) continue;
+
 				float t = samples[j * n + i + p * num_samples].y;
 				samples[j * n + i + p * num_samples].y = samples[k * n + i + p * num_samples].y;
 				samples[k * n + i + p * num_samples].y = t;

@@ -51,7 +51,7 @@ public:
 	ShadeRec hit_objects(const Ray& ray, const float tmin_ = kHugeValue);
 
 	void set_camera(Camera* cam_pt);
-	void openWindow(int w, int h, bool thread = true);
+	void openWindow(int w, int h, bool thread = false);
 
 	void set_ambient_light(Light* light_ptr);
 

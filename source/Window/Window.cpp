@@ -13,9 +13,8 @@ Window::~Window(){
 
 void Window::setPixel(int x, int y, int r, int g, int b){
 	int pos = (w*4*y)+((x-1)*4);
-    
-    if(pos >= pixels.size() || pos < 0) return;
-    
+
+	if (pos >= pixels.size() || pos < 0) return;
 	pixels[pos+0] = b;
 	pixels[pos+1] = g;
 	pixels[pos+2] = r;

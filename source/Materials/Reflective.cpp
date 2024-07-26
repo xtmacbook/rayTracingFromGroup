@@ -23,6 +23,7 @@ Reflective* Reflective::clone(RGBColor new_color) const{
     Reflective* clone_ = new Reflective(*this);
     clone_->set_cr(new_color);
     clone_->set_cd(new_color);
+    return clone_;
 }
 
 Reflective& Reflective::operator=(const Reflective& rhs){

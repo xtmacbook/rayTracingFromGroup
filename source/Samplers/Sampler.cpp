@@ -74,7 +74,7 @@ void Sampler::map_samples_to_unit_disk(){
     int size = samples.size();
     float r, phi;
     Point2D sp;
-    disk_samples.reserve(size);
+    disk_samples.resize(size);
     for(int j = 0; j < size; j++){
         sp.x = 2.0 * samples[j].x - 1.0;
         sp.y = 2.0 * samples[j].y - 1.0;

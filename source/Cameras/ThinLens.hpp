@@ -21,7 +21,7 @@ public:
 
 private:
     float lens_radius;
-    float f; // Focal plane distance
+    float m_focalPlanceDist; // Focal plane distance
     Sampler* sampler_ptr;
 
     Vector3D ray_direction(const Point2D& pixel_point, const Point2D& lens_point = Point2D(0, 0)) const;

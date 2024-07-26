@@ -1,4 +1,5 @@
 #include "Window-THREAD.hpp"
+#include "../Utilities/util.hpp"
 
 Window_THREAD::Window_THREAD(int width, int height) :
     Window(width, height){
@@ -31,15 +32,15 @@ void _windowThread(int width, int height, std::vector<unsigned char> *pixels, bo
 
 	struct timespec start, finish;
 	double elapsed = 1000.0;
-	clock_gettime(CLOCK_MONOTONIC, &start);
+	clock_gettime( &start);
 	while(*running){
 
-		clock_gettime(CLOCK_MONOTONIC, &finish);
+		clock_gettime( &finish);
 		elapsed = (finish.tv_sec - start.tv_sec);
 		elapsed += (finish.tv_nsec - start.tv_nsec) / 1000000000.0;
 		
 		if(elapsed > 1.0/60.0){
-			clock_gettime(CLOCK_MONOTONIC, &start);
+			clock_gettime( &start);
 			
 			while( SDL_PollEvent( &event ) )
 			{
