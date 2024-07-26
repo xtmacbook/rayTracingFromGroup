@@ -10,8 +10,8 @@ void World::build(){
 	background_color = black;
 
 	Ambient* ambient_ptr = new Ambient;
-	ambient_ptr->set_ls(1);
-	set_ambient_light(ambient_ptr);
+	//ambient_ptr->set_ls(1);
+	//set_ambient_light(ambient_ptr);
 
 	tracer_ptr = new RayCast(this);
 
@@ -27,7 +27,7 @@ void World::build(){
 	RGBColor dark_purple(0.5, 0, 1);
 
 	ThinLens* pinhole_ptr = new ThinLens(Point3D(10, 60, 60), Point3D(0, -10, -100));
-	pinhole_ptr->set_distance(100);
+	pinhole_ptr->set_view_distance(100);
 	pinhole_ptr->set_sampler(new Jittered(100, 100));
 	pinhole_ptr->set_lens_radius(0);
 	pinhole_ptr->set_focal_dist(60);

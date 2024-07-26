@@ -1,4 +1,4 @@
-#include "Pinhole.hpp"
+#include "FishEye.hpp"
 
 #include "../Utilities/Constants.hpp"
 #include "../Utilities/Point3D.hpp"
@@ -7,30 +7,36 @@
 #include <math.h>
 #include "../Utilities/util.hpp"
 
-Pinhole::Pinhole(Point3D eye_p, Point3D lookat):
+FishEyeCamera::FishEyeCamera(Point3D eye_p, Point3D lookat):
     Camera(eye_p, lookat),
     m_distanceWithViewPlane(1),
     zoom(1)
 {}
 
-void Pinhole::set_view_distance(const float dist){
+void FishEyeCamera::set_view_distance(const float dist){
     m_distanceWithViewPlane = dist;
 }
 
-float Pinhole::get_distance_from_vp() const{
+float FishEyeCamera::get_distance_from_vp() const{
     return m_distanceWithViewPlane;
 }
 
-void Pinhole::set_zoom(const float zoom){
+void FishEyeCamera::set_zoom(const float zoom){
     this->zoom = zoom;
 }
 
-float Pinhole::get_zoom() const{
+float FishEyeCamera::get_zoom() const{
     return zoom;
 }
 
-void Pinhole::render_scene(World& w){
-	debug_print("Pinhole rendering.\n");
+void FishEyeCamera::set_psi_max(float psi)
+{
+	m_psi_max = psi;
+}
+
+void FishEyeCamera::render_scene(World& w){
+
+	debug_print("FishEyeCamera rendering.\n");
     RGBColor L;
     ViewPlane* vp = &w.vp;
     Ray ray;
@@ -58,12 +64,14 @@ void Pinhole::render_scene(World& w){
 			// ANTI ALIASING
 			L = black;
 			debug_print("Getting anti aliasing samples.\n");
-			for(int p = 0; p < n; p++) {
-				for(int q = 0; q < n; q++){
-					pp.x = vp->m_pixelSize*(c - 0.5*vp->hres + (q+0.5)/n);
-					pp.y = vp->m_pixelSize*(r - 0.5*vp->vres + (p+0.5)/n);
-					ray.d = ray_direction(pp); 
-					L += w.tracer_ptr->trace_ray(ray, depth);
+			for (int p = 0; p < n; p++) {
+				for (int q = 0; q < n; q++) {
+					pp.x = vp->m_pixelSize * (c - 0.5 * vp->hres + (q + 0.5) / n);
+					pp.y = vp->m_pixelSize * (r - 0.5 * vp->vres + (p + 0.5) / n);
+					float r_squared;
+					ray.d = ray_direction(pp,vp->hres,vp->vres,vp->m_pixelSize, r_squared);
+					if(r_squared)
+						L += w.tracer_ptr->trace_ray(ray, depth);
 				}
 			}
 			debug_print("Anti aliasing samples get.\n");
@@ -91,8 +99,25 @@ void Pinhole::render_scene(World& w){
 	}	
 }
 
-Vector3D Pinhole::ray_direction(const Point2D& pixel_point) const {
-    Vector3D dir = pixel_point.x*u + pixel_point.y*v - m_distanceWithViewPlane*w;
-    dir.normalize();
-    return dir;
+Vector3D FishEyeCamera::ray_direction(const Point2D& pixel_point, int hres, int vres, float s, float& r_squared) const {
+    
+	Point2D pn(2.0 / (s * hres) * pixel_point.x, 2.0 / (s * vres) * pixel_point.y);
+	r_squared = pn.x * pn.x + pn.y * pn.y;
+
+	if (r_squared <= 1.0)
+	{
+		float r = sqrt(r_squared);
+		float psi = r * m_psi_max * PI_ON_180;
+		float sin_psi = sin(psi);
+		float cos_psi = cos(psi);
+
+		float sin_alpha = pn.y / r;
+		float cos_alpha = pn.x / r;
+
+		Vector3D dir = sin_psi * cos_alpha * u + sin_psi * sin_alpha * v - cos_psi * w;
+
+		return dir;
+	}
+
+    return Vector3D(0.0);
 }

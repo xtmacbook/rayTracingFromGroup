@@ -34,8 +34,8 @@ void Orthographic::render_scene(World& w){
 			pixel_color = black;
 			for(int j = 0; j < vp->num_samples; j++) {
 				sp = vp->sampler_ptr->sample_unit_square();
-				pp.x = vp->s*(c - 0.5*vp->hres + sp.x);
-				pp.y = vp->s*(r - 0.5*vp->vres + sp.y);
+				pp.x = vp->m_pixelSize*(c - 0.5*vp->hres + sp.x);
+				pp.y = vp->m_pixelSize*(r - 0.5*vp->vres + sp.y);
 				ray.o = Point3D(pp.x, pp.y, zw);
 				pixel_color += w.tracer_ptr->trace_ray(ray, depth);
 			}

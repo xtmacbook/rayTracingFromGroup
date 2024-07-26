@@ -66,7 +66,9 @@ set (SOURCE_Cameras_Source
   source/Cameras/Pinhole.cpp 
   source/Cameras/Pinhole.hpp 
   source/Cameras/ThinLens.cpp 
-  source/Cameras/ThinLens.hpp 
+  source/Cameras/ThinLens.hpp
+  source/Cameras/FishEye.hpp
+  source/Cameras/FishEye.cpp 
 )
 SOURCE_GROUP("source//camera" FILES ${SOURCE_Cameras_Source})
 

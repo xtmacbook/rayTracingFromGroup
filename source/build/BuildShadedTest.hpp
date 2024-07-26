@@ -21,8 +21,12 @@ void World::build() {
 	tracer_ptr = new RayCast(this);
 	// camera
 	
-	ThinLens* pinhole_ptr = new ThinLens(Point3D(0, 0, 500), Point3D(0));
-	pinhole_ptr->set_view_distance(600.0);
+
+	Point3D eye(0, 0, 500);
+	Point3D lookAt(0, 0, 0);
+
+	ThinLens* pinhole_ptr = new ThinLens(eye, lookAt);
+	pinhole_ptr->set_view_distance(300.0);
 	pinhole_ptr->set_sampler(new Jittered(100, 100));
 	pinhole_ptr->set_lens_radius(10.0);
 	pinhole_ptr->set_focal_dist(500);

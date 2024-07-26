@@ -8,7 +8,7 @@ class ViewPlane {
 public:
 	int hres;   									// horizontal image resolution 
 	int vres;   									// vertical image resolution
-	float s;										// pixel size
+	float m_pixelSize;										// pixel size
 
 	float gamma;									// gamma correction factor
 	float inv_gamma;								// the inverse of the gamma correction factor

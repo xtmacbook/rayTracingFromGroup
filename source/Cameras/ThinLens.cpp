@@ -38,18 +38,18 @@ float ThinLens::get_lens_radius(){
 }
 
 void ThinLens::set_focal_dist(const float focal_d){
-    f = focal_d;
+    m_focalPlanceDist = focal_d;
 }
 
 float ThinLens::get_focal_dist(){
-    return f;
+    return m_focalPlanceDist;
 }
 
 Vector3D ThinLens::ray_direction(const Point2D& pixel_point, const Point2D& lens_point) const{
     Point2D p;
-    p.x = pixel_point.x * f / d;
-    p.y = pixel_point.y * f / d;
-    Vector3D dir = (p.x - lens_point.x)*u + (p.y - lens_point.y)*v - f*w;
+    p.x = pixel_point.x * m_focalPlanceDist / m_distanceWithViewPlane;
+    p.y = pixel_point.y * m_focalPlanceDist / m_distanceWithViewPlane;
+    Vector3D dir = (p.x - lens_point.x)*u + (p.y - lens_point.y)*v - m_focalPlanceDist*w;
     dir.normalize();
 
     return dir;
@@ -67,7 +67,7 @@ void ThinLens::render_scene(World& w){
     Point2D lp; // Sample point on lens
 
     w.openWindow(vp->hres, vp->vres);
-    vp->s /= zoom;
+    vp->m_pixelSize /= zoom;
     
 	// TIME MANAGER
 	struct timespec start_processing;
@@ -85,8 +85,8 @@ void ThinLens::render_scene(World& w){
 				
                 sp = vp->sampler_ptr->sample_unit_square();
 				  
-                pp.x = vp->s*(c - 0.5*vp->hres + sp.x);
-				pp.y = vp->s*(r - 0.5*vp->vres + sp.y);
+                pp.x = vp->m_pixelSize*(c - 0.5*vp->hres + sp.x);
+				pp.y = vp->m_pixelSize*(r - 0.5*vp->vres + sp.y);
                 
                 dp = sampler_ptr->sample_unit_disk();
         
