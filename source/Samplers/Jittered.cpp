@@ -12,7 +12,7 @@ Sampler* Jittered::clone() const{
 
 void Jittered::generate_samples(){
     printf("Gerou jittered.\n");
-    int n = (int) sqrt(num_samples);
+    int n = (int) sqrt(num_samples); //sqrt
     for(int p = 0; p < num_sets; p++){
         
         for(int j = 0; j < n; j++){

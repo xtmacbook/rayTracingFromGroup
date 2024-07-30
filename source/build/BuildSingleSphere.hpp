@@ -10,6 +10,7 @@ void World::build(void)
 	Point3D eye(7.5, 4, 10);
 	Point3D lookAt(-1, 3.7, 0);
 	FishEyeCamera* pFishCamera = new FishEyeCamera(eye,lookAt);
+    pFishCamera->set_psi_max(90.0);
 	pFishCamera->set_view_distance(340);
 	pFishCamera->compute_uvw();
 	pFishCamera->set_psi_max(60.0);

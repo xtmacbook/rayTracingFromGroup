@@ -38,7 +38,6 @@ void Pinhole::render_scene(World& w){
     Point2D pp;
     int depth = 0;
 	int n = (int)sqrt(vp->num_samples);
-
     w.openWindow(vp->hres, vp->vres);
     vp->m_pixelSize /= zoom;
     ray.o = eye;

@@ -13,6 +13,16 @@ Material& Material::operator=(const Material& rhs){
     return (*this);
 }
 
+bool Material::is_casted_shadows() const
+{
+    return m_be_casted_on_it;
+}
+
+void Material::set_casted_shadows(bool cased)
+{
+    m_be_casted_on_it = cased;
+}
+
 Material::~Material()
 {}
 

@@ -19,4 +19,11 @@ public:
     virtual RGBColor get_Le(ShadeRec& sr) const;
 
     Material& operator= (const Material& rhs);
+
+	bool is_casted_shadows()const;
+	void set_casted_shadows(bool);
+
+protected:
+
+    bool m_be_casted_on_it; //whether a material has shadows cast on it
 };
