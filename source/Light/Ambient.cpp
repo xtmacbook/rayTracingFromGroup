@@ -34,6 +34,11 @@ Vector3D Ambient::get_direction(ShadeRec& s) {
 	return (Vector3D(0.0));
 }
 
+/**
+ * incident radiance from ambient light is Li = ls * C
+ * 
+ * the reflected ambient radiance is Lo = rho(p) * ls * C
+ */
 RGBColor Ambient::L(ShadeRec& sr) {	
     return (ls * color);
 }

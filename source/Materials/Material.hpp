@@ -11,6 +11,7 @@ public:
     virtual Material* clone(void) const = 0;
     virtual ~Material();
 
+    //without the shade, we can only render object with a constant color.
     virtual RGBColor shade(ShadeRec& sr);
     virtual RGBColor area_light_shade(ShadeRec& sr);
     virtual RGBColor path_shade(ShadeRec& sr);

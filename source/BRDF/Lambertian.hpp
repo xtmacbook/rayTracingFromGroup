@@ -2,6 +2,7 @@
 
 #include "BRDF.hpp"
 
+//lambertian reflectance is () : the incident radiance is scatted equally in all  directions
 class Lambertian : public BRDF{
 public:
     Lambertian(float kd_ = 0.0, RGBColor cd_ = RGBColor(0.0));
@@ -19,6 +20,6 @@ public:
     virtual RGBColor rho(const ShadeRec& sr, const Vector3D& wo) const;
 
 protected:
-    float kd;
-    RGBColor cd;
+    float kd; //diffuse reflection cofficient
+    RGBColor cd; //diffuse color
 };

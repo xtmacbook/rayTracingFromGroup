@@ -17,8 +17,8 @@ public:
     bool get_shadows() const;
     void set_shadows(const bool shadows_);
 
-    virtual Vector3D get_direction(ShadeRec& sr) = 0;
-    virtual RGBColor L(ShadeRec& sr) = 0;
+    virtual Vector3D get_direction(ShadeRec& sr) = 0; //return the direction of the incoming light at a hit point
+    virtual RGBColor L(ShadeRec& sr) = 0; // return the incident radiance at a hit point
 
     virtual float G(const ShadeRec& sr) const;
     virtual float pdf(const ShadeRec& sr) const;

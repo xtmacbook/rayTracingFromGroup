@@ -38,6 +38,12 @@ Vector3D Directional::get_direction(ShadeRec& sr) {
 	return (dir);
 }	
 
+/*
+	Li = ls *C Delta(cos)Delta() (14.5)
+
+	Lo = f * ls * C* cos(a) : a is reflected ligth with face normal
+*/
+
 RGBColor Directional::L(ShadeRec& s) {	
 	return (ls * color);
 }

@@ -42,7 +42,11 @@ void Lambertian::set_cd(const RGBColor cd){
     this->cd = cd;
 }
 
+/**
+ * f = rho / pi
+ */
 RGBColor Lambertian::f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& wi) const{
+    
     return (kd * cd * invPI);
 }
 
