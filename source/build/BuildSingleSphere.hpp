@@ -12,6 +12,7 @@ void World::build(void)
 	FishEyeCamera* pFishCamera = new FishEyeCamera(eye,lookAt);
 	pFishCamera->set_view_distance(340);
 	pFishCamera->compute_uvw();
+	pFishCamera->set_psi_max(60.0);
 	set_camera(pFishCamera);
 
 	background_color = black;
