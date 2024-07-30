@@ -149,9 +149,15 @@ void Phong::set_cd(const float a){
     specular_brdf->set_cd(RGBColor(a));
 }   
 
+void Phong::set_scd(const const RGBColor& c)
+{
+	specular_brdf->set_cd(c);
+}
+
 void Phong::set_exp(const float exp_){
     specular_brdf->set_exp(exp_);
 }
+
 
 RGBColor Phong::shade(ShadeRec& sr){
 	Vector3D 	wo 			= -sr.ray.d;
@@ -162,10 +168,10 @@ RGBColor Phong::shade(ShadeRec& sr){
 		Vector3D wi = sr.w.lights[j]->get_direction(sr);    
 		float ndotwi = sr.normal * wi;
 	
-		if (ndotwi > 0.0) {
+		if (ndotwi > 0.0) { // hit point toward the light
         	bool in_shadow = false;
             if(sr.w.lights[j]->get_shadows()){
-                Ray shadowRay(sr.hit_point, wi);
+                Ray shadowRay(sr.hit_point, wi);  //constructs the shadow ray and test if the hit point is in shadow
                 in_shadow = sr.w.lights[j]->in_shadow(shadowRay, sr);
             }
             if(!in_shadow){

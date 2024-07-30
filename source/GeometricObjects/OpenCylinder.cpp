@@ -76,6 +76,9 @@ bool OpenCylinder::hit(const Ray& ray, float& t, ShadeRec& s) const{
 }
 
 bool OpenCylinder::shadow_hit(const Ray& ray, float& tmin) const{
+
+	if (!is_casts_shadows()) return false;
+
     Point3D d(ray.d.x, ray.d.y, ray.d.z);
     Point3D o(ray.o);
 

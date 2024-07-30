@@ -60,7 +60,7 @@ RGBColor GlossySpecular::f(const ShadeRec& sr, const Vector3D& wo, const Vector3
     Vector3D r(-wi + 2.0*sr.normal*ndotwi);
     float rdotwo = r*wo;
     if(rdotwo > 0.0){
-        L = cd*kd*pow(rdotwo, E);
+        L = cd*kd*pow(rdotwo, E); //cd is for making specular hightlights a different color from that of the lights
     }
     return (L);
 }

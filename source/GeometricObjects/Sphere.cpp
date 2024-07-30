@@ -89,6 +89,9 @@ bool Sphere::hit(const Ray& ray, float& tmin, ShadeRec& sr) const {
 }
 
 bool Sphere::shadow_hit(const Ray& ray, float& tmin) const{
+
+	if (!is_casts_shadows()) return false;
+
 	double 		t;
 	Vector3D	temp 	= ray.o - center;
 	double 		a 		= ray.d * ray.d;

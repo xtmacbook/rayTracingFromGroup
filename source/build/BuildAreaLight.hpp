@@ -1,3 +1,4 @@
+
 void World::build(void) {
 			
 	int num_samples = 100;   	
@@ -75,6 +76,8 @@ void World::build(void) {
 	box_ptr3->set_material(matte_ptr1->clone());
 	add_object(box_ptr3);
 
+	/*box_ptr0->set_casts_shadows(false);
+	box_ptr1->set_casts_shadows(false);*/
 
 	// ground plane
 	

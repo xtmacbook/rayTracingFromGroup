@@ -40,6 +40,17 @@ Plane& Plane::operator= (const Plane& rhs)	{
 }
 
 bool Plane::hit(const Ray& ray, float& tmin, ShadeRec& sr) const {	
+
+	/*
+	*  p:交点
+	*  a:平面上的一个点
+	   (p - a) * n = 0
+	   -> (o + td -a ) *n = 0
+	   ->t = (a - o)n / (d * n)
+
+	*/
+
+
 	float t = (a - ray.o) * n / (ray.d * n); 
 														
 	if (t > kEpsilon) {
@@ -53,8 +64,11 @@ bool Plane::hit(const Ray& ray, float& tmin, ShadeRec& sr) const {
 	return(false);
 }
 
-bool Plane::shadow_hit(const Ray& ray, float& tmin) const {
-	float t = (a - ray.o) * n / (ray.d * n);
+bool Plane::shadow_hit(const Ray& shadowRay, float& tmin) const {
+
+	if (!is_casts_shadows()) return false;
+
+	float t = (a - shadowRay.o) * n / (shadowRay.d * n);
 	if(t > kEpsilon){
 		tmin = t;
 		return true;

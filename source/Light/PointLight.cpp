@@ -36,13 +36,13 @@ RGBColor PointLight::L(ShadeRec& sr){
     return (ls * color);
 }
 
-bool PointLight::in_shadow(const Ray& ray, const ShadeRec& sr) const{
+bool PointLight::in_shadow(const Ray& shadowRay, const ShadeRec& sr) const{
     float t;
     int num_objects = sr.w.objects.size();
-    float d = Point3D(location.x, location.y, location.z).distance(ray.o);
+    float d = Point3D(location.x, location.y, location.z).distance(shadowRay.o);
 
     for(int j = 0; j < num_objects; j++){
-        if(sr.w.objects[j]->shadow_hit(ray, t) && t < d){
+        if(sr.w.objects[j]->shadow_hit(shadowRay, t) && t < d){
             return true;
         }
     }

@@ -51,6 +51,7 @@ void World::build(void){
 	phong_ptr3->set_kd(0.75);
 	phong_ptr3->set_cd(RGBColor(1, 0.5, 1));			// mauve
 	phong_ptr3->set_ks(0.25);
+	phong_ptr3->set_scd(RGBColor(1, 0.1, 1));
 	phong_ptr3->set_exp(4);
 	
 	Phong* phong_ptr4 = new Phong;			

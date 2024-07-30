@@ -4,12 +4,14 @@
 #include "../Materials/Material.hpp"
 
 GeometricObject::GeometricObject(Material* material_p)
-	: 	material_ptr(material_p)
+	: 	material_ptr(material_p),
+	m_casts_shadows(true)
 {}
 
 GeometricObject::GeometricObject (const GeometricObject& object){
 	if(object.material_ptr){
 		material_ptr = object.material_ptr->clone();
+		m_casts_shadows = (object.m_casts_shadows);
 	}
 	else{
 		material_ptr = NULL;
@@ -27,6 +29,8 @@ GeometricObject& GeometricObject::operator= (const GeometricObject& rhs) {
 	if(rhs.material_ptr){
 		material_ptr = rhs.material_ptr->clone();
 	}
+
+	m_casts_shadows = rhs.m_casts_shadows;
 
 	return (*this);
 }
@@ -73,4 +77,14 @@ Point3D GeometricObject::sample(){
 
 float GeometricObject::pdf(const ShadeRec& sr){
 	return 1.0;
+}
+
+bool GeometricObject::is_casts_shadows() const
+{
+	return m_casts_shadows;
+}
+
+void GeometricObject::set_casts_shadows(bool casts)
+{
+	m_casts_shadows = casts;
 }

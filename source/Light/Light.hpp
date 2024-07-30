@@ -23,7 +23,7 @@ public:
     virtual float G(const ShadeRec& sr) const;
     virtual float pdf(const ShadeRec& sr) const;
 
-    virtual bool in_shadow(const Ray& ray, const ShadeRec& sr) const;
+    virtual bool in_shadow(const Ray& shadowRay, const ShadeRec& sr) const;
 
 protected:
     bool shadows;

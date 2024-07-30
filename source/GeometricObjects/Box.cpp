@@ -138,6 +138,9 @@ bool Box::hit(const Ray& ray, float& t, ShadeRec& s) const{
 }
 
 bool Box::shadow_hit(const Ray& ray, float& tmin) const {
+
+    if (!is_casts_shadows()) return false;
+
     Point3D o(ray.o);
     Point3D d(ray.d.x, ray.d.y, ray.d.z); 
     Point3D t_min;

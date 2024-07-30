@@ -91,6 +91,8 @@ bool Compound::hit(const Ray& ray, float& t, ShadeRec& s) const {
 
 
 bool Compound::shadow_hit(const Ray& ray, float& tmin) const{
+	if (!is_casts_shadows()) return false;
+
     int num_objects = objects.size();
     for(int i = 0; i < num_objects; i++){
         if(objects[i]->shadow_hit(ray, tmin)){

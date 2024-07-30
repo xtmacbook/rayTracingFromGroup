@@ -27,7 +27,12 @@ public:
 	virtual Point3D sample();
     virtual float pdf(const ShadeRec& sr);
 
+	bool is_casts_shadows()const;
+	void set_casts_shadows(bool);
+
 protected:
 	mutable Material* material_ptr;
 	GeometricObject& operator= (const GeometricObject& rhs);
+
+	bool m_casts_shadows; //whether this object casts shadows
 };
