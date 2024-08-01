@@ -9,7 +9,7 @@ void World::build(void) {
 	
 	background_color = black;
 	
-	tracer_ptr = new AreaLighting(this);
+	tracer_ptr = new AreaLightingTracer(this);
 		
 	MultiJittered* sampler_ptr = new MultiJittered(num_samples);
 	

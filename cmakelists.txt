@@ -121,8 +121,8 @@ set ( SOURCE_Samplers_Source
 SOURCE_GROUP("source//samplers" FILES ${SOURCE_Samplers_Source})
 
 set ( SOURCE_Tracers_Source
-  source/Tracers/AreaLighting.cpp 
-  source/Tracers/AreaLighting.hpp    
+  source/Tracers/AreaLightingTracer.cpp 
+  source/Tracers/AreaLightingTracer.hpp    
   source/Tracers/RayCast.hpp   
   source/Tracers/RayCast.cpp 
   source/Tracers/Tracer.hpp    

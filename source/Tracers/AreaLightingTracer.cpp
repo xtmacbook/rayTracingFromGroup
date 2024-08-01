@@ -1,13 +1,13 @@
-#include "AreaLighting.hpp"
+#include "AreaLightingTracer.hpp"
 #include "../World/World.hpp"
 #include "../Utilities/ShadeRec.hpp"
 #include "../Materials/Material.hpp"
 
-AreaLighting::AreaLighting(World* world_ptr_r):
+AreaLightingTracer::AreaLightingTracer(World* world_ptr_r):
     Tracer(world_ptr_r)
 {}
 
-RGBColor AreaLighting::trace_ray(const Ray& ray) const{
+RGBColor AreaLightingTracer::trace_ray(const Ray& ray) const{
     ShadeRec sr(world_ptr->hit_objects(ray));
     if(sr.hit_an_object){
         sr.ray = ray;
@@ -18,7 +18,7 @@ RGBColor AreaLighting::trace_ray(const Ray& ray) const{
     }
 }
 
-RGBColor AreaLighting::trace_ray(const Ray ray, const int depth) const{
+RGBColor AreaLightingTracer::trace_ray(const Ray ray, const int depth) const{
     ShadeRec sr(world_ptr->hit_objects(ray));
     if(sr.hit_an_object){
         sr.ray = ray;
@@ -29,7 +29,7 @@ RGBColor AreaLighting::trace_ray(const Ray ray, const int depth) const{
     }
 }
 
-RGBColor AreaLighting::trace_ray(const Ray ray, float& tmin, const int depth) const{
+RGBColor AreaLightingTracer::trace_ray(const Ray ray, float& tmin, const int depth) const{
     ShadeRec sr(world_ptr->hit_objects(ray));
     if(sr.hit_an_object){
         sr.ray = ray;

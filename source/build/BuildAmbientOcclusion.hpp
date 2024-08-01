@@ -1,6 +1,10 @@
 
+
+
 void World::build(void) {
 	int num_samples = 256;   	
+
+	bool useAmbientOccluder = true;
 
 	vp.set_hres(400);	  		
 	vp.set_vres(400);
@@ -8,14 +12,26 @@ void World::build(void) {
 	
 	tracer_ptr = new RayCast(this);
 		
-	Regular* sampler_ptr = new Regular(num_samples);
+	if (useAmbientOccluder)
+	{
+		Regular* sampler_ptr = new Regular(num_samples);
+		//MultiJittered* sampler_ptr = new MultiJittered();
+		AmbientOccluder* occluder_ptr = new AmbientOccluder;
+		occluder_ptr->scale_radiance(1.0);
+		occluder_ptr->set_min_amount(0.0);
+		occluder_ptr->set_sampler(sampler_ptr);
+		set_ambient_light(occluder_ptr);
+
+	}
+	else
+	{
+		Ambient* ambient_ptr = new Ambient;
+		ambient_ptr->set_color(1);
+		ambient_ptr->scale_radiance(1.0);
+		set_ambient_light(ambient_ptr);
+	}
 	
-	AmbientOccluder* occluder_ptr = new AmbientOccluder;
-	occluder_ptr->scale_radiance(1.0);
-	occluder_ptr->set_min_amount(0.0);
-	occluder_ptr->set_sampler(sampler_ptr);
-	set_ambient_light(occluder_ptr);	
-	
+
 	Pinhole* pinhole_ptr = new Pinhole;
 	pinhole_ptr->set_eye(25, 20, -45);
 	pinhole_ptr->set_lookat(0, 1, 0); 

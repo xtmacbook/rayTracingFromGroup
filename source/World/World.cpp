@@ -34,7 +34,7 @@
 //#include "../Tracers/MultipleObjects.hpp"
 //#include "../Tracers/Sinusoid.hpp"
 #include "../Tracers/RayCast.hpp"
-#include "../Tracers/AreaLighting.hpp"
+#include "../Tracers/AreaLightingTracer.hpp"
 #include "../Tracers/Whitted.hpp"
 
 // Cameras
@@ -61,18 +61,15 @@
 //#include "../build/BuildGlossy.hpp"
 //#include "../build/BuildMirrorHall.hpp"
 //#include "../build/BuildShadowsTest.hpp"
-#include "../build/BuildAreaLight.hpp"
+//#include "../build/BuildAreaLight.hpp"
+#include "../build/BuildAmbientOcclusion.hpp"
 
 
 //#include "../build/BuildReflective.hpp"
-
-
-// 
 //#include "../build/BuildSingleSphere.hpp"
 //#include "../build/BuildSpheresQueue.hpp"
 //#include "../build/BuildSingleSphereLight.hpp"
 //#include "../build/BuildSphereGrid.hpp"
-//#include "../build/BuildAmbientOcclusion.hpp"
 //#include "../build/BuildAreaLight.hpp"
 //#include "../build/BuildSimpleMesh.hpp"
 //#include "../build/BuildBBCoverPic.hpp"

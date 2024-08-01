@@ -67,7 +67,7 @@ Point3D Sampler::sample_hemisphere(){
 	if (count % num_samples == 0)  									// start of a new pixel
 		jump = (rand_int() % num_sets) * num_samples;
 		
-    return (hemisphere_samples[jump + (count++)%num_samples]);;		
+    return (hemisphere_samples[jump + (count++)%num_samples]);	
 }
 
 void Sampler::map_samples_to_unit_disk(){
