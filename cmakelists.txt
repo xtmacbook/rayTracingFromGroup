@@ -55,6 +55,7 @@ set (SOURCE_build_Source
   source/build/BuildSinusoid.hpp
   source/build/BuildSphereGrid.hpp
   source/build/BuildSpheresQueue.hpp
+  source/build/BuildEnvironemntLight.hpp
 )
 SOURCE_GROUP("source//build" FILES ${SOURCE_build_Source})
 
@@ -84,7 +85,9 @@ set (SOURCE_Light_Soruce
   source/Light/Light.cpp 
   source/Light/Light.hpp 
   source/Light/PointLight.cpp 
-  source/Light/PointLight.hpp 
+  source/Light/PointLight.hpp
+  source/Light/EnvironmentLight.hpp
+  source/Light/EnvironmentLight.cpp 
 )
 SOURCE_GROUP("source//light" FILES ${SOURCE_Light_Soruce})
 
@@ -211,7 +214,9 @@ set (SOURCE_GeometricObjects_Source
   source/GeometricObjects/Torus.cpp  
   source/GeometricObjects/Torus.hpp       
   source/GeometricObjects/Triangle.cpp  
-  source/GeometricObjects/Triangle.hpp 
+  source/GeometricObjects/Triangle.hpp
+  source/GeometricObjects/ConcaveSphere.hpp
+  source/GeometricObjects/ConcaveSphere.cpp 
 )
 SOURCE_GROUP("source//GeometricObjects" FILES ${SOURCE_GeometricObjects_Source})
  

@@ -5,6 +5,20 @@ BBox::BBox(Point3D p0_, Point3D p1_)
     , p1(p1_)
 {}
 
+BBox::BBox(const double _x0, const double _x1,
+	const double _y0, const double _y1,
+	const double _z0, const double _z1)
+{
+	p0.x = _x0;
+	p0.y = _y0;
+	p0.z = _z0;
+
+	p1.x = _x1;
+	p1.x = _y1;
+	p1.x = _z1;
+}
+
+
 BBox::BBox(const BBox& bbox)
     : p0(bbox.p0)
     , p1(bbox.p1)

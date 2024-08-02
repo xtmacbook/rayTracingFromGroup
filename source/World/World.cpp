@@ -63,7 +63,8 @@
 //#include "../build/BuildMirrorHall.hpp"
 //#include "../build/BuildShadowsTest.hpp"
 //#include "../build/BuildAreaLight.hpp"
-#include "../build/BuildAmbientOcclusion.hpp"
+//#include "../build/BuildAmbientOcclusion.hpp"
+#include "../build/BuildEnvironemntLight.hpp"
 
 
 //#include "../build/BuildReflective.hpp"
