@@ -23,7 +23,10 @@ public:
 	
 	virtual Normal get_normal() const; 
 	virtual Normal get_normal(const Point3D& p) const;
-	
+
+	/**
+	 * for this object as object of area light geometry
+	 */
 	virtual Point3D sample();
     virtual float pdf(const ShadeRec& sr);
 

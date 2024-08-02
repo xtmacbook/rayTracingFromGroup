@@ -11,6 +11,8 @@ RGBColor AreaLightingTracer::trace_ray(const Ray& ray) const{
     ShadeRec sr(world_ptr->hit_objects(ray));
     if(sr.hit_an_object){
         sr.ray = ray;
+
+        //the differ from the RayCast::trace_ray by calling material_ptr::area_light_shader instead of material_ptr::shader
         return (sr.material_ptr->area_light_shade(sr));
     }
     else{

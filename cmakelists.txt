@@ -73,10 +73,10 @@ set (SOURCE_Cameras_Source
 SOURCE_GROUP("source//camera" FILES ${SOURCE_Cameras_Source})
 
 set (SOURCE_Light_Soruce
-  source/Light/Ambient.cpp 
-  source/Light/Ambient.hpp 
-  source/Light/AmbientOccluder.cpp 
-  source/Light/AmbientOccluder.hpp 
+  source/Light/AmbientLight.cpp 
+  source/Light/AmbientLight.hpp 
+  source/Light/AmbientOccluderLight.cpp 
+  source/Light/AmbientOccluderLight.hpp 
   source/Light/AreaLight.cpp 
   source/Light/AreaLight.hpp 
   source/Light/Directional.cpp 

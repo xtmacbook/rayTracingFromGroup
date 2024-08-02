@@ -9,7 +9,7 @@ void World::build(){
 
 	background_color = black;
 
-	Ambient* ambient_ptr = new Ambient;
+	//Ambient* ambient_ptr = new Ambient;
 	//ambient_ptr->set_ls(1);
 	//set_ambient_light(ambient_ptr);
 

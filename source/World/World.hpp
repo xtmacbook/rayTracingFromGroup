@@ -20,7 +20,7 @@
 
 #include "../Cameras/Camera.hpp"
 #include "../Light/Light.hpp"
-#include "../Light/Ambient.hpp"
+#include "../Light/AmbientLight.hpp"
 
 class World {	
 public:

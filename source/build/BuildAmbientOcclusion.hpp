@@ -16,7 +16,7 @@ void World::build(void) {
 	{
 		Regular* sampler_ptr = new Regular(num_samples);
 		//MultiJittered* sampler_ptr = new MultiJittered();
-		AmbientOccluder* occluder_ptr = new AmbientOccluder;
+		AmbientOccluderLight* occluder_ptr = new AmbientOccluderLight;
 		occluder_ptr->scale_radiance(1.0);
 		occluder_ptr->set_min_amount(0.0);
 		occluder_ptr->set_sampler(sampler_ptr);
@@ -25,7 +25,7 @@ void World::build(void) {
 	}
 	else
 	{
-		Ambient* ambient_ptr = new Ambient;
+		AmbientLight* ambient_ptr = new AmbientLight;
 		ambient_ptr->set_color(1);
 		ambient_ptr->scale_radiance(1.0);
 		set_ambient_light(ambient_ptr);

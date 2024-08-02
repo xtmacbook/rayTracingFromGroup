@@ -2,13 +2,13 @@
 
 #include "Light.hpp"
 
-class Ambient: public Light {
+class AmbientLight: public Light {
 public:
-    Ambient();   							
-    Ambient(const Ambient& a); 					 
+    AmbientLight();   							
+    AmbientLight(const AmbientLight& a); 					 
     virtual Light* clone() const;	
-    Ambient& operator= (const Ambient& rhs);									
-    virtual ~Ambient();
+    AmbientLight& operator= (const AmbientLight& rhs);									
+    virtual ~AmbientLight();
             
     void scale_radiance(const float b);
 

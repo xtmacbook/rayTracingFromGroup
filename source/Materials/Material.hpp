@@ -13,9 +13,12 @@ public:
 
     //without the shade, we can only render object with a constant color.
     virtual RGBColor shade(ShadeRec& sr);
-    virtual RGBColor area_light_shade(ShadeRec& sr);
+    virtual RGBColor area_light_shade(ShadeRec& sr); //for area light
     virtual RGBColor path_shade(ShadeRec& sr);
 
+    /**
+     * return the emitted radiance
+     */
     virtual RGBColor get_Le(ShadeRec& sr) const;
 
     Material& operator= (const Material& rhs);

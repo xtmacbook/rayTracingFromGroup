@@ -3,7 +3,7 @@
 #include "../World/World.hpp"
 
 PointLight::PointLight(Vector3D location_, float ls_, RGBColor color_, bool shadows_):
-    Ambient(),
+    AmbientLight(),
     location(location_)
 {
     this->scale_radiance(ls_);
@@ -12,7 +12,7 @@ PointLight::PointLight(Vector3D location_, float ls_, RGBColor color_, bool shad
 }
 
 PointLight::PointLight(PointLight& point):
-    Ambient(point),
+    AmbientLight(point),
     location(point.get_location())
 {}
 

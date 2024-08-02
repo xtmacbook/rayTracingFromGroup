@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Ambient.hpp"
+#include "AmbientLight.hpp"
 
-class PointLight: public Ambient{
+class PointLight: public AmbientLight{
 public:
     PointLight(Vector3D location = Vector3D(0), float ls_ = 1.0, RGBColor color_ = 1.0, bool shadows_ = false);
     PointLight(PointLight& point);

@@ -1,14 +1,14 @@
 #pragma once
 
-#include "Ambient.hpp"
+#include "AmbientLight.hpp"
 #include "../Samplers/Sampler.hpp"
 
-class AmbientOccluder : public Ambient {
+class AmbientOccluderLight : public AmbientLight {
 public:
-    AmbientOccluder();
-    AmbientOccluder(const AmbientOccluder& amb);
-    AmbientOccluder& operator=(const AmbientOccluder& rhs);
-    AmbientOccluder* clone() const;
+    AmbientOccluderLight();
+    AmbientOccluderLight(const AmbientOccluderLight& amb);
+    AmbientOccluderLight& operator=(const AmbientOccluderLight& rhs);
+    AmbientOccluderLight* clone() const;
     
     void set_sampler(Sampler* s_ptr);
     void set_min_amount(RGBColor min);

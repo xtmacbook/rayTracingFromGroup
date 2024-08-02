@@ -22,8 +22,8 @@
 // Lights
 #include "../Light/Directional.hpp"
 #include "../Light/PointLight.hpp"
-#include "../Light/Ambient.hpp"
-#include "../Light/AmbientOccluder.hpp"
+#include "../Light/AmbientLight.hpp"
+#include "../Light/AmbientOccluderLight.hpp"
 #include "../Light/AreaLight.hpp"
 
 // Samplers
@@ -35,6 +35,7 @@
 //#include "../Tracers/Sinusoid.hpp"
 #include "../Tracers/RayCast.hpp"
 #include "../Tracers/AreaLightingTracer.hpp"
+
 #include "../Tracers/Whitted.hpp"
 
 // Cameras
@@ -85,7 +86,7 @@ World::World() :
 	camera(new Orthographic()),
 	ambient_ptr(NULL)
 {	
-	Ambient* ambient = new Ambient;
+	AmbientLight* ambient = new AmbientLight;
 	ambient->scale_radiance(0);
 	ambient_ptr = ambient;
 }

@@ -27,6 +27,7 @@ void World::build(void) {
 	
 
 	Rectangle* rectangle_ptr = new Rectangle(p0, a, b, normal);
+	rectangle_ptr->set_casts_shadows(false);
 	rectangle_ptr->set_material(emissive_ptr);
 	rectangle_ptr->set_sampler(sampler_ptr);
 	add_object(rectangle_ptr);
