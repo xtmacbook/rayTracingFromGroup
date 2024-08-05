@@ -9,7 +9,7 @@ void World::build(){
 
 	background_color = black;
 
-	Ambient* ambient_ptr = new Ambient;
+	AmbientLight* ambient_ptr = new AmbientLight;
 	ambient_ptr->scale_radiance(1);
 	set_ambient_light(ambient_ptr);
 
@@ -27,7 +27,7 @@ void World::build(){
 	RGBColor dark_purple(0.5, 0, 1);
 
 	ThinLens* pinhole_ptr = new ThinLens(Point3D(0, 0, 4), Point3D(0, 0, -1));
-	pinhole_ptr->set_distance(1000);
+	pinhole_ptr->set_view_distance(1000);
 	pinhole_ptr->set_sampler(new Jittered(100, 100));
 	pinhole_ptr->set_lens_radius(0);
 	pinhole_ptr->set_focal_dist(60);

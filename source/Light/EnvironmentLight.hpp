@@ -22,9 +22,11 @@ public:
 
 	virtual Light* clone() const;
 
+	void set_material(Material* material);
+
 private:
 	Vector3D u, v, w;
-	Sampler* sampler_ptr;
+	Sampler* sampler_ptr = nullptr;
 	Vector3D wi;
-	Material* materia_ptr;
+	Material* materia_ptr = nullptr;
 };

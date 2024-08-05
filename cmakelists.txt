@@ -216,7 +216,9 @@ set (SOURCE_GeometricObjects_Source
   source/GeometricObjects/Triangle.cpp  
   source/GeometricObjects/Triangle.hpp
   source/GeometricObjects/ConcaveSphere.hpp
-  source/GeometricObjects/ConcaveSphere.cpp 
+  source/GeometricObjects/ConcaveSphere.cpp
+  source/GeometricObjects/Grid.cpp
+  source/GeometricObjects/Grid.hpp 
 )
 SOURCE_GROUP("source//GeometricObjects" FILES ${SOURCE_GeometricObjects_Source})
  

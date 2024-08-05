@@ -11,7 +11,7 @@ void World::build(void) {
 	tracer_ptr = new Whitted(this);	
 	background_color = RGBColor(0.1); 
 	
-	Ambient* ambient_ptr = new Ambient;
+	AmbientLight* ambient_ptr = new AmbientLight;
 	ambient_ptr->scale_radiance(0.5);
 	set_ambient_light(ambient_ptr);
 	

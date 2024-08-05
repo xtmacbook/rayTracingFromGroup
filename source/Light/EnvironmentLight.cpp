@@ -54,3 +54,12 @@ Light* EnvironmentLight::clone() const
 {
 	return new EnvironmentLight(*this);
 }
+
+void EnvironmentLight::set_material(Material* material)
+{
+	if (materia_ptr) {
+		delete materia_ptr;
+		materia_ptr = nullptr;
+	}
+	materia_ptr = material;
+}

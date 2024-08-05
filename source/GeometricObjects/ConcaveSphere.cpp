@@ -2,27 +2,23 @@
 #include "ConcaveSphere.hpp"
 #include "../Samplers/Sampler.hpp"
 
-inline void
-ConcaveSphere::set_center(const Point3D& c) {
+
+const double ConcaveSphere::kEpsilon = 0.001;
+
+
+ void ConcaveSphere::set_center(const Point3D& c) {
 	center = c;
 }
 
-inline void
-ConcaveSphere::set_center(const double x, const double y, const double z) {
+ void ConcaveSphere::set_center(const double x, const double y, const double z) {
 	center.x = x;
 	center.y = y;
 	center.z = z;
 }
 
-inline void
-ConcaveSphere::set_radius(const double r) {
+ void ConcaveSphere::set_radius(const double r) {
 	radius = r;
 }
-
-
-
-const double ConcaveSphere::kEpsilon = 0.001;
-
 
 ConcaveSphere::ConcaveSphere(void)
 	: 	GeometricObject(),
@@ -151,7 +147,7 @@ ConcaveSphere::shadow_hit(const Ray& ray, double& tmin) const {
 void
 ConcaveSphere::set_sampler(Sampler* sampler) {
 	sampler_ptr = sampler;
-	//sampler_ptr->map_samples_to_hemisphere();
+	sampler_ptr->map_samples_to_hemisphere(1);
 }
 
 
@@ -160,11 +156,10 @@ ConcaveSphere::set_sampler(Sampler* sampler) {
 
 Point3D
 ConcaveSphere::sample(void) {
-	//Point3D sample_point = sampler_ptr->sample_sphere();
 
-	//return (center + sample_point*radius);
+	Point3D sample_point = sampler_ptr->sample_hemisphere();
 
-	return Point3D();
+	return (center + sample_point*radius);
 }
 
 
