@@ -2,6 +2,9 @@
 
 #include "BRDF.hpp"
 
+/**
+ * Specular reflection
+ */
 class GlossySpecular : public BRDF{
 public:
     GlossySpecular(float kd_ = 0.0, float exp_ = 0.0, RGBColor cd_ = RGBColor(0));

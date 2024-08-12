@@ -57,6 +57,9 @@ void Reflective::set_cr(const float a){
     reflective_brdf->set_cr(RGBColor(a));
 }   
 
+/*
+    equal (24.3)
+*/
 RGBColor Reflective::shade(ShadeRec& sr){
     RGBColor L(Phong::shade(sr));
     Vector3D wo = -sr.ray.d;
@@ -64,8 +67,8 @@ RGBColor Reflective::shade(ShadeRec& sr){
     RGBColor fr = reflective_brdf->sample_f(sr, wo, wi);
     Ray reflective_ray(sr.hit_point, wi);
 
-    L += fr*sr.w.tracer_ptr->trace_ray(reflective_ray, sr.depth+1)
-         *(sr.normal*wi);
+    L += fr * sr.w.tracer_ptr->trace_ray(reflective_ray, sr.depth+1)
+         *(sr.normal*wi); 
     
     return L;
 }

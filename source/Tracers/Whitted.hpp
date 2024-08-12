@@ -2,6 +2,8 @@
 
 #include "Tracer.hpp"
 
+//for specular-to-specular light transport
+
 class Whitted : public Tracer {
     public:
     Whitted(World* world_ptr_ = NULL);

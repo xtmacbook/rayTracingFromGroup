@@ -12,6 +12,12 @@ public:
     void set_location(const float x, const float y, const float z);
 
     Vector3D get_direction(ShadeRec& sr);
+
+    /**
+     * From equal(14.8): 
+     *  Li = l_{s} * C_{l} Delta()Delta()
+     */
+
     RGBColor L(ShadeRec& sr);
 
     virtual bool in_shadow(const Ray& ray, const ShadeRec& sr) const;

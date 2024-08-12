@@ -42,8 +42,15 @@ void PerfectSpecular::set_cr(const RGBColor cr){
     this->cr = cr;
 }
 
+
+/*
+
+    Because the reflected ray is always in the direction of mirror reflections,
+    there is no random sampling of the BRDF
+*/
+
 RGBColor PerfectSpecular::sample_f(const ShadeRec& sr, const Vector3D& wo, Vector3D& wi) const{
     float ndotwo = sr.normal*wo;
     wi = (-wo + 2.0*sr.normal*ndotwo);
-    return (kr*cr/(sr.normal*wi));
+    return (kr*cr/(sr.normal*wi)); //(table 13.1) 
 }  

@@ -18,7 +18,15 @@ public:
     
     virtual Vector3D get_direction(ShadeRec& s); 
     
-    virtual RGBColor L(ShadeRec& s);
+    /* 
+    
+    From equal(14.1): The incident radiance L_{i} is : L_{i} = l_{s} * c_{l}
+    which is independent of p and w_{i}.
+    
+    The reflected radiance is :  L_{o} = rho * L_{i} 
+    
+    */
+    virtual RGBColor L(ShadeRec& s); 
 
     virtual bool in_shadow(const Ray& ray, const ShadeRec& sr) const;
 

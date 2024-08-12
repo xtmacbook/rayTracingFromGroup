@@ -22,6 +22,15 @@ public:
     void set_direction(Vector3D d);						
     void set_direction(float dx, float dy, float dz);
     virtual Vector3D get_direction(ShadeRec& sr);
+
+
+    /*
+        Li = l_{s} * C_{l} Delta(cos)Delta() (14.5)
+
+        From equal(14.4): L_{o} = f * l_{s} * C_{l}* cos(a) : a is reflected ligth with face normal
+    */
+
+
     virtual RGBColor L(ShadeRec& sr);	
     
     virtual bool in_shadow(const Ray& ray, const ShadeRec& sr) const;
