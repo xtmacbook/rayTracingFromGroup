@@ -1,18 +1,19 @@
 #include "GlossySpecular.hpp"
 #include "../Utilities/Constants.hpp"
+#include "../Samplers/MultiJittered.hpp"
 
 GlossySpecular::GlossySpecular(float kd_, float exp_, RGBColor cd_):
     BRDF(),
-    kd(kd_),
-    E(exp_),
-    cd(cd_)
+    ks(kd_),
+    exp(exp_),
+    cs(cd_)
 {}
 
 GlossySpecular::GlossySpecular(const GlossySpecular& lamb):
     BRDF(lamb),
-    kd(lamb.kd),
-    E(lamb.E),
-    cd(lamb.cd)
+    ks(lamb.ks),
+    exp(lamb.exp),
+    cs(lamb.cs)
 {}
 
 GlossySpecular* GlossySpecular::clone() const{
@@ -24,34 +25,34 @@ GlossySpecular& GlossySpecular::operator=(const GlossySpecular& rhs){
         return (*this);
     }
     BRDF::operator=(rhs);
-    kd = rhs.kd;
-    E = rhs.E;
-    cd = rhs.cd;
+    ks = rhs.ks;
+    exp = rhs.exp;
+    cs = rhs.cs;
     return (*this);
 }
 
 float GlossySpecular::get_kd() const{
-    return kd;
+    return ks;
 }
 
 void GlossySpecular::set_kd(const float kd){
-    this->kd = kd;
+    this->ks = kd;
 }
 
 void GlossySpecular::set_exp(const float exp_){
-    this->E = exp_;
+    this->exp = exp_;
 }
 
 float GlossySpecular::get_exp() const{
-    return E;
+    return exp;
 }
 
 RGBColor GlossySpecular::get_cd() const{
-    return cd;
+    return cs;
 }
 
 void GlossySpecular::set_cd(const RGBColor cd){
-    this->cd = cd;
+    this->cs = cd;
 }
 
 RGBColor GlossySpecular::f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& wi) const{
@@ -60,11 +61,42 @@ RGBColor GlossySpecular::f(const ShadeRec& sr, const Vector3D& wo, const Vector3
     Vector3D r(-wi + 2.0*sr.normal*ndotwi);
     float rdotwo = r*wo;
     if(rdotwo > 0.0){
-        L = cd*kd*pow(rdotwo, E); //cd is for making specular hightlights a different color from that of the lights
+        L = cs*ks*pow(rdotwo, exp); //cd is for making specular hightlights a different color from that of the lights
     }
     return (L);
 }
 
 RGBColor GlossySpecular::rho(const ShadeRec& sr, const Vector3D& wo) const{
     return (black);
+}
+
+void GlossySpecular::set_sampler(const int num_samples, const float exp)
+{
+	sampler_ptr = new MultiJittered(num_samples);
+	sampler_ptr->map_samples_to_hemisphere(exp);
+}
+
+RGBColor GlossySpecular::sample_f(const ShadeRec& sr, Vector3D& wo, Vector3D& wi, float& pdf) const
+{
+    float ndotwo = sr.normal * wo;
+
+    Vector3D mirror_reflect_dir = -wo + 2.0 * sr.normal * ndotwo;
+
+    Vector3D w = mirror_reflect_dir;
+    Vector3D u = Vector3D(0.00424, 1.0, 0.00764) ^ w;
+    u.normalize();
+    Vector3D v = u ^ w;
+
+    Point3D sp = sampler_ptr->sample_hemisphere();
+    wi = sp.x * u + sp.y * v + sp.z * w; //reflected ray direction
+
+    if (sr.normal * wi < 0.0)
+        wi = -sp.x * u + sp.y * v + sp.z * w;
+
+    float phone_lobe = pow(mirror_reflect_dir * wi, exp);
+
+    pdf = phone_lobe * (sr.normal * wi);
+
+    return (ks * cs * phone_lobe);
+
 }

@@ -1,5 +1,5 @@
   #include "PerfectSpecular.hpp"
-  
+
 PerfectSpecular::PerfectSpecular(float kr_, RGBColor cr_)
     : BRDF()
     , kr(kr_)

@@ -16,7 +16,7 @@ public:
     void set_cr(const RGBColor cr);
 
     virtual RGBColor sample_f(const ShadeRec& sr, const Vector3D& wo, Vector3D& wi) const;
-  
+
 protected:
     float kr;
     RGBColor cr;

@@ -24,8 +24,16 @@ public:
     virtual RGBColor f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& wi) const;
     virtual RGBColor rho(const ShadeRec& sr, const Vector3D& wo) const;
 
+    /*
+    add for glossy reflection
+    */
+    void set_sampler(const int num_samples, const float exp);
+	RGBColor sample_f(const ShadeRec& sr, Vector3D& wo, Vector3D& wi, float& pdf) const override; // add for glossy reflection
+
+
+
 protected:
-    float kd;
-    float E;
-    RGBColor cd;
+    float ks;
+    float exp;
+    RGBColor cs;
 };

@@ -22,7 +22,6 @@
 // Lights
 #include "../Light/Directional.hpp"
 #include "../Light/PointLight.hpp"
-#include "../Light/AmbientLight.hpp"
 #include "../Light/AmbientOccluderLight.hpp"
 #include "../Light/AreaLight.hpp"
 
@@ -60,13 +59,13 @@
 //#include "../build/BuildBox.hpp"
 //#include "../build/BuildShadedTest.hpp"
 //#include "../build/BuildGlossy.hpp"
-//#include "../build/BuildMirrorHall.hpp"
+#include "../build/BuildMirrorHall.hpp"
 //#include "../build/BuildShadowsTest.hpp"
 //#include "../build/BuildAreaLight.hpp"
 //#include "../build/BuildAmbientOcclusion.hpp"
 //#include "../build/BuildEnvironemntLight.hpp"
 //#include "../build/BuildSphereGrid.hpp"
-#include "../build/BuildReflective.hpp"
+//#include "../build/BuildReflective.hpp"
 
 //#include "../build/BuildSingleSphere.hpp"
 //#include "../build/BuildSpheresQueue.hpp"
