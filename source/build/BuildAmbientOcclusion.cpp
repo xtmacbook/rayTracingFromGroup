@@ -1,16 +1,36 @@
 
+#include "../World/World.hpp"
 
+#include "../Light/EnvironmentLight.hpp"
+#include "../Light/Directional.hpp"
+#include "../Light/AmbientOccluderLight.hpp"
 
-void World::build(void) {
+#include "../Tracers/AreaLightingTracer.hpp"
+#include "../Tracers/RayCast.hpp"
+
+#include "../Cameras/Pinhole.hpp"
+
+#include "../Materials/Matte.hpp"
+#include "../Materials/Reflective.hpp"
+#include "../Materials/Emissive.hpp"
+
+#include "../GeometricObjects/Sphere.hpp"
+#include "../GeometricObjects/Cylinder.hpp"
+#include "../GeometricObjects/ConcaveSphere.hpp"
+
+#include "../GeometricObjects/Plane.hpp"
+#include "../GeometricObjects/Box.hpp"
+
+void buildAmbientOcclusion(World* pWorld) {
 	int num_samples = 256;   	
 
 	bool useAmbientOccluder = true;
 
-	vp.set_hres(400);	  		
-	vp.set_vres(400);
-	vp.set_samples(num_samples);
+	pWorld->vp.set_hres(400);	  		
+	pWorld->vp.set_vres(400);
+	pWorld->vp.set_samples(num_samples);
 	
-	tracer_ptr = new RayCast(this);
+	pWorld->tracer_ptr = new RayCast(pWorld);
 		
 	if (useAmbientOccluder)
 	{
@@ -20,7 +40,7 @@ void World::build(void) {
 		occluder_ptr->scale_radiance(1.0);
 		occluder_ptr->set_min_amount(0.0);
 		occluder_ptr->set_sampler(sampler_ptr);
-		set_ambient_light(occluder_ptr);
+		pWorld->set_ambient_light(occluder_ptr);
 
 	}
 	else
@@ -28,7 +48,7 @@ void World::build(void) {
 		AmbientLight* ambient_ptr = new AmbientLight;
 		ambient_ptr->set_color(1);
 		ambient_ptr->scale_radiance(1.0);
-		set_ambient_light(ambient_ptr);
+		pWorld->set_ambient_light(ambient_ptr);
 	}
 	
 
@@ -37,7 +57,7 @@ void World::build(void) {
 	pinhole_ptr->set_lookat(0, 1, 0); 
 	pinhole_ptr->set_view_distance(5000);	
 	pinhole_ptr->compute_uvw();     
-	set_camera(pinhole_ptr);
+	pWorld->set_camera(pinhole_ptr);
 	
 	// sphere
 	
@@ -48,7 +68,7 @@ void World::build(void) {
 		
 	Sphere* sphere_ptr = new Sphere (Point3D(0, 1, 0), 1);  
 	sphere_ptr->set_material(matte_ptr1);
-	add_object(sphere_ptr);	
+	pWorld->add_object(sphere_ptr);
 	
 	// ground plane
 	
@@ -59,5 +79,5 @@ void World::build(void) {
 	
 	Plane* plane_ptr = new Plane(Point3D(0), Normal(0, 1, 0));
 	plane_ptr->set_material(matte_ptr2);
-	add_object(plane_ptr);	
+	pWorld->add_object(plane_ptr);
 }

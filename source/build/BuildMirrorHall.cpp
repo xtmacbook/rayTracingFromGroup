@@ -1,45 +1,102 @@
 #pragma once
+#include "../World/World.hpp"
 
-void World::build(void) {
+#include "../Utilities/Constants.hpp"
+
+// Window
+#include "../Window/Window.hpp"
+#include "../Window/Window-THREAD.hpp"
+#include "../Window/Window-NOTHREAD.hpp"
+
+// geometric objects
+#include "../GeometricObjects/Plane.hpp"
+#include "../GeometricObjects/Sphere.hpp"
+#include "../GeometricObjects/Box.hpp"
+#include "../GeometricObjects/Triangle.hpp"
+#include "../GeometricObjects/Disk.hpp"
+#include "../GeometricObjects/OpenCylinder.hpp"
+#include "../GeometricObjects/Cylinder.hpp"
+#include "../GeometricObjects/Grid.hpp"
+#include "../GeometricObjects/SmoothMeshTriangle.hpp"
+#include "../GeometricObjects/FlatMeshTriangle.hpp"
+#include "../GeometricObjects/Rectangle.hpp"
+
+// Lights
+#include "../Light/Directional.hpp"
+#include "../Light/PointLight.hpp"
+#include "../Light/AmbientOccluderLight.hpp"
+#include "../Light/AreaLight.hpp"
+
+// Samplers
+#include "../Samplers/MultiJittered.hpp"
+#include "../Samplers/NRooks.hpp"
+
+// tracers
+//#include "../Tracers/MultipleObjects.hpp"
+//#include "../Tracers/Sinusoid.hpp"
+#include "../Tracers/RayCast.hpp"
+#include "../Tracers/AreaLightingTracer.hpp"
+
+#include "../Tracers/Whitted.hpp"
+
+// Cameras
+#include "../Cameras/Pinhole.hpp"
+#include "../Cameras/Orthographic.hpp"
+#include "../Cameras/ThinLens.hpp"
+
+// Materials
+#include "../Materials/Matte.hpp"
+#include "../Materials/Phong.hpp"
+#include "../Materials/Emissive.hpp"
+#include "../Materials/Reflective.hpp"
+
+// utilities
+#include "../Utilities/Vector3D.hpp"
+#include "../Utilities/Point2D.hpp"
+#include "../Utilities/Point3D.hpp"
+#include "../Utilities/Normal.hpp"
+#include "../Utilities/Maths.hpp"
+
+void buildMirrorHall(World * pWorld) {
 	int num_samples = 16;
 	
-	vp.set_hres(600);	  		
-	vp.set_vres(600);        
-	vp.set_samples(num_samples);
-	vp.set_max_depth(10);	
+	pWorld->vp.set_hres(600);
+	pWorld->vp.set_vres(600);        
+	pWorld->vp.set_samples(num_samples);
+	pWorld->vp.set_max_depth(10);	
 	
-	tracer_ptr = new Whitted(this);
+	pWorld->tracer_ptr = new Whitted(pWorld);
 			
 	Pinhole* pinhole_ptr = new Pinhole;
 	pinhole_ptr->set_eye(7.5, 3, 9.5);
 	pinhole_ptr->set_lookat(0);
 	pinhole_ptr->set_view_distance(300.0);
 	pinhole_ptr->compute_uvw(); 
-	set_camera(pinhole_ptr);
+	pWorld->set_camera(pinhole_ptr);
 
 	PointLight* light_ptr1 = new PointLight;
 	light_ptr1->set_location(10, 10, 0); 
 	light_ptr1->scale_radiance(2.0); 
 	//light_ptr1->set_shadows(true); 
-    add_light(light_ptr1);
+	pWorld->add_light(light_ptr1);
     
     PointLight* light_ptr2 = new PointLight;
 	light_ptr2->set_location(0, 10, 10); 
 	light_ptr2->scale_radiance(2.0); 
 	//light_ptr2->set_shadows(true); 
-    add_light(light_ptr2);
+	pWorld->add_light(light_ptr2);
     
     PointLight* light_ptr3 = new PointLight;
 	light_ptr3->set_location(-10, 10, 0); 
 	light_ptr3->scale_radiance(2.0); 
 	//light_ptr3->set_shadows(true); 
-    add_light(light_ptr3);
+	pWorld->add_light(light_ptr3);
     
     PointLight* light_ptr4 = new PointLight;
 	light_ptr4->set_location(0, 10, -10); 
 	light_ptr4->scale_radiance(2.0); 
 	//light_ptr4->set_shadows(true); 
-    add_light(light_ptr4);
+	pWorld->add_light(light_ptr4);
 
 		
 	// sphere
@@ -56,7 +113,7 @@ void World::build(void) {
 	
 	Sphere*	sphere_ptr1 = new Sphere(Point3D(0, 0.5, 0), 4); 
 	sphere_ptr1->set_material(reflective_ptr1);
-	add_object(sphere_ptr1);
+	pWorld->add_object(sphere_ptr1);
 		
 	
 	// the walls, the ceiling, and the floor of the room are defined as planes
@@ -73,7 +130,7 @@ void World::build(void) {
 	
 	Plane* floor_ptr = new Plane(Point3D(0, -room_size,  0), Normal(0, 1, 0));
 	floor_ptr->set_material(matte_ptr1);        
-	add_object(floor_ptr);
+	pWorld->add_object(floor_ptr);
 	
 	
 	// ceiling  (+ve yw)
@@ -85,7 +142,7 @@ void World::build(void) {
 	
 	Plane* ceiling_ptr = new Plane(Point3D(0, room_size,  0), Normal(0, -1, 0));
 	ceiling_ptr->set_material(matte_ptr2);        
-	add_object(ceiling_ptr);
+	pWorld->add_object(ceiling_ptr);
 	
 	
 	// back wall  (-ve zw)
@@ -97,13 +154,13 @@ void World::build(void) {
 	
 	Plane* backWall_ptr = new Plane(Point3D(0, 0,  -room_size), Normal(0, 0, 1));
 	backWall_ptr->set_material(matte_ptr3);        
-	add_object(backWall_ptr);
+	pWorld->add_object(backWall_ptr);
 	
 	// front wall  (+ve zw)
 	
 	Plane* frontWall_ptr = new Plane(Point3D(0, 0,  room_size), Normal(0, 0, -1));
 	frontWall_ptr->set_material(matte_ptr3->clone());        
-	add_object(frontWall_ptr);
+	pWorld->add_object(frontWall_ptr);
 	
 	// left wall  (-ve xw)
 	
@@ -114,13 +171,13 @@ void World::build(void) {
 	
 	Plane* leftWall_ptr = new Plane(Point3D(-room_size, 0, 0), Normal(1, 0, 0));
 	leftWall_ptr->set_material(matte_ptr4);        
-	add_object(leftWall_ptr);
+	pWorld->add_object(leftWall_ptr);
 	
 	// right wall  (+ve xw)
 	
 	Plane* rightWall_ptr = new Plane(Point3D(room_size, 0, 0), Normal(-1, 0, 0));
 	rightWall_ptr->set_material(matte_ptr4->clone());        
-	add_object(rightWall_ptr);
+	pWorld->add_object(rightWall_ptr);
 	
 	
 	// mirrors on the walls
@@ -151,7 +208,7 @@ void World::build(void) {
 	Normal n(0, 0, 1);
 	Rectangle* rectangle_ptr1 = new Rectangle(p0, a, b, n);
 	rectangle_ptr1->set_material(reflective_ptr2); 
-	add_object(rectangle_ptr1);
+	pWorld->add_object(rectangle_ptr1);
 
 	// front wall mirror  (+ve zw)
 	
@@ -159,7 +216,7 @@ void World::build(void) {
 	n = Normal(0, 0, -1);
 	Rectangle* rectangle_ptr2 = new Rectangle(p0, a, b, n);
 	rectangle_ptr2->set_material(reflective_ptr2->clone()); 
-	add_object(rectangle_ptr2);
+	pWorld->add_object(rectangle_ptr2);
 	
 	
 	// left wall mirror  (-ve xw)
@@ -169,7 +226,7 @@ void World::build(void) {
 	n = Normal(1, 0, 0);
 	Rectangle* rectangle_ptr3 = new Rectangle(p0, a, b, n);
 	rectangle_ptr3->set_material(reflective_ptr2->clone()); 
-	add_object(rectangle_ptr3);
+	pWorld->add_object(rectangle_ptr3);
 
 
 	// right wall mirror 
@@ -179,7 +236,7 @@ void World::build(void) {
 	n = Normal(1, 0, 0);
 	Rectangle* rectangle_ptr4 = new Rectangle(p0, a, b, n);
 	rectangle_ptr4->set_material(reflective_ptr2->clone()); 
-	add_object(rectangle_ptr4);
+	pWorld->add_object(rectangle_ptr4);
 
 
 	// // horizontal mirror underneath the sphere

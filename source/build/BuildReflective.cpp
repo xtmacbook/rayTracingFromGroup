@@ -1,19 +1,78 @@
 #pragma once
 
-void World::build(void) {
+
+#include "../World/World.hpp"
+
+#include "../Utilities/Constants.hpp"
+
+// Window
+#include "../Window/Window.hpp"
+#include "../Window/Window-THREAD.hpp"
+#include "../Window/Window-NOTHREAD.hpp"
+
+// geometric objects
+#include "../GeometricObjects/Plane.hpp"
+#include "../GeometricObjects/Sphere.hpp"
+#include "../GeometricObjects/Box.hpp"
+#include "../GeometricObjects/Triangle.hpp"
+#include "../GeometricObjects/Disk.hpp"
+#include "../GeometricObjects/OpenCylinder.hpp"
+#include "../GeometricObjects/Cylinder.hpp"
+#include "../GeometricObjects/Grid.hpp"
+#include "../GeometricObjects/SmoothMeshTriangle.hpp"
+#include "../GeometricObjects/FlatMeshTriangle.hpp"
+#include "../GeometricObjects/Rectangle.hpp"
+
+// Lights
+#include "../Light/Directional.hpp"
+#include "../Light/PointLight.hpp"
+#include "../Light/AmbientOccluderLight.hpp"
+#include "../Light/AreaLight.hpp"
+
+// Samplers
+#include "../Samplers/MultiJittered.hpp"
+#include "../Samplers/NRooks.hpp"
+
+// tracers
+//#include "../Tracers/MultipleObjects.hpp"
+//#include "../Tracers/Sinusoid.hpp"
+#include "../Tracers/RayCast.hpp"
+#include "../Tracers/AreaLightingTracer.hpp"
+
+#include "../Tracers/Whitted.hpp"
+
+// Cameras
+#include "../Cameras/Pinhole.hpp"
+#include "../Cameras/Orthographic.hpp"
+#include "../Cameras/ThinLens.hpp"
+
+// Materials
+#include "../Materials/Matte.hpp"
+#include "../Materials/Phong.hpp"
+#include "../Materials/Emissive.hpp"
+#include "../Materials/Reflective.hpp"
+
+// utilities
+#include "../Utilities/Vector3D.hpp"
+#include "../Utilities/Point2D.hpp"
+#include "../Utilities/Point3D.hpp"
+#include "../Utilities/Normal.hpp"
+#include "../Utilities/Maths.hpp"
+
+void buildReflective(World* pWorld) {
 	int num_samples = 16;
 	
-	vp.set_hres(600); 
-	vp.set_vres(400);
-	vp.set_samples(num_samples);
-	vp.set_max_depth(1);
+	pWorld->vp.set_hres(600); 
+	pWorld->vp.set_vres(400);
+	pWorld->vp.set_samples(num_samples);
+	pWorld->vp.set_max_depth(1);
 	
-	tracer_ptr = new Whitted(this);	
-	background_color = RGBColor(0.1); 
+	pWorld->tracer_ptr = new Whitted(pWorld);
+	pWorld->background_color = RGBColor(0.1);
 	
 	AmbientLight* ambient_ptr = new AmbientLight;
 	ambient_ptr->scale_radiance(0.5);
-	set_ambient_light(ambient_ptr);
+	pWorld->set_ambient_light(ambient_ptr);
 	
 			
 	Pinhole* pinhole_ptr = new Pinhole;
@@ -21,14 +80,14 @@ void World::build(void) {
 	pinhole_ptr->set_lookat(-10, 39, 0);  
 	pinhole_ptr->set_view_distance(360);
 	pinhole_ptr->compute_uvw(); 
-	set_camera(pinhole_ptr);
+	pWorld->set_camera(pinhole_ptr);
 	
 		
 	PointLight* light_ptr = new PointLight;
 	light_ptr->set_location(150, 150, 0);  
 	light_ptr->scale_radiance(3.0);
 	light_ptr->set_shadows(true);
-	add_light(light_ptr);
+	pWorld->add_light(light_ptr);
 	
 	// yellow-green reflective sphere
 	
@@ -44,7 +103,7 @@ void World::build(void) {
 	float radius = 23.0;
 	Sphere* sphere_ptr1 = new Sphere(Point3D(38, radius, -25), radius); 
 	sphere_ptr1->set_material(reflective_ptr1);
-	add_object(sphere_ptr1);
+	pWorld->add_object(sphere_ptr1);
 	
 	
 	// orange non-reflective sphere
@@ -56,7 +115,7 @@ void World::build(void) {
 	
 	Sphere* sphere_ptr2 = new Sphere(Point3D(-7, 10, 42), 20);
 	sphere_ptr2->set_material(matte_ptr1);      
-	add_object(sphere_ptr2);
+	pWorld->add_object(sphere_ptr2);
 	
 	
 	// sphere on top of box
@@ -72,7 +131,7 @@ void World::build(void) {
 
 	Sphere* sphere_ptr3 = new Sphere(Point3D(-30, 59, 35), 20);
 	sphere_ptr3->set_material(reflective_ptr2);     
-	add_object(sphere_ptr3);
+	pWorld->add_object(sphere_ptr3);
 
 	
 	// cylinder
@@ -91,7 +150,7 @@ void World::build(void) {
 	double cylinder_radius	= 22;
 	Cylinder* cylinder_ptr = new Cylinder(bottom, top, cylinder_radius);
 	cylinder_ptr->set_material(reflective_ptr3);
-	add_object(cylinder_ptr);
+	pWorld->add_object(cylinder_ptr);
 	
 	
 	// box
@@ -103,10 +162,10 @@ void World::build(void) {
 	
 	Box* box_ptr = new Box(Point3D(-35, 0, -110), Point3D(-25, 60, 65));
 	box_ptr->set_material(matte_ptr2);
-	add_object(box_ptr);
+	pWorld->add_object(box_ptr);
 
 
 	Plane* plane = new Plane(Point3D(0), Normal(0, 1, 0));
 	plane->set_material(matte_ptr2->clone(white));
-	add_object(plane);
+	pWorld->add_object(plane);
 }

@@ -55,28 +55,20 @@
 #include "../Utilities/Normal.hpp"
 #include "../Utilities/Maths.hpp"
 
-// build functions
-//#include "../build/BuildBox.hpp"
-//#include "../build/BuildShadedTest.hpp"
-//#include "../build/BuildGlossy.hpp"
-#include "../build/BuildMirrorHall.hpp"
-//#include "../build/BuildShadowsTest.hpp"
-//#include "../build/BuildAreaLight.hpp"
-//#include "../build/BuildAmbientOcclusion.hpp"
-//#include "../build/BuildEnvironemntLight.hpp"
-//#include "../build/BuildSphereGrid.hpp"
-//#include "../build/BuildReflective.hpp"
+void buildEnvirOnmentLight(World*);
+void buildAmbientOcclusion(World*);
+void buildAreadLight(World* pWorld);
+void BuildBBCoverPicLight(World* pWorld);
+void buildBuildBox(World* pWorld);
+void buildGlossy(World* pWorld);
+void buildMirrorHall(World* pWorld);
+void buildReflective(World* pWorld);
+void buildThinLensTest(World* pWorld);
+void buildShadows(World* pWorld);
+void buildFishEyeCameraTest(World* pWorld);
+void buildSingleSphereLight(World* pWorld);
+void buildSphereGrid(World* pWorld);
 
-//#include "../build/BuildSingleSphere.hpp"
-//#include "../build/BuildSpheresQueue.hpp"
-//#include "../build/BuildSingleSphereLight.hpp"
-//#include "../build/BuildAreaLight.hpp"
-//#include "../build/BuildSimpleMesh.hpp"
-//#include "../build/BuildBBCoverPic.hpp"
-//#include "../build/BuildBBCoverPicLight.hpp"
-//#include "../build/BuildMultipleObjects.hpp"
-//#include "../build/BuildSinusoid.hpp"
-//#include "../build/BuildHorizontalPlane.hpp"
 
 World::World() :  	
 	background_color(black),
@@ -235,4 +227,21 @@ void World::set_ambient_light(Light* light_ptr){
 		delete ambient_ptr;
 	}
 	ambient_ptr = light_ptr;
+}
+
+void World::build(void) {
+		
+	//buildEnvirOnmentLight(this);
+	//buildAmbientOcclusion(this);
+	//buildAreadLight(this);
+	//BuildBBCoverPicLight(this);
+	//buildBuildBox(this);
+	//buildGlossy(this);
+	//buildMirrorHall(this);
+	//buildReflective(this);
+	//buildThinLensTest(this);
+	//buildShadows(this);
+	//buildFishEyeCameraTest(this);
+	//buildSingleSphereLight(this);
+	buildSphereGrid(this);
 }

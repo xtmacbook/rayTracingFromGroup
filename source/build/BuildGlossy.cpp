@@ -1,25 +1,83 @@
-void World::build(void){
+#include "../World/World.hpp"
+
+#include "../Utilities/Constants.hpp"
+
+// Window
+#include "../Window/Window.hpp"
+#include "../Window/Window-THREAD.hpp"
+#include "../Window/Window-NOTHREAD.hpp"
+
+// geometric objects
+#include "../GeometricObjects/Plane.hpp"
+#include "../GeometricObjects/Sphere.hpp"
+#include "../GeometricObjects/Box.hpp"
+#include "../GeometricObjects/Triangle.hpp"
+#include "../GeometricObjects/Disk.hpp"
+#include "../GeometricObjects/OpenCylinder.hpp"
+#include "../GeometricObjects/Cylinder.hpp"
+#include "../GeometricObjects/Grid.hpp"
+#include "../GeometricObjects/SmoothMeshTriangle.hpp"
+#include "../GeometricObjects/FlatMeshTriangle.hpp"
+#include "../GeometricObjects/Rectangle.hpp"
+
+// Lights
+#include "../Light/Directional.hpp"
+#include "../Light/PointLight.hpp"
+#include "../Light/AmbientOccluderLight.hpp"
+#include "../Light/AreaLight.hpp"
+
+// Samplers
+#include "../Samplers/MultiJittered.hpp"
+#include "../Samplers/NRooks.hpp"
+
+// tracers
+//#include "../Tracers/MultipleObjects.hpp"
+//#include "../Tracers/Sinusoid.hpp"
+#include "../Tracers/RayCast.hpp"
+#include "../Tracers/AreaLightingTracer.hpp"
+
+#include "../Tracers/Whitted.hpp"
+
+// Cameras
+#include "../Cameras/Pinhole.hpp"
+#include "../Cameras/Orthographic.hpp"
+#include "../Cameras/ThinLens.hpp"
+
+// Materials
+#include "../Materials/Matte.hpp"
+#include "../Materials/Phong.hpp"
+#include "../Materials/Emissive.hpp"
+#include "../Materials/Reflective.hpp"
+
+// utilities
+#include "../Utilities/Vector3D.hpp"
+#include "../Utilities/Point2D.hpp"
+#include "../Utilities/Point3D.hpp"
+#include "../Utilities/Normal.hpp"
+#include "../Utilities/Maths.hpp"
+
+void buildGlossy(World *pWorld){
 	int num_samples = 16;
 	
-	vp.set_hres(600);
-	vp.set_vres(400);
-	vp.set_samples(num_samples);
+	pWorld->vp.set_hres(600);
+	pWorld->vp.set_vres(400);
+	pWorld->vp.set_samples(num_samples);
 	
-	tracer_ptr = new RayCast(this);
+	pWorld->tracer_ptr = new RayCast(pWorld);
 			
-	Ambient* ambient_ptr = new Ambient;
+	AmbientLight* ambient_ptr = new AmbientLight;
 	ambient_ptr->scale_radiance(0.01);
-	set_ambient_light(ambient_ptr);
+	pWorld->set_ambient_light(ambient_ptr);
 	
 	float a = 0.75;
-	background_color = RGBColor(0.0, 0.3 * a, 0.25 * a);  // torquise
+	pWorld->background_color = RGBColor(0.0, 0.3 * a, 0.25 * a);  // torquise
 			
 	Pinhole* pinhole_ptr = new Pinhole;
 	pinhole_ptr->set_eye(Point3D(7.5, 4, 10)); 
 	pinhole_ptr->set_lookat(Point3D(-1, 3.7, 0));  
 	pinhole_ptr->set_view_distance(340);		
 	pinhole_ptr->compute_uvw(); 
-	set_camera(pinhole_ptr);
+	pWorld->set_camera(pinhole_ptr);
 	
 	Directional* light_ptr1 = new Directional;	// for Figure 15.8(a)
 	light_ptr1->set_direction(15, 15, 2.5); 
@@ -29,7 +87,7 @@ void World::build(void){
 	PointLight* light_ptr2 = new PointLight;	// for Figure 15.8(b)
 	light_ptr2->set_location(Vector3D(15, 15, 2.5)); 
 	light_ptr2->scale_radiance(2.0);	
-	add_light(light_ptr2);
+	pWorld->add_light(light_ptr2);
 	
 	
 	Phong* phong_ptr1 = new Phong;			
@@ -71,11 +129,11 @@ void World::build(void){
 	
 	Sphere* sphere_ptr1 = new Sphere(Point3D(3.85, 2.3, -2.55), 2.3);
 	sphere_ptr1->set_material(phong_ptr1);
-	add_object(sphere_ptr1);
+	pWorld->add_object(sphere_ptr1);
 	
 	Sphere* sphere_ptr2 = new Sphere(Point3D(-0.7, 1, 4.2), 2);
 	sphere_ptr2->set_material(phong_ptr2);     
-	add_object(sphere_ptr2);
+	pWorld->add_object(sphere_ptr2);
 
 	// cylinder 
 	
@@ -84,17 +142,17 @@ void World::build(void){
 	float radius	= 2.2;
 	Cylinder* cylinder_ptr = new Cylinder(bottom, top, radius);
 	cylinder_ptr->set_material(phong_ptr3);
-	add_object(cylinder_ptr);
+	pWorld->add_object(cylinder_ptr);
 	
 	// box
 		
 	Box* box_ptr = new Box(Point3D(-3.5, 0, -11), Point3D(1, 6, 17.5));
 	box_ptr->set_material(phong_ptr4);
-	add_object(box_ptr);
+	pWorld->add_object(box_ptr);
 	
 	// ground plane
 	
 	Plane* plane_ptr = new Plane(Point3D(0), Normal(0, 1, 0));
 	plane_ptr->set_material(matte_ptr5);
-	add_object(plane_ptr);
+	pWorld->add_object(plane_ptr);
 }

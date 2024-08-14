@@ -1,8 +1,23 @@
 #pragma once
-#include "../GeometricObjects/ConcaveSphere.hpp"
+
+#include "../World/World.hpp"
+
 #include "../Light/EnvironmentLight.hpp"
+#include "../Light/Directional.hpp"
 
+#include "../Tracers/AreaLightingTracer.hpp"
+#include "../Cameras/Pinhole.hpp"
 
+#include "../Materials/Matte.hpp"
+#include "../Materials/Reflective.hpp"
+#include "../Materials/Emissive.hpp"
+
+#include "../GeometricObjects/Sphere.hpp"
+#include "../GeometricObjects/Cylinder.hpp"
+#include "../GeometricObjects/ConcaveSphere.hpp"
+
+#include "../GeometricObjects/Plane.hpp"
+#include "../GeometricObjects/Box.hpp"
 
 void initObj(World&world)
 {
@@ -79,21 +94,19 @@ void initObj(World&world)
 	world.add_object(plane);
 }
 
- 
-
-void World::build(void){
+void buildEnvirOnmentLight(World*pWorld){
 	
 	int num_samples = 64;
 
     //init vp
-    vp.set_hres(600);
-	vp.set_vres(400);
-	vp.set_samples(num_samples);
+	pWorld->vp.set_hres(600);
+	pWorld->vp.set_vres(400);
+	pWorld->vp.set_samples(num_samples);
 
-    background_color = black;
+	pWorld->background_color = black;
 
     //init tracer------------------------------------------------------------------------
-	tracer_ptr = new AreaLightingTracer(this);
+	pWorld->tracer_ptr = new AreaLightingTracer(pWorld);
 
 	//init camera ------------------------------------------------------------------------
 	Pinhole* pinhole_ptr = new Pinhole;
@@ -101,12 +114,12 @@ void World::build(void){
 	pinhole_ptr->set_lookat(-10, 39, 0);
 	pinhole_ptr->set_view_distance(360);
 	pinhole_ptr->compute_uvw();
-	set_camera(pinhole_ptr);
+	pWorld->set_camera(pinhole_ptr);
 
     //init light ------------------------------------------------------------------------
 	AmbientLight* ambient_ptr = new AmbientLight;
 	ambient_ptr->scale_radiance(0.5);
-	set_ambient_light(ambient_ptr);
+	pWorld->set_ambient_light(ambient_ptr);
 
 	//Regular* sampler_ptr = new Regular(num_samples);
 	////MultiJittered* sampler_ptr = new MultiJittered();
@@ -124,21 +137,21 @@ void World::build(void){
     sphere_ptr->set_radius(1000000.0);
     sphere_ptr->set_material(emissive_ptr);
     sphere_ptr->set_casts_shadows(false);
-    add_object(sphere_ptr);
+    pWorld->add_object(sphere_ptr);
 
     EnvironmentLight* light_ptr = new EnvironmentLight;
     light_ptr->set_material(emissive_ptr);
     light_ptr->set_sampler(new MultiJittered(num_samples));
     light_ptr->set_shadows(true);
-    add_light(light_ptr);
+	pWorld->add_light(light_ptr);
 
 
 	Directional* light_ptr1 = new Directional();
 	light_ptr1->set_direction(Vector3D(20, 150, 125));
 	light_ptr1->scale_radiance(4.0);
 	light_ptr1->set_shadows(true);				// for Figure 16.1(b)
-	add_light(light_ptr1);
+	pWorld->add_light(light_ptr1);
 
 	//init objects ------------------------------------------------------------------------
-	initObj(*this);
+	initObj(*pWorld);
 }

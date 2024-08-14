@@ -43,7 +43,7 @@ public:
 	void add_light(Light* light_ptr);
 	
 	void build();
-				
+	
 	RGBColor max_to_one(const RGBColor& c) const;
 	RGBColor clamp_to_color(const RGBColor& c) const;
 	

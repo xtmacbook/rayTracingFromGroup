@@ -38,24 +38,19 @@ set (SOURCE_BRDF_Source
 SOURCE_GROUP("source\\BRDF" FILES ${SOURCE_BRDF_Source})
 
 set (SOURCE_build_Source
-  source/build/BuildAmbientOcclusion.hpp
-  source/build/BuildAreaLight.hpp
-  source/build/BuildBBCoverPicLight.hpp
-  source/build/BuildBox.hpp
-  source/build/BuildGlossy.hpp
-  source/build/BuildHorizontalPlane.hpp
-  source/build/BuildMirrorHall.hpp
-  source/build/BuildMultipleObjects.hpp
-  source/build/BuildReflective.hpp
-  source/build/BuildShadedTest.hpp
-  source/build/BuildShadowsTest.hpp
-  source/build/BuildSimpleMesh.hpp
-  source/build/BuildSingleSphere.hpp
-  source/build/BuildSingleSphereLight.hpp
-  source/build/BuildSinusoid.hpp
-  source/build/BuildSphereGrid.hpp
-  source/build/BuildSpheresQueue.hpp
-  source/build/BuildEnvironemntLight.hpp
+  source/build/BuildAmbientOcclusion.cpp
+  source/build/BuildAreaLight.cpp
+  source/build/BuildBBCoverPicLight.cpp
+  source/build/BuildBox.cpp
+  source/build/BuildGlossy.cpp
+  source/build/BuildMirrorHall.cpp
+  source/build/BuildReflective.cpp
+  source/build/BuildShadedTest.cpp
+  source/build/BuildShadowsTest.cpp
+  source/build/BuildSingleSphere.cpp
+  source/build/BuildSingleSphereLight.cpp
+  source/build/BuildSphereGrid.cpp
+  source/build/BuildEnvironemntLight.cpp
 )
 SOURCE_GROUP("source//build" FILES ${SOURCE_build_Source})
 
