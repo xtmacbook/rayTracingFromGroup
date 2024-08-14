@@ -31,14 +31,6 @@ GlossySpecular& GlossySpecular::operator=(const GlossySpecular& rhs){
     return (*this);
 }
 
-float GlossySpecular::get_kd() const{
-    return ks;
-}
-
-void GlossySpecular::set_kd(const float kd){
-    this->ks = kd;
-}
-
 void GlossySpecular::set_exp(const float exp_){
     this->exp = exp_;
 }
@@ -46,13 +38,24 @@ void GlossySpecular::set_exp(const float exp_){
 float GlossySpecular::get_exp() const{
     return exp;
 }
+float GlossySpecular::get_ks() const
+{
+    return ks;
+}
 
-RGBColor GlossySpecular::get_cd() const{
+void GlossySpecular::set_ks(const float ks)
+{
+    this->ks = ks;
+}
+
+RGBColor GlossySpecular::get_cs() const
+{
     return cs;
 }
 
-void GlossySpecular::set_cd(const RGBColor cd){
-    this->cs = cd;
+void GlossySpecular::set_cs(const RGBColor cs)
+{
+    this->cs = cs;
 }
 
 RGBColor GlossySpecular::f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& wi) const{
@@ -75,7 +78,7 @@ void GlossySpecular::set_sampler(const int num_samples, const float exp)
 	sampler_ptr = new MultiJittered(num_samples);
 	sampler_ptr->map_samples_to_hemisphere(exp);
 }
-
+/* because there are no delta function in this integrand ,we have to estimate its value using Monte Carlo integration */
 RGBColor GlossySpecular::sample_f(const ShadeRec& sr, Vector3D& wo, Vector3D& wi, float& pdf) const
 {
     float ndotwo = sr.normal * wo;

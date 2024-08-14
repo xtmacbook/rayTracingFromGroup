@@ -11,15 +11,14 @@ public:
     GlossySpecular(const GlossySpecular& lamb);
     virtual GlossySpecular* clone() const;
     GlossySpecular& operator=(const GlossySpecular& rhs);
-
-    float get_kd() const;
-    void set_kd(const float kd);
-
     float get_exp() const;
     void set_exp(const float exp_);
 
-    RGBColor get_cd() const;
-    void set_cd(const RGBColor cd);
+    float get_ks() const;
+    void set_ks(const float ks);
+
+    RGBColor get_cs() const;
+    void set_cs(const RGBColor cs);
 
     virtual RGBColor f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& wi) const;
     virtual RGBColor rho(const ShadeRec& sr, const Vector3D& wo) const;
@@ -33,7 +32,7 @@ public:
 
 
 protected:
-    float ks;
     float exp;
+    float ks;
     RGBColor cs;
 };

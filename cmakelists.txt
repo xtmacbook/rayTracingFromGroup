@@ -102,7 +102,9 @@ set (SOURCE_Materials_Source
   source/Materials/Phong.cpp 
   source/Materials/Phong.hpp 
   source/Materials/Reflective.cpp 
-  source/Materials/Reflective.hpp  
+  source/Materials/Reflective.hpp 
+  source/Materials/GlossyReflectorMaterial.cpp
+  source/Materials/GlossyReflectorMaterial.hpp 
 )
 SOURCE_GROUP("source//materials" FILES ${SOURCE_Materials_Source})
 

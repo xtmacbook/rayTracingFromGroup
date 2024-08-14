@@ -128,30 +128,30 @@ void Phong::set_kd(const float k){
 }
 
 void Phong::set_ks(const float k){
-    specular_brdf->set_kd(k);
+    specular_brdf->set_ks(k);
 }
 
 void Phong::set_cd(const RGBColor& c){
     ambient_brdf->set_cd(c);
     diffuse_brdf->set_cd(c);
-    specular_brdf->set_cd(c);
+    specular_brdf->set_cs(c);
 }   
 
 void Phong::set_cd(const float r, const float g, const float b){
     ambient_brdf->set_cd(RGBColor(r, g, b));
     diffuse_brdf->set_cd(RGBColor(r, g, b));
-    specular_brdf->set_cd(RGBColor(r, g, b));
+    specular_brdf->set_cs(RGBColor(r, g, b));
 }   
 
 void Phong::set_cd(const float a){
     ambient_brdf->set_cd(RGBColor(a));
     diffuse_brdf->set_cd(RGBColor(a));
-    specular_brdf->set_cd(RGBColor(a));
+    specular_brdf->set_cs(RGBColor(a));
 }   
 
 void Phong::set_scd(const const RGBColor& c)
 {
-	specular_brdf->set_cd(c);
+	specular_brdf->set_cs(c);
 }
 
 void Phong::set_exp(const float exp_){
