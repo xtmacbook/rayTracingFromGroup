@@ -6,6 +6,8 @@
 class GlossyReflectorMaterial : public Phong {
 public:
     
+    GlossyReflectorMaterial();
+
     void set_samples(const int num_samples,float exp);
 
     void set_kr(const float kr);

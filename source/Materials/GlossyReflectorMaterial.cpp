@@ -2,7 +2,12 @@
 #include "GlossyReflectorMaterial.hpp"
 #include "../Tracers/Tracer.hpp"
 
- /// @brief 
+GlossyReflectorMaterial::GlossyReflectorMaterial()
+{
+    glossy_reflector_ptr = new GlossySpecular;
+}
+
+/// @brief 
  /// @param num_samples 
  /// @param exp 
  void GlossyReflectorMaterial::set_samples(const int num_samples, float exp)

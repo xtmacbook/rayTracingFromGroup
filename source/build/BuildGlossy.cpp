@@ -55,6 +55,7 @@
 #include "../Utilities/Point3D.hpp"
 #include "../Utilities/Normal.hpp"
 #include "../Utilities/Maths.hpp"
+#include "../Materials/GlossyReflectorMaterial.hpp"
 
 void buildGlossy(World *pWorld){
 	int num_samples = 16;
@@ -63,7 +64,7 @@ void buildGlossy(World *pWorld){
 	pWorld->vp.set_vres(400);
 	pWorld->vp.set_samples(num_samples);
 	
-	pWorld->tracer_ptr = new RayCast(pWorld);
+	pWorld->tracer_ptr = new AreaLightingTracer(pWorld);
 			
 	AmbientLight* ambient_ptr = new AmbientLight;
 	ambient_ptr->scale_radiance(0.01);
@@ -73,7 +74,7 @@ void buildGlossy(World *pWorld){
 	pWorld->background_color = RGBColor(0.0, 0.3 * a, 0.25 * a);  // torquise
 			
 	Pinhole* pinhole_ptr = new Pinhole;
-	pinhole_ptr->set_eye(Point3D(1, 1, -6)); 
+	pinhole_ptr->set_eye(Point3D(1,3, -6)); 
 	pinhole_ptr->set_lookat(Point3D(0, 0, 0));  
 	pinhole_ptr->set_view_distance(360);		
 	pinhole_ptr->compute_uvw(); 
@@ -109,16 +110,28 @@ void buildGlossy(World *pWorld){
 	matte_ptr5->set_kd(0.97);	
 	matte_ptr5->set_cd(white);  
 	
+	float exp = 100.0;
+	GlossyReflectorMaterial* glossyReflector_ptr = new GlossyReflectorMaterial;
+	glossyReflector_ptr->set_samples(num_samples,exp);
+	glossyReflector_ptr->set_ka(0.0);
+	glossyReflector_ptr->set_kd(0.0);
+	glossyReflector_ptr->set_ks(0.0);
+	glossyReflector_ptr->set_exp(exp);
+	glossyReflector_ptr->set_cd(1.0, 1.0, 0.3);
+	glossyReflector_ptr->set_kr(0.9);
+	//glossyReflector_ptr->set_cr(1.0, 1.0, 0.3);
+	glossyReflector_ptr->set_exponent(exp);
+
 	// spheres
 	Sphere* sphere_ptr1 = new Sphere(Point3D(0.0, 0.0, 4.2), 2.3);
-	sphere_ptr1->set_material(phong_ptr1);
+	sphere_ptr1->set_material(glossyReflector_ptr);
 	pWorld->add_object(sphere_ptr1);
 	
 	Sphere* sphere_ptr2 = new Sphere(Point3D(3.7, 0.0, 6.2), 2);
 	sphere_ptr2->set_material(phong_ptr2);     
 	pWorld->add_object(sphere_ptr2);
 
-	Sphere* sphere_ptr3 = new Sphere(Point3D(-6.0, 0.0, 6.2), 2);
+	Sphere* sphere_ptr3 = new Sphere(Point3D(-3.0, 0.0, 5.2), 3);
 	sphere_ptr3->set_material(phong_ptr2);
 	pWorld->add_object(sphere_ptr3);
 
