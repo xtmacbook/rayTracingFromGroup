@@ -58,6 +58,11 @@ void GlossySpecular::set_cs(const RGBColor cs)
     this->cs = cs;
 }
 
+void GlossySpecular::set_cs(const float r, const float g, const float b)
+{
+	cs.r = r; cs.g = g; cs.b = b;
+}
+
 RGBColor GlossySpecular::f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& wi) const{
     RGBColor L;
     float ndotwi = sr.normal*wi;

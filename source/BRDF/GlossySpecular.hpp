@@ -19,6 +19,7 @@ public:
 
     RGBColor get_cs() const;
     void set_cs(const RGBColor cs);
+	void set_cs(const float r, const float g, const float b);
 
     virtual RGBColor f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& wi) const;
     virtual RGBColor rho(const ShadeRec& sr, const Vector3D& wo) const;

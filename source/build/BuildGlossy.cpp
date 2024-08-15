@@ -119,7 +119,7 @@ void buildGlossy(World *pWorld){
 	glossyReflector_ptr->set_exp(exp);
 	glossyReflector_ptr->set_cd(1.0, 1.0, 0.3);
 	glossyReflector_ptr->set_kr(0.9);
-	//glossyReflector_ptr->set_cr(1.0, 1.0, 0.3);
+	glossyReflector_ptr->set_cr(1.0, 1.0, 0.3);
 	glossyReflector_ptr->set_exponent(exp);
 
 	// spheres
@@ -129,14 +129,14 @@ void buildGlossy(World *pWorld){
 	
 	Sphere* sphere_ptr2 = new Sphere(Point3D(3.7, 0.0, 6.2), 2);
 	sphere_ptr2->set_material(phong_ptr2);     
-	pWorld->add_object(sphere_ptr2);
+	//pWorld->add_object(sphere_ptr2);
 
 	Sphere* sphere_ptr3 = new Sphere(Point3D(-3.0, 0.0, 5.2), 3);
 	sphere_ptr3->set_material(phong_ptr2);
-	pWorld->add_object(sphere_ptr3);
+	//pWorld->add_object(sphere_ptr3);
 
 	// ground plane
 	Plane* plane_ptr = new Plane(Point3D(0,-2,0), Normal(0, 1, 0));
 	plane_ptr->set_material(matte_ptr5);
-	pWorld->add_object(plane_ptr);
+	//pWorld->add_object(plane_ptr);
 }

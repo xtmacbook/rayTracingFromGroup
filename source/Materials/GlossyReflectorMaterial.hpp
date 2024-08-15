@@ -12,6 +12,10 @@ public:
 
     void set_kr(const float kr);
 
+	void set_cr(const RGBColor& c);
+
+    void set_cr(const float r, const float g, const float b);
+
     void set_exponent(float exp);
 
     virtual RGBColor area_light_shade(ShadeRec&sr);

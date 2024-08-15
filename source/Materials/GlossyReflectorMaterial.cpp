@@ -20,6 +20,16 @@ void GlossyReflectorMaterial::set_kr(const float kr)
     glossy_reflector_ptr->set_ks(kr);
 }
 
+void GlossyReflectorMaterial::set_cr(const RGBColor& c)
+{
+    glossy_reflector_ptr->set_cs(c);
+}
+
+void GlossyReflectorMaterial::set_cr(const float r, const float g, const float b)
+{
+    glossy_reflector_ptr->set_cs(r, g, b);
+}
+
 void GlossyReflectorMaterial::set_exponent(float exp)
 {
     glossy_reflector_ptr->set_exp(exp);
