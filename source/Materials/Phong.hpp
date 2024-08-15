@@ -29,7 +29,7 @@ public:
     void set_cd(const RGBColor& c);
     void set_cd(const float r, const float g, const float b);
     void set_cd(const float a); 
-    void set_scd(const const RGBColor& c);
+    void set_scd(const RGBColor& c);
 
     virtual RGBColor shade(ShadeRec& sr);
     virtual RGBColor area_light_shade(ShadeRec& sr);

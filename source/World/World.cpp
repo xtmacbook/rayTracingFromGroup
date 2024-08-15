@@ -232,7 +232,7 @@ void World::set_ambient_light(Light* light_ptr){
 void World::build(void) {
 		
 	//buildEnvirOnmentLight(this);
-	//buildAmbientOcclusion(this);
+	buildAmbientOcclusion(this);
 	//buildAreadLight(this);
 	//BuildBBCoverPicLight(this);
 	//buildBuildBox(this);
@@ -243,5 +243,5 @@ void World::build(void) {
 	//buildShadows(this);
 	//buildFishEyeCameraTest(this);
 	//buildSingleSphereLight(this);
-	buildSphereGrid(this);
+	//buildSphereGrid(this);
 }

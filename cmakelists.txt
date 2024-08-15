@@ -135,7 +135,8 @@ SOURCE_GROUP("source//tracers" FILES ${SOURCE_Tracers_Source})
 
 set ( SOURCE_Utilities_Source
   source/Utilities/Constants.hpp 
-  source/Utilities/Debug.hpp 
+  source/Utilities/Debug.hpp
+  source/Utilities/Debug.cpp 
   source/Utilities/Maths.hpp  
   source/Utilities/Matrix.cpp 
   source/Utilities/Matrix.hpp 

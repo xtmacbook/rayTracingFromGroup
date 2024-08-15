@@ -149,7 +149,7 @@ void Phong::set_cd(const float a){
     specular_brdf->set_cs(RGBColor(a));
 }   
 
-void Phong::set_scd(const const RGBColor& c)
+void Phong::set_scd(const RGBColor& c)
 {
 	specular_brdf->set_cs(c);
 }
