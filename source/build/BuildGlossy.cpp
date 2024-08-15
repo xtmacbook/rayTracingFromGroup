@@ -73,9 +73,9 @@ void buildGlossy(World *pWorld){
 	pWorld->background_color = RGBColor(0.0, 0.3 * a, 0.25 * a);  // torquise
 			
 	Pinhole* pinhole_ptr = new Pinhole;
-	pinhole_ptr->set_eye(Point3D(7.5, 4, 10)); 
-	pinhole_ptr->set_lookat(Point3D(-1, 3.7, 0));  
-	pinhole_ptr->set_view_distance(340);		
+	pinhole_ptr->set_eye(Point3D(1, 1, -6)); 
+	pinhole_ptr->set_lookat(Point3D(0, 0, 0));  
+	pinhole_ptr->set_view_distance(360);		
 	pinhole_ptr->compute_uvw(); 
 	pWorld->set_camera(pinhole_ptr);
 	
@@ -103,56 +103,27 @@ void buildGlossy(World *pWorld){
 	phong_ptr2->set_cd(RGBColor(0.75, 0.25, 0));   	// orange
 	phong_ptr2->set_ks(0.25);
 	phong_ptr2->set_exp(500);
-	
-	Phong* phong_ptr3 = new Phong;			
-	phong_ptr3->set_ka(0.4); 
-	phong_ptr3->set_kd(0.75);
-	phong_ptr3->set_cd(RGBColor(1, 0.5, 1));			// mauve
-	phong_ptr3->set_ks(0.25);
-	phong_ptr3->set_scd(RGBColor(1, 0.1, 1));
-	phong_ptr3->set_exp(4);
-	
-	Phong* phong_ptr4 = new Phong;			
-	phong_ptr4->set_ka(0.15); 
-	phong_ptr4->set_kd(0.5);
-	phong_ptr4->set_cd(RGBColor(0.75, 1.0, 0.75));   	// light green
-	phong_ptr4->set_ks(0.5);
-	phong_ptr4->set_exp(3);
 		
 	Matte* matte_ptr5 = new Matte;			
 	matte_ptr5->set_ka(0.20); 
 	matte_ptr5->set_kd(0.97);	
 	matte_ptr5->set_cd(white);  
 	
-	
 	// spheres
-	
-	Sphere* sphere_ptr1 = new Sphere(Point3D(3.85, 2.3, -2.55), 2.3);
+	Sphere* sphere_ptr1 = new Sphere(Point3D(0.0, 0.0, 4.2), 2.3);
 	sphere_ptr1->set_material(phong_ptr1);
 	pWorld->add_object(sphere_ptr1);
 	
-	Sphere* sphere_ptr2 = new Sphere(Point3D(-0.7, 1, 4.2), 2);
+	Sphere* sphere_ptr2 = new Sphere(Point3D(3.7, 0.0, 6.2), 2);
 	sphere_ptr2->set_material(phong_ptr2);     
 	pWorld->add_object(sphere_ptr2);
 
-	// cylinder 
-	
-	float bottom 	= 0.0;
-	float top 		= 8.5;   
-	float radius	= 2.2;
-	Cylinder* cylinder_ptr = new Cylinder(bottom, top, radius);
-	cylinder_ptr->set_material(phong_ptr3);
-	pWorld->add_object(cylinder_ptr);
-	
-	// box
-		
-	Box* box_ptr = new Box(Point3D(-3.5, 0, -11), Point3D(1, 6, 17.5));
-	box_ptr->set_material(phong_ptr4);
-	pWorld->add_object(box_ptr);
-	
+	Sphere* sphere_ptr3 = new Sphere(Point3D(-6.0, 0.0, 6.2), 2);
+	sphere_ptr3->set_material(phong_ptr2);
+	pWorld->add_object(sphere_ptr3);
+
 	// ground plane
-	
-	Plane* plane_ptr = new Plane(Point3D(0), Normal(0, 1, 0));
+	Plane* plane_ptr = new Plane(Point3D(0,-2,0), Normal(0, 1, 0));
 	plane_ptr->set_material(matte_ptr5);
 	pWorld->add_object(plane_ptr);
 }

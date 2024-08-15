@@ -232,11 +232,11 @@ void World::set_ambient_light(Light* light_ptr){
 void World::build(void) {
 		
 	//buildEnvirOnmentLight(this);
-	buildAmbientOcclusion(this);
+	//buildAmbientOcclusion(this);
 	//buildAreadLight(this);
 	//BuildBBCoverPicLight(this);
 	//buildBuildBox(this);
-	//buildGlossy(this);
+	buildGlossy(this);
 	//buildMirrorHall(this);
 	//buildReflective(this);
 	//buildThinLensTest(this);
