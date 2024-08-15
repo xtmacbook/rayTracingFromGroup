@@ -2,6 +2,8 @@
 #include "../Samplers/MultiJittered.hpp"
 #include "../Utilities/ShadeRec.hpp"
 #include "../World/World.hpp"
+#include "../Window/Window.hpp"
+#include "../GeometricObjects/GeometricObject.hpp"
 
 AmbientOccluderLight::AmbientOccluderLight()
     : u(0)

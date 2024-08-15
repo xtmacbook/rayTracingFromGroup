@@ -1,6 +1,8 @@
 #define SDL_MAIN_HANDLED
 
 #include "../World/World.hpp"
+#include "../Utilities/Debug.hpp"
+#include "../Cameras/Camera.hpp"
 
 int main(){
     World w;

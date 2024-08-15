@@ -1,6 +1,7 @@
 #include "PointLight.hpp"
 #include "../Utilities/ShadeRec.hpp"
 #include "../World/World.hpp"
+#include "../GeometricObjects/GeometricObject.hpp"
 
 PointLight::PointLight(Vector3D location_, float ls_, RGBColor color_, bool shadows_):
     AmbientLight(),

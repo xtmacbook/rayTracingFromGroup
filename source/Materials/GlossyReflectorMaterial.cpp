@@ -1,5 +1,6 @@
 
 #include "GlossyReflectorMaterial.hpp"
+#include "../Tracers/Tracer.hpp"
 
  /// @brief 
  /// @param num_samples 

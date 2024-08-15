@@ -4,6 +4,7 @@
 
 #include "../Light/EnvironmentLight.hpp"
 #include "../Light/Directional.hpp"
+#include "../light/AmbientLight.hpp"
 
 #include "../Tracers/AreaLightingTracer.hpp"
 #include "../Cameras/Pinhole.hpp"

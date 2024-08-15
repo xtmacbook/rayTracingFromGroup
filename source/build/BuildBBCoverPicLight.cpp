@@ -5,6 +5,8 @@
 #include "../Light/EnvironmentLight.hpp"
 #include "../Light/Directional.hpp"
 #include "../Light/AreaLight.hpp"
+#include "../light/AmbientLight.hpp"
+
 
 #include "../Tracers/AreaLightingTracer.hpp"
 #include "../Tracers/RayCast.hpp"

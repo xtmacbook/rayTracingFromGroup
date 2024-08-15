@@ -3,6 +3,7 @@
 #include "../Utilities/ShadeRec.hpp"
 #include "../World/World.hpp"
 #include "../Materials/Material.hpp"
+#include "../GeometricObjects/GeometricObject.hpp"
 
 void EnvironmentLight::set_sampler(Sampler* s_ptr)
 {

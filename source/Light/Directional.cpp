@@ -1,4 +1,5 @@
 #include "Directional.hpp"
+#include "../GeometricObjects/GeometricObject.hpp"
 
 Directional::Directional(void)
 	: 	Light(),

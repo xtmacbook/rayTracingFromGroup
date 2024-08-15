@@ -1,4 +1,5 @@
 #include "Reflective.hpp"
+#include "../Tracers/Tracer.hpp"
 
 Reflective::Reflective()
     : Phong()

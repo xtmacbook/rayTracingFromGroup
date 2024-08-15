@@ -11,16 +11,13 @@
 
 #include "ViewPlane.hpp"
 #include "../Utilities/RGBColor.hpp"
-#include "../Tracers/Tracer.hpp"
-#include "../GeometricObjects/GeometricObject.hpp"
-#include "../Utilities/Ray.hpp"
-#include "../Utilities/Debug.hpp"
+#include "../Utilities/ShadeRec.hpp"
 
-#include "../Window/Window.hpp"
-
-#include "../Cameras/Camera.hpp"
-#include "../Light/Light.hpp"
-#include "../Light/AmbientLight.hpp"
+class Window;
+class Camera;
+class Light;
+class Tracer;
+class GeometricObject;
 
 class World {	
 public:

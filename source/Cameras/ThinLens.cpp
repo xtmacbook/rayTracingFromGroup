@@ -1,6 +1,10 @@
 #include "ThinLens.hpp"
 #include "../World/World.hpp"
 #include "../Utilities/util.hpp"
+#include "../Window/Window.hpp"
+#include "../Tracers/Tracer.hpp"
+
+#include <time.h>
 
 ThinLens::ThinLens(Point3D eye_p, Point3D lookat):
     Pinhole(eye_p, lookat),

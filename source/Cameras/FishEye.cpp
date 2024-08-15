@@ -4,8 +4,11 @@
 #include "../Utilities/Point3D.hpp"
 #include "../Utilities/Vector3D.hpp"
 #include "../Utilities/Debug.hpp"
-#include <math.h>
 #include "../Utilities/util.hpp"
+#include "../Window/Window.hpp"
+#include "../Tracers/Tracer.hpp"
+#include <math.h>
+
 
 FishEyeCamera::FishEyeCamera(Point3D eye_p, Point3D lookat):
     Camera(eye_p, lookat),

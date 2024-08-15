@@ -1,6 +1,9 @@
 #include "Orthographic.hpp"
 #include "../World/World.hpp"
 #include "../Utilities/util.hpp"
+#include "../Tracers/Tracer.hpp"
+#include "../Window/Window.hpp"
+#include <time.h>
 
 Orthographic::Orthographic(Point3D eye, Point3D lookat):
     Camera(eye, lookat)

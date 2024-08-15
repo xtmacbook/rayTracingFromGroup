@@ -1,6 +1,8 @@
 #include "Matte.hpp"
 
 #include "../World/World.hpp"
+#include "../Light/Light.hpp"
+
 
 Matte::Matte(Lambertian* ambient_brdf_, Lambertian* diffuse_brdf_):
     Material()
