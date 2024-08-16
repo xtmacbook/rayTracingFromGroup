@@ -90,9 +90,6 @@ void buildGlossy(World *pWorld){
 	pWorld->add_light(light_ptr2);
 
 
-	// other objects
-
-	// large sphere
 
 	GlossyReflectorMaterial* glossy_ptr1 = new GlossyReflectorMaterial;
 	glossy_ptr1->set_samples(num_samples, 100.0);
@@ -110,58 +107,7 @@ void buildGlossy(World *pWorld){
 	pWorld->add_object(sphere_ptr1);
 
 
-	// small sphere
-
-	Matte* matte_ptr2 = new Matte;
-	matte_ptr2->set_ka(0.4);
-	matte_ptr2->set_kd(0.4);
-	matte_ptr2->set_cd(0.75, 0, 0);     // red
-
-	Sphere* sphere_ptr2 = new Sphere(Point3D(34, 12, 13), 12);
-	sphere_ptr2->set_material(matte_ptr2);
-	pWorld->add_object(sphere_ptr2);
-
-
-	// medium sphere
-
-	Reflective* reflective_ptr = new Reflective;
-	reflective_ptr->set_cd(0.75);
-	reflective_ptr->set_ka(0.0);
-	reflective_ptr->set_kd(0.0);
-	reflective_ptr->set_ks(0.0);
-	reflective_ptr->set_exp(20);
-	reflective_ptr->set_kr(0.9);
-	reflective_ptr->set_cr(1.0, 0.75, 0.5);   // orange
-
-	Sphere* sphere_ptr3 = new Sphere(Point3D(-7, 15, 42), 16);
-	sphere_ptr3->set_material(reflective_ptr);
-	pWorld->add_object(sphere_ptr3);
-
-
-	// cylinder
-
-	GlossyReflectorMaterial* glossy_ptr2 = new GlossyReflectorMaterial;
-	glossy_ptr2->set_samples(num_samples, 10.0);
-	glossy_ptr2->set_ka(0.0);
-	glossy_ptr2->set_kd(0.0);
-	glossy_ptr2->set_ks(0.75);
-	//	glossy_ptr2->set_cs(0.35, 0.75, 0.55);  // green
-	glossy_ptr2->set_exp(10.0);
-	glossy_ptr2->set_cd(1.0, 1.0, 0.3);
-	glossy_ptr2->set_kr(0.9);
-	glossy_ptr2->set_exponent(10.0);
-	glossy_ptr2->set_cr(0.35, 0.75, 0.55);   // green
-
-	double bottom = 0.0;
-	double top = 85.0;
-	double radius = 22.0;
-	OpenCylinder* cylinder_ptr = new OpenCylinder(bottom, top, radius);
-	cylinder_ptr->set_material(glossy_ptr2);
-	pWorld->add_object(cylinder_ptr);
-
-
 	// ground plane
-
 	Reflective* reflective_ptr1 = new Reflective;
 	reflective_ptr1->set_ka(0.4);               // ambient reflection, ka=0.4
 	reflective_ptr1->set_kd(0.8);               // diffuse reflection, kd=0.8

@@ -18,6 +18,8 @@ public:
 
     void set_exponent(float exp);
 
+    virtual RGBColor 	shade(ShadeRec& s);
+    
     virtual RGBColor area_light_shade(ShadeRec&sr);
 private:
     GlossySpecular*  glossy_reflector_ptr = nullptr;
