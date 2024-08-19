@@ -6,11 +6,11 @@
 
 cmake_minimum_required ( VERSION 3.1.0...3.27.0 )
 
-set (prjName ht_master_sec)
+set (prjName RayTracing)
 
 
 # Project
-project(${projName} C CXX)
+project(${projName} CXX)
 
 # Add c++11 flags
 if (CYGWIN) 
@@ -157,6 +157,8 @@ set ( SOURCE_Tracers_Source
   source/Tracers/Tracer.cpp 
   source/Tracers/Whitted.hpp   
   source/Tracers/Whitted.cpp  
+  source/Tracers/PathTracer.hpp
+  source/Tracers/PathTracer.cpp
 )
 SOURCE_GROUP("source//tracers" FILES ${SOURCE_Tracers_Source})
 

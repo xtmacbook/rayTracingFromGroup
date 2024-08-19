@@ -21,6 +21,7 @@ public:
 
     virtual RGBColor f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& wi) const;
     virtual RGBColor rho(const ShadeRec& sr, const Vector3D& wo) const;
+	virtual RGBColor sample_f(const ShadeRec& sr, Vector3D& wo, Vector3D& wi, float& pdf) const;
 
 protected:
     float kd; //diffuse reflection cofficient

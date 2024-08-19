@@ -2,7 +2,7 @@
 #include "GlossyReflectorMaterial.hpp"
 #include "../Tracers/Tracer.hpp"
 
-GlossyReflectorMaterial::GlossyReflectorMaterial()
+GlossyReflector::GlossyReflector()
 {
     glossy_reflector_ptr = new GlossySpecular;
 }
@@ -10,32 +10,32 @@ GlossyReflectorMaterial::GlossyReflectorMaterial()
 /// @brief 
  /// @param num_samples 
  /// @param exp 
- void GlossyReflectorMaterial::set_samples(const int num_samples, float exp)
+ void GlossyReflector::set_samples(const int num_samples, float exp)
 {
     glossy_reflector_ptr->set_sampler(num_samples,exp);
 }
 
-void GlossyReflectorMaterial::set_kr(const float kr)
+void GlossyReflector::set_kr(const float kr)
 {
     glossy_reflector_ptr->set_ks(kr);
 }
 
-void GlossyReflectorMaterial::set_cr(const RGBColor& c)
+void GlossyReflector::set_cr(const RGBColor& c)
 {
     glossy_reflector_ptr->set_cs(c);
 }
 
-void GlossyReflectorMaterial::set_cr(const float r, const float g, const float b)
+void GlossyReflector::set_cr(const float r, const float g, const float b)
 {
     glossy_reflector_ptr->set_cs(r, g, b);
 }
 
-void GlossyReflectorMaterial::set_exponent(float exp)
+void GlossyReflector::set_exponent(float exp)
 {
     glossy_reflector_ptr->set_exp(exp);
 }
 
-RGBColor GlossyReflectorMaterial::shade(ShadeRec& sr) {
+RGBColor GlossyReflector::shade(ShadeRec& sr) {
 	RGBColor L(Phong::shade(sr));  // direct illumination
 
 	Vector3D wo = -sr.ray.d;
@@ -49,7 +49,7 @@ RGBColor GlossyReflectorMaterial::shade(ShadeRec& sr) {
 	return (L);
 }
 
-RGBColor GlossyReflectorMaterial::area_light_shade(ShadeRec &sr)
+RGBColor GlossyReflector::area_light_shade(ShadeRec &sr)
 {
     RGBColor L (Phong::area_light_shade(sr));
     

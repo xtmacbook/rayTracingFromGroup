@@ -236,8 +236,8 @@ void World::build(void) {
 	//buildAreadLight(this);
 	//BuildBBCoverPicLight(this);
 	//buildBuildBox(this);
-	buildGlossy(this);
-	//buildMirrorHall(this);
+	//buildGlossy(this);
+	buildMirrorHall(this);
 	//buildReflective(this);
 	//buildThinLensTest(this);
 	//buildShadows(this);

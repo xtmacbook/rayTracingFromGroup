@@ -42,7 +42,6 @@ void PerfectSpecular::set_cr(const RGBColor cr){
     this->cr = cr;
 }
 
-
 /*
 
     Because the reflected ray is always in the direction of mirror reflections,
@@ -53,4 +52,12 @@ RGBColor PerfectSpecular::sample_f(const ShadeRec& sr, const Vector3D& wo, Vecto
     float ndotwo = sr.normal*wo;
     wi = (-wo + 2.0*sr.normal*ndotwo);
     return (kr*cr/(sr.normal*wi)); //(table 13.1) 
-}  
+}
+
+RGBColor PerfectSpecular::sample_f(const ShadeRec& sr, Vector3D& wo, Vector3D& wi, float& pdf) const
+{
+	float ndotwo = sr.normal * wo;
+	wi = (-wo + 2.0 * sr.normal * ndotwo);
+    pdf = sr.normal * wi;
+	return kr * cr;  
+}

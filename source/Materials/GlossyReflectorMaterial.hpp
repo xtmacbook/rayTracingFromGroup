@@ -3,10 +3,10 @@
 #include "Phong.hpp"
 #include "../BRDF/GlossySpecular.hpp"
 
-class GlossyReflectorMaterial : public Phong {
+class GlossyReflector : public Phong {
 public:
     
-    GlossyReflectorMaterial();
+    GlossyReflector();
 
     void set_samples(const int num_samples,float exp);
 
