@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef  _BRDF_H_
+#define _BRDF_H_
+
 #include "../Samplers/Sampler.hpp"
 #include "../Utilities/Vector3D.hpp"
 #include "../Utilities/ShadeRec.hpp"
@@ -40,3 +43,5 @@ public:
 protected:
     Sampler* sampler_ptr;
 };
+
+#endif

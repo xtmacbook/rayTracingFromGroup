@@ -1,5 +1,9 @@
 #pragma once
 
+
+#ifndef  _BBOX_H_
+#define _BBOX_H_
+
 #include "../Utilities/Ray.hpp"
 #include "../Utilities/Constants.hpp"
 
@@ -22,3 +26,4 @@ public:
     Point3D p0;
     Point3D p1;
 };
+#endif

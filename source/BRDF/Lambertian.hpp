@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef  _LAMBERTIAN_H_
+#define _LAMBERTIAN_H_
+
 #include "BRDF.hpp"
 
 //lambertian reflectance is () : the incident radiance is scatted equally in all  directions
@@ -23,3 +26,4 @@ protected:
     float kd; //diffuse reflection cofficient
     RGBColor cd; //diffuse color
 };
+#endif

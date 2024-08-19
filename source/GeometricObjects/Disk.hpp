@@ -1,5 +1,9 @@
 #pragma once
 
+
+#ifndef  _GEOMETRICOBJECT_H_
+#define _GEOMETRICOBJECT_H_
+
 #include "GeometricObject.hpp"
 
 class Disk : public GeometricObject {
@@ -27,3 +31,5 @@ protected:
     Normal normal;
     float radius;
 };
+
+#endif

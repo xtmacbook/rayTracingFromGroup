@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef  _GLOSSYSPECULAR_H_
+#define _GLOSSYSPECULAR_H_
+
 #include "BRDF.hpp"
 
 /**
@@ -37,3 +40,4 @@ protected:
     float ks;
     RGBColor cs;
 };
+#endif

@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef  _PERFECTSPECULAR_H_
+#define _PERFECTSPECULAR_H_
+
 #include "BRDF.hpp"
 
 class PerfectSpecular : public BRDF{
@@ -21,3 +24,5 @@ protected:
     float kr;
     RGBColor cr;
 };
+
+#endif

@@ -1,5 +1,9 @@
 #pragma once
 
+
+#ifndef  _FISHEYECAMERA_H_
+#define _FISHEYECAMERA_H_
+
 #include "Camera.hpp"
 #include "../World/World.hpp"
 
@@ -24,3 +28,5 @@ protected:
 
     virtual Vector3D ray_direction(const Point2D& pixel_point,int hres,int vres,float s,float&r_squared) const;
 };
+
+#endif

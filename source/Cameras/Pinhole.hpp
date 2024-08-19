@@ -1,5 +1,9 @@
 #pragma once
 
+
+#ifndef  _PINHOLE_H_
+#define _PINHOLE_H_
+
 #include "Camera.hpp"
 #include "../World/World.hpp"
 
@@ -21,3 +25,5 @@ protected:
 
     virtual Vector3D ray_direction(const Point2D& pixel_point) const;
 };
+
+#endif

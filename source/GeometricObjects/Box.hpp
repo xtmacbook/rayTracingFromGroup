@@ -1,5 +1,9 @@
 #pragma once
 
+
+#ifndef  _Box_H_
+#define _Box_H_
+
 #include "GeometricObject.hpp"
 
 class Box : public GeometricObject {
@@ -33,3 +37,5 @@ protected:
     Point3D p1;
     Point3D dimensions;
 };  
+
+#endif

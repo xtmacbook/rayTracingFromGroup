@@ -1,4 +1,5 @@
 #pragma once
+#include <stdlib.h>
 
 inline float max(float x0, float x1) {
 	return((x0 > x1) ? x0 : x1);

@@ -1,4 +1,8 @@
 
+
+#ifndef  _CONCAVESPHERE_H_
+#define _CONCAVESPHERE_H_
+
 #include "GeometricObject.hpp"
 class Sampler;
 
@@ -49,3 +53,5 @@ private:
 
 	static const double kEpsilon;   // for shadows and secondary rays
 };
+
+#endif
