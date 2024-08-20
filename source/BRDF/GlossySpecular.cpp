@@ -105,6 +105,6 @@ RGBColor GlossySpecular::sample_f(const ShadeRec& sr, Vector3D& wo, Vector3D& wi
 
     pdf = phone_lobe * (sr.normal * wi);
 
-    return (ks * cs * phone_lobe);
+    return (ks * cs * phone_lobe); 
 
 }
