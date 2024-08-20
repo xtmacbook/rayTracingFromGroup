@@ -68,6 +68,7 @@ void buildShadows(World* pWorld);
 void buildFishEyeCameraTest(World* pWorld);
 void buildSingleSphereLight(World* pWorld);
 void buildSphereGrid(World* pWorld);
+void buildCornellBox(World* pWorld);
 
 
 World::World() :  	
@@ -237,11 +238,13 @@ void World::build(void) {
 	//BuildBBCoverPicLight(this);
 	//buildBuildBox(this);
 	//buildGlossy(this);
-	buildMirrorHall(this);
+	//buildMirrorHall(this);
 	//buildReflective(this);
 	//buildThinLensTest(this);
 	//buildShadows(this);
 	//buildFishEyeCameraTest(this);
 	//buildSingleSphereLight(this);
 	//buildSphereGrid(this);
+
+	buildCornellBox(this);
 }

@@ -42,6 +42,12 @@ void Lambertian::set_cd(const RGBColor cd){
     this->cd = cd;
 }
 
+void Lambertian::set_sampler(Sampler* s_ptr)
+{
+    sampler_ptr = s_ptr;
+    sampler_ptr->map_samples_to_hemisphere(1);
+}
+
 /**
  * f = rho / pi
  */

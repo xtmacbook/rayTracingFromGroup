@@ -111,6 +111,11 @@ void Matte::set_cd(const float a){
     diffuse_brdf->set_cd(RGBColor(a));
 }
 
+void Matte::set_sampler(Sampler* s_ptr)
+{
+    diffuse_brdf->set_sampler(s_ptr);
+}
+
 RGBColor Matte::shade(ShadeRec& sr){
     Vector3D wo = -sr.ray.d;
     RGBColor L = ambient_brdf->rho(sr, wo)*sr.w.ambient_ptr->L(sr);

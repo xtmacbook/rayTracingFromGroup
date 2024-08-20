@@ -18,6 +18,8 @@ public:
 
     RGBColor get_cd() const;
     void set_cd(const RGBColor cd);
+    
+    void set_sampler(Sampler* sampler);
 
     virtual RGBColor f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& wi) const;
     virtual RGBColor rho(const ShadeRec& sr, const Vector3D& wo) const;

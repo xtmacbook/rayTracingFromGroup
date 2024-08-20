@@ -51,6 +51,7 @@ set (SOURCE_build_Source
   source/build/BuildSingleSphereLight.cpp
   source/build/BuildSphereGrid.cpp
   source/build/BuildEnvironemntLight.cpp
+  source/build/BuildCornellBox.cpp
 )
 SOURCE_GROUP("source//build" FILES ${SOURCE_build_Source})
 
