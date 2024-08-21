@@ -1,11 +1,11 @@
 #include "BRDF.hpp"
 
 BRDF::BRDF():
-    sampler_ptr(NULL)
+    sampler_ptr(nullptr)
 {}
 
 BRDF::BRDF(const BRDF& brdf)
-    : sampler_ptr(NULL) {
+    : sampler_ptr(nullptr) {
     if(brdf.sampler_ptr){
         sampler_ptr = brdf.sampler_ptr->clone();
     }
@@ -19,17 +19,17 @@ BRDF& BRDF::operator=(const BRDF& rhs){
     if(this == &rhs){
         return *this;
     }
-    if(rhs.sampler_ptr != NULL){
+    if(rhs.sampler_ptr != nullptr){
         sampler_ptr = rhs.sampler_ptr->clone();
     }
-    sampler_ptr = NULL;
+    sampler_ptr = nullptr;
     return (*this);
 }
 
 BRDF::~BRDF(){
     if(sampler_ptr){
         delete sampler_ptr;
-        sampler_ptr = NULL;
+        sampler_ptr = nullptr;
     }
 }
 

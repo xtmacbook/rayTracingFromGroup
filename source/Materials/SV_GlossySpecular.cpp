@@ -7,7 +7,7 @@ SV_GlossySpecular::SV_GlossySpecular(void)
 	: 	BRDF(),
         ks(0.0),
 		cs(new ConstantColor(white)),
-		sampler_ptr(NULL)
+		sampler_ptr(nullptr)
 {}
 
 

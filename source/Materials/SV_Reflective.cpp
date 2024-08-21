@@ -15,7 +15,7 @@ SV_Reflective::SV_Reflective(const SV_Reflective& rm)
 	if(rm.reflective_brdf)
 		reflective_brdf = rm.reflective_brdf->clone();
 	else
-		reflective_brdf = NULL;
+		reflective_brdf = nullptr;
 }
 
 
@@ -28,7 +28,7 @@ SV_Reflective::operator= (const SV_Reflective& rhs) {
 
 	if (reflective_brdf) {
 		delete reflective_brdf;
-		reflective_brdf = NULL;
+		reflective_brdf = nullptr;
 	}
 
 	if (rhs.reflective_brdf)
@@ -47,7 +47,7 @@ SV_Reflective::clone(void) const {
 SV_Reflective::~SV_Reflective(void) {
 	if (reflective_brdf) {
 		delete reflective_brdf;
-		reflective_brdf = NULL;
+		reflective_brdf = nullptr;
 	}
 }
 

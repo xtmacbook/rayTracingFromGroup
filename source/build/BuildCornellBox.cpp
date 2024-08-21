@@ -25,7 +25,7 @@
 #include "../GeometricObjects/Box.hpp"
 
 void buildCornellBox(World* pWorld) {
-		int num_samples = 1;		// for Figure 26.7(a)
+		int num_samples = 100;		// for Figure 26.7(a)
 //	int num_samples = 100;		// for Figure 26.7(b)
 	//int num_samples = 1024;		// for Figure 26.7(c)
 	//	int num_samples = 10000;	// for Figure 26.7(d)

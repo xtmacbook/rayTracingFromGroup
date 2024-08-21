@@ -5,7 +5,7 @@
 
 class Torus : public GeometricObject {
 public:
-    Torus(Material* material_p = NULL, BBox bbox_ = BBox());
+    Torus(Material* material_p = nullptr, BBox bbox_ = BBox());
     Torus(const Torus& torus);
     Torus& operator=(Torus& rhs);
     virtual Torus* clone(void) const;

@@ -5,7 +5,7 @@
 
 class Matte: public Material{
 public:
-    Matte(Lambertian* ambient_brdf_ = NULL, Lambertian* diffuse_brdf_ = NULL);
+    Matte(Lambertian* ambient_brdf_ = nullptr, Lambertian* diffuse_brdf_ = nullptr);
     Matte(const Matte& m);
     virtual Matte* clone() const;
     virtual Matte* clone(RGBColor new_color) const;

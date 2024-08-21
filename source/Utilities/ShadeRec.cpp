@@ -12,7 +12,7 @@ ShadeRec::ShadeRec(World& wr)
 	: 	hit_an_object(false),
 		local_hit_point(),
 		hit_point(),
-		material_ptr(NULL),
+		material_ptr(nullptr),
 		normal(),
 		w(wr),
 		ray(),

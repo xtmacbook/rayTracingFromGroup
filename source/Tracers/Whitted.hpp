@@ -6,7 +6,7 @@
 
 class Whitted : public Tracer {
     public:
-    Whitted(World* world_ptr_ = NULL);
+    Whitted(World* world_ptr_ = nullptr);
 
 	virtual RGBColor trace_ray(const Ray& ray) const;
 	virtual RGBColor trace_ray(const Ray ray, const int depth) const;

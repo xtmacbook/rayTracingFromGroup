@@ -43,7 +43,7 @@ ViewPlane& ViewPlane::operator= (const ViewPlane& rhs) {
 ViewPlane::~ViewPlane(void) {
 	if(sampler_ptr){
 		delete sampler_ptr;
-		sampler_ptr = NULL;
+		sampler_ptr = nullptr;
 	}
 }
 
@@ -56,9 +56,9 @@ void ViewPlane::set_vres(const int v_res) {
 }
 
 void ViewPlane::set_samples(const int samples){
-	if(sampler_ptr != NULL){
+	if(sampler_ptr != nullptr){
 		delete sampler_ptr;
-		sampler_ptr = NULL;
+		sampler_ptr = nullptr;
 	}
 	if(samples > 1){
 		sampler_ptr = new MultiJittered(samples);
@@ -71,14 +71,14 @@ void ViewPlane::set_samples(const int samples){
 }
 
 void ViewPlane::set_sampler(Sampler* sampler_p){
-	if(sampler_p != NULL){ 
+	if(sampler_p != nullptr){ 
 		if(sampler_p->get_num_samples() != 1){
 			sampler_ptr = sampler_p;
 			num_samples = sampler_p->get_num_samples();
 		}
 		else{
 			delete sampler_p;
-			sampler_p = NULL;
+			sampler_p = nullptr;
 		}
 	}
 }

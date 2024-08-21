@@ -4,7 +4,7 @@
 
 class SmoothMeshTriangle : public MeshTriangle {
 public:
-    SmoothMeshTriangle(Mesh* mesh_ptr_ = NULL, const int i0 = 0, const int i1 = 0, const int i2 = 0);
+    SmoothMeshTriangle(Mesh* mesh_ptr_ = nullptr, const int i0 = 0, const int i1 = 0, const int i2 = 0);
     SmoothMeshTriangle(const SmoothMeshTriangle& flat_mesh);
     SmoothMeshTriangle& operator=(const SmoothMeshTriangle& rhs);
     virtual SmoothMeshTriangle* clone() const;

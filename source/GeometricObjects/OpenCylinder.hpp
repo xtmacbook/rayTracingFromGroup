@@ -5,8 +5,8 @@
 
 class OpenCylinder : public GeometricObject {
 public:
-    OpenCylinder(Material* material_p = NULL);
-    OpenCylinder(float y0_, float y1_, float radius_, Material* material_p = NULL);
+    OpenCylinder(Material* material_p = nullptr);
+    OpenCylinder(float y0_, float y1_, float radius_, Material* material_p = nullptr);
     OpenCylinder(const OpenCylinder& disk);
 
     OpenCylinder& operator=(const OpenCylinder& rhs);

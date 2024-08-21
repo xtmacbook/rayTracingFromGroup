@@ -6,7 +6,7 @@
 
 class MeshTriangle : public GeometricObject {
 public:
-    MeshTriangle(Mesh* mesh_ptr_ = NULL, const int i0 = 0, const int i1 = 0, const int i2 = 0);
+    MeshTriangle(Mesh* mesh_ptr_ = nullptr, const int i0 = 0, const int i1 = 0, const int i2 = 0);
     MeshTriangle(const MeshTriangle& mesh_triangle);
     MeshTriangle& operator=(const MeshTriangle& rhs);
     virtual MeshTriangle* clone() const = 0;

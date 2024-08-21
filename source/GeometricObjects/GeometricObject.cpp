@@ -14,7 +14,7 @@ GeometricObject::GeometricObject (const GeometricObject& object){
 		m_casts_shadows = (object.m_casts_shadows);
 	}
 	else{
-		material_ptr = NULL;
+		material_ptr = nullptr;
 	}
 }	
 
@@ -24,7 +24,7 @@ GeometricObject& GeometricObject::operator= (const GeometricObject& rhs) {
 
 	if(material_ptr){
 		delete material_ptr;
-		material_ptr = NULL;
+		material_ptr = nullptr;
 	}
 	if(rhs.material_ptr){
 		material_ptr = rhs.material_ptr->clone();
@@ -40,14 +40,14 @@ BBox GeometricObject::get_bounding_box() const {
 }
 
 GeometricObject::~GeometricObject () {
-	if(material_ptr != NULL){
+	if(material_ptr != nullptr){
 		delete material_ptr;
-		material_ptr = NULL;
+		material_ptr = nullptr;
 	}
 }
 
 void GeometricObject::set_material(Material* material_p){
-	if(material_ptr != NULL){
+	if(material_ptr != nullptr){
 		delete material_ptr;
 	}
 	material_ptr = material_p;

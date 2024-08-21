@@ -34,12 +34,12 @@ Compound::~Compound(){
         }
     }
     delete_objects();
-    material_ptr = NULL;
+    material_ptr = nullptr;
 }
 
 void Compound::add_object(GeometricObject* object_ptr){
-    if(object_ptr != NULL){
-        if(object_ptr->get_material() == NULL){
+    if(object_ptr != nullptr){
+        if(object_ptr->get_material() == nullptr){
             object_ptr->set_material(material_ptr);   
         }
         objects.push_back(object_ptr);
@@ -57,7 +57,7 @@ void Compound::set_material(Material* material_p){
 
 void Compound::delete_objects(){
     for(int i = 0; i < objects.size(); i++){
-        if(objects[i] != NULL){
+        if(objects[i] != nullptr){
             delete objects[i];
         }
     }   

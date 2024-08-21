@@ -61,7 +61,7 @@ Rectangle* Rectangle::clone() const {
 Rectangle::~Rectangle(){
     if(sampler_ptr){
         delete sampler_ptr;
-        sampler_ptr = NULL;
+        sampler_ptr = nullptr;
     }
 }
 

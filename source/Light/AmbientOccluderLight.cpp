@@ -50,7 +50,7 @@ AmbientOccluderLight* AmbientOccluderLight::clone() const {
 void AmbientOccluderLight::set_sampler(Sampler* s_ptr){
     if(sampler_ptr){
         delete sampler_ptr;
-        sampler_ptr = NULL;
+        sampler_ptr = nullptr;
     }
     sampler_ptr = s_ptr;
     sampler_ptr->map_samples_to_hemisphere(1);

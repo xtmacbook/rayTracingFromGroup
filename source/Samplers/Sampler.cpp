@@ -114,7 +114,7 @@ void Sampler::map_samples_to_unit_disk(){
 
 void Sampler::map_samples_to_hemisphere(const float e){
     int size = samples.size();
-    hemisphere_samples.resize(num_samples*num_sets);
+    hemisphere_samples.reserve(num_samples*num_sets);
     for(int j = 0; j < size; j++){
         float cos_phi = cos(2.0*PI*samples[j].x);
         float sin_phi = sin(2.0*PI*samples[j].x);

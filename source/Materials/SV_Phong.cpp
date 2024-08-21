@@ -13,15 +13,15 @@ SV_Phong::SV_Phong(const SV_Phong& p)
 {
 	if(p.ambient_brdf)
 		ambient_brdf = p.ambient_brdf->clone();
-	else  ambient_brdf = NULL;
+	else  ambient_brdf = nullptr;
 
 	if(p.diffuse_brdf)
 		diffuse_brdf = p.diffuse_brdf->clone();
-	else  diffuse_brdf = NULL;
+	else  diffuse_brdf = nullptr;
 
 	if(p.specular_brdf)
 		specular_brdf = p.specular_brdf->clone();
-	else  specular_brdf = NULL;
+	else  specular_brdf = nullptr;
 }
 
 
@@ -40,7 +40,7 @@ SV_Phong::operator= (const SV_Phong& rhs) {
 
 	if (ambient_brdf) {
 		delete ambient_brdf;
-		ambient_brdf = NULL;
+		ambient_brdf = nullptr;
 	}
 
 	if (rhs.ambient_brdf)
@@ -48,7 +48,7 @@ SV_Phong::operator= (const SV_Phong& rhs) {
 
 	if (diffuse_brdf) {
 		delete diffuse_brdf;
-		diffuse_brdf = NULL;
+		diffuse_brdf = nullptr;
 	}
 
 	if (rhs.diffuse_brdf)
@@ -56,7 +56,7 @@ SV_Phong::operator= (const SV_Phong& rhs) {
 
 	if (specular_brdf) {
 		delete specular_brdf;
-		specular_brdf = NULL;
+		specular_brdf = nullptr;
 	}
 
 	if (rhs.specular_brdf)
@@ -70,17 +70,17 @@ SV_Phong::~SV_Phong(void) {
 
 	if (ambient_brdf) {
 		delete ambient_brdf;
-		ambient_brdf = NULL;
+		ambient_brdf = nullptr;
 	}
 
 	if (diffuse_brdf) {
 		delete diffuse_brdf;
-		diffuse_brdf = NULL;
+		diffuse_brdf = nullptr;
 	}
 
 	if (specular_brdf) {
 		delete specular_brdf;
-		specular_brdf = NULL;
+		specular_brdf = nullptr;
 	}
 }
 

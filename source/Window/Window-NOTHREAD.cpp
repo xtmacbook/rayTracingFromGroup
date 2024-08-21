@@ -46,8 +46,8 @@ void Window_NOTHREAD::update(){
         }
         SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
         SDL_RenderClear(renderer);
-        SDL_UpdateTexture(texture, NULL, &pixels[0], w*4);
-        SDL_RenderCopy(renderer, texture, NULL, NULL);
+        SDL_UpdateTexture(texture, nullptr, &pixels[0], w*4);
+        SDL_RenderCopy(renderer, texture, nullptr, nullptr);
         SDL_RenderPresent(renderer);
     }
 }

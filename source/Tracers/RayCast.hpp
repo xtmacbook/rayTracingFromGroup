@@ -4,7 +4,7 @@
 
 class RayCast: public Tracer{
 public:
-    RayCast(World* world_ptr_ = NULL);
+    RayCast(World* world_ptr_ = nullptr);
 
 	virtual RGBColor trace_ray(const Ray& ray) const;
 	virtual RGBColor trace_ray(const Ray ray, const int depth) const;

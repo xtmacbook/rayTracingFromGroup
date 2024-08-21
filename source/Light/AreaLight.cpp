@@ -4,19 +4,19 @@
 
 AreaLight::AreaLight(void)
 	: 	Light(),
-		object_ptr(NULL),
-		material_ptr(NULL)
+		object_ptr(nullptr),
+		material_ptr(nullptr)
 {}	
 	
 AreaLight::AreaLight(const AreaLight& alight)
 	: 	Light(alight) {
 	if(alight.object_ptr)
 		object_ptr = alight.object_ptr->clone(); 
-	else  object_ptr = NULL;
+	else  object_ptr = nullptr;
 	
 	if(alight.material_ptr)
 		material_ptr = alight.material_ptr->clone(); 
-	else  material_ptr = NULL;
+	else  material_ptr = nullptr;
 }
 
 AreaLight* AreaLight::clone() const {
@@ -35,7 +35,7 @@ AreaLight& AreaLight::operator= (const AreaLight& rhs) {
 	
 	if (object_ptr) {
 		delete object_ptr;
-		object_ptr = NULL;
+		object_ptr = nullptr;
 	}
 
 	if (rhs.object_ptr)
@@ -43,7 +43,7 @@ AreaLight& AreaLight::operator= (const AreaLight& rhs) {
 		
 	if (material_ptr) {
 		delete material_ptr;
-		material_ptr = NULL;
+		material_ptr = nullptr;
 	}
 
 	if (rhs.material_ptr)

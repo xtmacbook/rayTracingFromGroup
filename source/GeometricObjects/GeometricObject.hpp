@@ -7,7 +7,7 @@
 					
 class GeometricObject {	
 public:	
-	GeometricObject(Material* material_p = NULL);
+	GeometricObject(Material* material_p = nullptr);
 	GeometricObject(const GeometricObject& object);		// copy constructor
 	virtual GeometricObject* clone(void) const = 0;		// virtual copy constructor
 	virtual ~GeometricObject ();						// destructor

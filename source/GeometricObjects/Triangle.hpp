@@ -9,7 +9,7 @@ public:
     Normal normal;
 
     Triangle();
-    Triangle(const Point3D& a, const Point3D& b, const Point3D& c, Material* material_p = NULL); 
+    Triangle(const Point3D& a, const Point3D& b, const Point3D& c, Material* material_p = nullptr); 
     Triangle(const Triangle& triangle);
     Triangle& operator=(const Triangle& rhs);
     Triangle* clone() const;

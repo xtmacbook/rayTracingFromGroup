@@ -1,7 +1,7 @@
 #include "Tracer.hpp"
 
 Tracer::Tracer()
-	: world_ptr(NULL)
+	: world_ptr(nullptr)
 {}
 
 Tracer::Tracer(World* _worldPtr)
@@ -10,7 +10,7 @@ Tracer::Tracer(World* _worldPtr)
 
 Tracer::~Tracer() {
 	if (world_ptr)
-		world_ptr = NULL;
+		world_ptr = nullptr;
 }
 
 RGBColor Tracer::trace_ray(const Ray& ray) const {

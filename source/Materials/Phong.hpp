@@ -6,7 +6,7 @@
 
 class Phong: public Material{
 public:
-    Phong(Lambertian* ambient_brdf_ = NULL, Lambertian* diffuse_brdf_ = NULL, GlossySpecular* specular_brdf_ = NULL);
+    Phong(Lambertian* ambient_brdf_ = nullptr, Lambertian* diffuse_brdf_ = nullptr, GlossySpecular* specular_brdf_ = nullptr);
     Phong(const Phong& m);
     virtual Phong* clone() const;
     virtual Phong* clone(RGBColor new_color) const;

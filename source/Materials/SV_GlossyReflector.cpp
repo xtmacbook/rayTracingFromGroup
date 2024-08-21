@@ -14,7 +14,7 @@ SV_GlossyReflector::SV_GlossyReflector(const SV_GlossyReflector& gr)
 	if(gr.glossy_specular_brdf)
 		glossy_specular_brdf = gr.glossy_specular_brdf->clone();
 	else
-		glossy_specular_brdf = NULL;
+		glossy_specular_brdf = nullptr;
 }
 
 SV_GlossyReflector&
@@ -26,7 +26,7 @@ SV_GlossyReflector::operator= (const SV_GlossyReflector& rhs) {
 
 	if (glossy_specular_brdf) {
 		delete glossy_specular_brdf;
-		glossy_specular_brdf = NULL;
+		glossy_specular_brdf = nullptr;
 	}
 
 	if (rhs.glossy_specular_brdf)
@@ -45,7 +45,7 @@ SV_GlossyReflector::clone(void) const {
 SV_GlossyReflector::~SV_GlossyReflector(void) {
 	if (glossy_specular_brdf) {
 		delete glossy_specular_brdf;
-		glossy_specular_brdf = NULL;
+		glossy_specular_brdf = nullptr;
 	}
 }
 

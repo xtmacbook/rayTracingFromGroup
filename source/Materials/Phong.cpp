@@ -9,13 +9,13 @@ Phong::Phong(Lambertian* ambient_brdf_, Lambertian* diffuse_brdf_, GlossySpecula
     ambient_brdf = ambient_brdf_;
     diffuse_brdf = diffuse_brdf_;
     specular_brdf = specular_brdf_;
-    if(ambient_brdf_ == NULL){
+    if(ambient_brdf_ == nullptr){
         ambient_brdf = new Lambertian();
     }
-    if(diffuse_brdf_ == NULL){
+    if(diffuse_brdf_ == nullptr){
         diffuse_brdf = new Lambertian();
     }
-    if(specular_brdf_ == NULL){
+    if(specular_brdf_ == nullptr){
         specular_brdf = new GlossySpecular();
     }
 }
@@ -78,17 +78,17 @@ Phong& Phong::operator=(const Phong& rhs){
 Phong::~Phong(){
     if(ambient_brdf){
         delete ambient_brdf;
-        ambient_brdf = NULL;
+        ambient_brdf = nullptr;
     }
 
     if(diffuse_brdf){
         delete diffuse_brdf;
-        diffuse_brdf = NULL;
+        diffuse_brdf = nullptr;
     }
 
     if(specular_brdf){
         delete specular_brdf;
-        specular_brdf = NULL;
+        specular_brdf = nullptr;
     }
 }
 
@@ -97,7 +97,7 @@ Lambertian* Phong::get_ambient_brdf() const{
 }
 
 void Phong::set_ambient_brdf(Lambertian* ambient_brdf_){
-    if(ambient_brdf_ != NULL)
+    if(ambient_brdf_ != nullptr)
         ambient_brdf = ambient_brdf_;
 }
 
@@ -106,7 +106,7 @@ Lambertian* Phong::get_diffuse_brdf() const{
 }
 
 void Phong::set_diffuse_brdf(Lambertian* diffuse_brdf_){
-    if(diffuse_brdf_ != NULL)
+    if(diffuse_brdf_ != nullptr)
         diffuse_brdf = diffuse_brdf_;
 }
 
@@ -116,7 +116,7 @@ GlossySpecular* Phong::get_specular_brdf() const{
 }
 
 void Phong::set_specular_brdf(GlossySpecular* specular_brdf_){
-    if(specular_brdf_ != NULL)
+    if(specular_brdf_ != nullptr)
         specular_brdf = specular_brdf_;
 }
 

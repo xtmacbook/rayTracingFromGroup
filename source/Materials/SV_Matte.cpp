@@ -15,11 +15,11 @@ SV_Matte::SV_Matte(const SV_Matte& m)
 {
 	if(m.ambient_brdf)
 		ambient_brdf = m.ambient_brdf->clone();
-	else  ambient_brdf = NULL;
+	else  ambient_brdf = nullptr;
 
 	if(m.diffuse_brdf)
 		diffuse_brdf = m.diffuse_brdf->clone();
-	else  diffuse_brdf = NULL;
+	else  diffuse_brdf = nullptr;
 }
 
 
@@ -38,7 +38,7 @@ SV_Matte::operator= (const SV_Matte& rhs) {
 
 	if (ambient_brdf) {
 		delete ambient_brdf;
-		ambient_brdf = NULL;
+		ambient_brdf = nullptr;
 	}
 
 	if (rhs.ambient_brdf)
@@ -46,7 +46,7 @@ SV_Matte::operator= (const SV_Matte& rhs) {
 
 	if (diffuse_brdf) {
 		delete diffuse_brdf;
-		diffuse_brdf = NULL;
+		diffuse_brdf = nullptr;
 	}
 
 	if (rhs.diffuse_brdf)
@@ -60,12 +60,12 @@ SV_Matte::~SV_Matte(void) {
 
 	if (ambient_brdf) {
 		delete ambient_brdf;
-		ambient_brdf = NULL;
+		ambient_brdf = nullptr;
 	}
 
 	if (diffuse_brdf) {
 		delete diffuse_brdf;
-		diffuse_brdf = NULL;
+		diffuse_brdf = nullptr;
 	}
 }
 
