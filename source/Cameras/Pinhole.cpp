@@ -46,12 +46,6 @@ void Pinhole::render_scene(World& w){
     ray.o = eye;
 	    
 	// TIME MANAGER
-	struct timespec start_processing;
-	struct timespec start_displaying;
-	struct timespec now;
-	clock_gettime( &start_processing);
-	float time_displaying = 0;
-
 	debug_print("Joining entering 2d-for.\n");
     for (int r = 0; r < vp->vres; r++) {	
 		for (int c = 0; c <= vp->hres; c++) {					
@@ -70,8 +64,6 @@ void Pinhole::render_scene(World& w){
 			}
 			debug_print("Anti aliasing samples get.\n");
 			L /= vp->num_samples;
-					
-			clock_gettime( &start_displaying); 			
 			
 			// DISPLAYING STUFF
 			w.display_pixel(r, c, L);
@@ -81,13 +73,9 @@ void Pinhole::render_scene(World& w){
 			}
 
             // TIME MANAGER
-			clock_gettime( &now); 			
-			time_displaying += (now.tv_sec - start_displaying.tv_sec);
-			time_displaying += (now.tv_nsec - start_displaying.tv_nsec)/1000000000.0;
 		}	
 	}
-	printf("\r\nRendering completed.\nTotal processing time: %.4f seconds.\nTotal displaying time: %.4f seconds.\n", 
-		(now.tv_sec - start_processing.tv_sec)+((now.tv_nsec - start_processing.tv_nsec)/1000000000.0) - time_displaying, time_displaying);
+	
 	while(w.window->isOpen()){
 		w.window->update();
 	}	
