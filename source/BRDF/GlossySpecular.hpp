@@ -31,7 +31,7 @@ public:
     add for glossy reflection
     */
     void set_sampler(const int num_samples, const float exp);
-	RGBColor sample_f(const ShadeRec& sr, Vector3D& wo, Vector3D& wi, float& pdf) const override; // add for glossy reflection
+	RGBColor sample_f(const ShadeRec& sr, const Vector3D& wo, Vector3D& wi, float& pdf) const override; // add for glossy reflection
 
 
 
