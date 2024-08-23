@@ -1,16 +1,30 @@
 #include "Rectangle.hpp"
 
-Rectangle::Rectangle(Point3D p0_, Vector3D a_, Vector3D b_, Normal n)
+Rectangle::Rectangle(const Point3D& p0, const Vector3D& av, const Vector3D& bv, const Normal& n)
     : GeometricObject()
-    , p0(p0_)
-    , a(a_)
-    , b(b_)
+    , p0(p0)
+    , a(av)
+    , b(bv)
     , normal(n) 
     , sampler_ptr(new Regular(1)) 
     , area(a.length() * b.length())
     , inv_area(1.0/area)
     , a_len_squared(a.length()*a.length())
     , b_len_squared(b.length()*b.length()) {
+    normal.normalize();
+}
+
+Rectangle::Rectangle(const Point3D& p0, const Vector3D& av, const Vector3D& bv)
+:GeometricObject()
+, p0(p0)
+, a(av)
+, b(bv)
+, sampler_ptr(new Regular(1))
+, area(a.length()* b.length())
+, inv_area(1.0 / area)
+, a_len_squared(a.length()* a.length())
+, b_len_squared(b.length()* b.length()) {
+    normal = a ^ b;
     normal.normalize();
 }
 

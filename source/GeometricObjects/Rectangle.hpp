@@ -16,7 +16,11 @@ private:
     float b_len_squared;
 
 public:
-    Rectangle(Point3D p0_ = Point3D(0), Vector3D a_ = Vector3D(0), Vector3D b_ = Vector3D(0), Normal n = Normal(0));
+    
+    Rectangle(const Point3D& _p0, const Vector3D& _a, const Vector3D& _b);
+
+    Rectangle(const Point3D& _p0, const Vector3D& _a, const Vector3D& _b, const Normal& n);
+
     Rectangle(const Rectangle& rect);
     Rectangle& operator=(const Rectangle& rhs);
     Rectangle* clone() const;
