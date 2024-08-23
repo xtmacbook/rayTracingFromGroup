@@ -99,7 +99,7 @@ RGBColor GlossySpecular::sample_f(const ShadeRec& sr, const Vector3D& wo, Vector
     wi = sp.x * u + sp.y * v + sp.z * w; //reflected ray direction
 
 	if (sr.normal * wi < 0.0) 						// reflected ray is below tangent plane
-		wi = -sp.x * u - sp.y * v + sp.z * w;
+		 wi = -sp.x * u - sp.y * v + sp.z * w;
 
     float phone_lobe = pow(mirror_reflect_dir * wi, exp);
 
