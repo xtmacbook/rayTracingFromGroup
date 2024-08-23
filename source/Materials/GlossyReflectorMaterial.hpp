@@ -8,6 +8,10 @@ public:
     
     GlossyReflector();
 
+    GlossyReflector& operator= (const GlossyReflector& rhs);
+
+    virtual GlossyReflector* clone(void) const;
+
     void set_samples(const int num_samples,float exp);
 
     void set_kr(const float kr);

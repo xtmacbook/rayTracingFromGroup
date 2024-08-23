@@ -7,9 +7,29 @@ GlossyReflector::GlossyReflector()
     glossy_reflector_ptr = new GlossySpecular;
 }
 
-/// @brief 
- /// @param num_samples 
- /// @param exp 
+GlossyReflector& GlossyReflector::operator=(const GlossyReflector& rhs)
+{
+	if (this == &rhs)
+		return (*this);
+
+	Phong::operator=(rhs);
+
+	if (glossy_reflector_ptr) {
+		delete glossy_reflector_ptr;
+		glossy_reflector_ptr = nullptr;
+	}
+
+	if (rhs.glossy_reflector_ptr)
+		glossy_reflector_ptr = rhs.glossy_reflector_ptr->clone();
+
+	return (*this);
+}
+
+GlossyReflector* GlossyReflector::clone(void) const
+{
+	return (new GlossyReflector(*this));
+}
+
  void GlossyReflector::set_samples(const int num_samples, float exp)
 {
     glossy_reflector_ptr->set_sampler(num_samples,exp);
