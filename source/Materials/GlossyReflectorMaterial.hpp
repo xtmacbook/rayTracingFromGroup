@@ -3,10 +3,14 @@
 #include "Phong.hpp"
 #include "../BRDF/GlossySpecular.hpp"
 
-class GlossyReflectorMaterial : public Phong {
+class GlossyReflector : public Phong {
 public:
     
-    GlossyReflectorMaterial();
+    GlossyReflector();
+
+    GlossyReflector& operator= (const GlossyReflector& rhs);
+
+    virtual GlossyReflector* clone(void) const;
 
     void set_samples(const int num_samples,float exp);
 
@@ -18,6 +22,8 @@ public:
 
     void set_exponent(float exp);
 
+    virtual RGBColor 	shade(ShadeRec& s);
+    
     virtual RGBColor area_light_shade(ShadeRec&sr);
 private:
     GlossySpecular*  glossy_reflector_ptr = nullptr;

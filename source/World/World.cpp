@@ -68,14 +68,15 @@ void buildShadows(World* pWorld);
 void buildFishEyeCameraTest(World* pWorld);
 void buildSingleSphereLight(World* pWorld);
 void buildSphereGrid(World* pWorld);
+void buildCornellBox(World* pWorld);
 
 
 World::World() :  	
 	background_color(black),
-	tracer_ptr(NULL),
-	window(NULL),
+	tracer_ptr(nullptr),
+	window(nullptr),
 	camera(new Orthographic()),
-	ambient_ptr(NULL)
+	ambient_ptr(nullptr)
 {	
 	AmbientLight* ambient = new AmbientLight;
 	ambient->scale_radiance(0);
@@ -85,19 +86,19 @@ World::World() :
 World::~World() {		
 	if(tracer_ptr) {
 		delete tracer_ptr;
-		tracer_ptr = NULL;
+		tracer_ptr = nullptr;
 	}	
 	if(window){
 		delete window;
-		window = NULL;
+		window = nullptr;
 	}
 	if(camera){
 		delete camera;
-		camera = NULL;
+		camera = nullptr;
 	}
 	if(ambient_ptr){
 		delete ambient_ptr;
-		ambient_ptr = NULL;
+		ambient_ptr = nullptr;
 	}
 	delete_objects();
 }
@@ -190,8 +191,10 @@ void World::delete_objects() {
 	int num_objects = objects.size();
 	
 	for (int j = 0; j < num_objects; j++) {
-		delete objects[j];
-		objects[j] = NULL;
+		if (objects[j]) {
+			delete objects[j];
+			objects[j] = nullptr;
+		}
 	}	
 	
 	objects.erase (objects.begin(), objects.end());
@@ -236,7 +239,7 @@ void World::build(void) {
 	//buildAreadLight(this);
 	//BuildBBCoverPicLight(this);
 	//buildBuildBox(this);
-	buildGlossy(this);
+	//buildGlossy(this);
 	//buildMirrorHall(this);
 	//buildReflective(this);
 	//buildThinLensTest(this);
@@ -244,4 +247,6 @@ void World::build(void) {
 	//buildFishEyeCameraTest(this);
 	//buildSingleSphereLight(this);
 	//buildSphereGrid(this);
+
+	buildCornellBox(this);
 }

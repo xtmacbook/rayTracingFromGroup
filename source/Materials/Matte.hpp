@@ -5,7 +5,7 @@
 
 class Matte: public Material{
 public:
-    Matte(Lambertian* ambient_brdf_ = NULL, Lambertian* diffuse_brdf_ = NULL);
+    Matte(Lambertian* ambient_brdf_ = nullptr, Lambertian* diffuse_brdf_ = nullptr);
     Matte(const Matte& m);
     virtual Matte* clone() const;
     virtual Matte* clone(RGBColor new_color) const;
@@ -24,9 +24,12 @@ public:
     void set_cd(const float r, const float g, const float b);
     void set_cd(const float a); 
     
+    void set_sampler(Sampler* sp);   			// any type of sampling
+
     virtual RGBColor shade(ShadeRec& sr);
     virtual RGBColor area_light_shade(ShadeRec& sr);
-
+    virtual RGBColor path_shade(ShadeRec& sr);
+    
 private:
     Lambertian* ambient_brdf;
     Lambertian* diffuse_brdf;

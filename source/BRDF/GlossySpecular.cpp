@@ -69,7 +69,7 @@ RGBColor GlossySpecular::f(const ShadeRec& sr, const Vector3D& wo, const Vector3
     Vector3D r(-wi + 2.0*sr.normal*ndotwi);
     float rdotwo = r*wo;
     if(rdotwo > 0.0){
-        L = cs*ks*pow(rdotwo, exp); //cd is for making specular hightlights a different color from that of the lights
+        L = ks*cs*pow(rdotwo, exp); //cd is for making specular hightlights a different color from that of the lights
     }
     return (L);
 }
@@ -84,7 +84,7 @@ void GlossySpecular::set_sampler(const int num_samples, const float exp)
 	sampler_ptr->map_samples_to_hemisphere(exp);
 }
 /* because there are no delta function in this integrand ,we have to estimate its value using Monte Carlo integration */
-RGBColor GlossySpecular::sample_f(const ShadeRec& sr, Vector3D& wo, Vector3D& wi, float& pdf) const
+RGBColor GlossySpecular::sample_f(const ShadeRec& sr, const Vector3D& wo, Vector3D& wi, float& pdf) const
 {
     float ndotwo = sr.normal * wo;
 
@@ -98,13 +98,13 @@ RGBColor GlossySpecular::sample_f(const ShadeRec& sr, Vector3D& wo, Vector3D& wi
     Point3D sp = sampler_ptr->sample_hemisphere();
     wi = sp.x * u + sp.y * v + sp.z * w; //reflected ray direction
 
-    if (sr.normal * wi < 0.0)
-        wi = -sp.x * u + sp.y * v + sp.z * w;
+	if (sr.normal * wi < 0.0) 						// reflected ray is below tangent plane
+		 wi = -sp.x * u - sp.y * v + sp.z * w;
 
     float phone_lobe = pow(mirror_reflect_dir * wi, exp);
 
     pdf = phone_lobe * (sr.normal * wi);
 
-    return (ks * cs * phone_lobe);
+    return (ks * cs * phone_lobe); 
 
 }

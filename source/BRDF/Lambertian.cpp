@@ -42,6 +42,12 @@ void Lambertian::set_cd(const RGBColor cd){
     this->cd = cd;
 }
 
+void Lambertian::set_sampler(Sampler* s_ptr)
+{
+    sampler_ptr = s_ptr;
+    sampler_ptr->map_samples_to_hemisphere(1);
+}
+
 /**
  * f = rho / pi
  */
@@ -52,4 +58,24 @@ RGBColor Lambertian::f(const ShadeRec& sr, const Vector3D& wo, const Vector3D& w
 
 RGBColor Lambertian::rho(const ShadeRec& sr, const Vector3D& wo) const{
     return (kd * cd);
+}
+
+// this generates a direction by sampling the hemisphere with a cosine distribution
+// this is called in path_shade for any material with a diffuse shading component
+// the samples have to be stored with a cosine distribution
+
+RGBColor Lambertian::sample_f(const ShadeRec& sr, const Vector3D& wo, Vector3D& wi, float& pdf) const
+{
+    Vector3D w = sr.normal;
+    Vector3D v = Vector3D(0.0034,1.0,0.0071) ^ w;
+    v.normalize();
+    Vector3D u = v ^ w;
+
+    Point3D sp = sampler_ptr->sample_hemisphere();
+    wi = sp.x * u + sp.y * v + sp.z * w;
+    wi.normalize();
+
+    pdf = sr.normal * wi * invPI;
+
+    return (kd * cd * invPI);
 }

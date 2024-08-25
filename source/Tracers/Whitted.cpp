@@ -8,7 +8,6 @@ Whitted::Whitted(World* world_ptr_r):
 {}
 
 RGBColor Whitted::trace_ray(const Ray& ray) const{
-    printf("error. Whitted::trace_ray without depth.\n");
     return black;
 }
 

@@ -111,7 +111,7 @@ void Grid::setup_cells(){
     cells.clear();
     cells.reserve(num_cells);
     for(int i = 0; i < num_cells; i++){
-        cells.push_back(NULL);
+        cells.push_back(nullptr);
     }
 
     std::vector<int> counts;

@@ -17,7 +17,7 @@ public:
     void set_cr(const float a); 
     
     virtual RGBColor shade(ShadeRec& sr);
-
+    virtual RGBColor path_shade(ShadeRec& sr) ;
 private:
     PerfectSpecular* reflective_brdf;
 };

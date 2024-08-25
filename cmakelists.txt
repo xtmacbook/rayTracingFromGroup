@@ -6,11 +6,11 @@
 
 cmake_minimum_required ( VERSION 3.1.0...3.27.0 )
 
-set (prjName ht_master_sec)
+set (prjName RayTracing)
 
 
 # Project
-project(${projName} C CXX)
+project(${projName} CXX)
 
 # Add c++11 flags
 if (CYGWIN) 
@@ -51,6 +51,7 @@ set (SOURCE_build_Source
   source/build/BuildSingleSphereLight.cpp
   source/build/BuildSphereGrid.cpp
   source/build/BuildEnvironemntLight.cpp
+  source/build/BuildCornellBox.cpp
 )
 SOURCE_GROUP("source//build" FILES ${SOURCE_build_Source})
 
@@ -100,9 +101,37 @@ set (SOURCE_Materials_Source
   source/Materials/Reflective.hpp 
   source/Materials/GlossyReflectorMaterial.cpp
   source/Materials/GlossyReflectorMaterial.hpp 
+  source/Materials/SV_Emissive.cpp 
+  source/Materials/SV_Emissive.hpp 
+  source/Materials/SV_GlossyReflector.cpp 
+  source/Materials/SV_GlossyReflector.hpp 
+  source/Materials/SV_GlossySpecular.cpp 
+  source/Materials/SV_GlossySpecular.hpp
+  source/Materials/SV_Lambertian.cpp 
+  source/Materials/SV_Lambertian.hpp 
+  source/Materials/SV_Matte.cpp 
+  source/Materials/SV_Matte.hpp 
+  source/Materials/SV_PerfectSpecular.cpp 
+  source/Materials/SV_PerfectSpecular.hpp 
+  source/Materials/SV_Phong.cpp 
+  source/Materials/SV_Phong.hpp 
+  source/Materials/SV_PlaneChecker.cpp 
+  source/Materials/SV_PlaneChecker.hpp 
+  source/Materials/SV_Reflective.cpp 
+  source/Materials/SV_Reflective.hpp 
 )
 SOURCE_GROUP("source//materials" FILES ${SOURCE_Materials_Source})
 
+set (SOURCE_Texture_Source
+  source/Texture/Texture.cpp 
+  source/Texture/Texture.hpp
+  source/Texture/Checker3D.hpp
+  source/Texture/Checker3D.cpp
+  source/Texture/ConstantColor.hpp
+  source/Texture/ConstantColor.cpp
+
+)
+SOURCE_GROUP("source//Texture" FILES ${SOURCE_Texture_Source})
 
 set ( SOURCE_Samplers_Source
   source/Samplers/Jittered.cpp 
@@ -129,6 +158,8 @@ set ( SOURCE_Tracers_Source
   source/Tracers/Tracer.cpp 
   source/Tracers/Whitted.hpp   
   source/Tracers/Whitted.cpp  
+  source/Tracers/PathTracer.hpp
+  source/Tracers/PathTracer.cpp
 )
 SOURCE_GROUP("source//tracers" FILES ${SOURCE_Tracers_Source})
 
@@ -233,6 +264,8 @@ SET(RayTracing_SRCS
   ${SOURCE_Window_Source}
   ${SOURCE_World_Source}
   ${SOURCE_GeometricObjects_Source}
+  ${SOURCE_Texture_Source}
+
   source/Main/main.cpp 
 )
 

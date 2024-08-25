@@ -2,15 +2,15 @@
 
 #include "../World/World.hpp"
 #include "../Light/Light.hpp"
-
+#include "../Tracers/Tracer.hpp"
 
 Matte::Matte(Lambertian* ambient_brdf_, Lambertian* diffuse_brdf_):
     Material()
 {
-    if(ambient_brdf_ == NULL){
+    if(ambient_brdf_ == nullptr){
         ambient_brdf = new Lambertian(0,25);
     }
-    if(diffuse_brdf_ == NULL){
+    if(diffuse_brdf_ == nullptr){
         diffuse_brdf = new Lambertian(0,75);
     }
 }
@@ -61,12 +61,12 @@ Matte& Matte::operator=(const Matte& rhs){
 Matte::~Matte(){
     if(ambient_brdf){
         delete ambient_brdf;
-        ambient_brdf = NULL;
+        ambient_brdf = nullptr;
     }
 
     if(diffuse_brdf){
         delete diffuse_brdf;
-        diffuse_brdf = NULL;
+        diffuse_brdf = nullptr;
     }
 }
 
@@ -75,7 +75,7 @@ Lambertian* Matte::get_ambient_brdf() const{
 }
 
 void Matte::set_ambient_brdf(Lambertian* ambient_brdf_){
-    if(ambient_brdf_ != NULL)
+    if(ambient_brdf_ != nullptr)
         ambient_brdf = ambient_brdf_;
 }
 
@@ -84,7 +84,7 @@ Lambertian* Matte::get_diffuse_brdf() const{
 }
 
 void Matte::set_diffuse_brdf(Lambertian* diffuse_brdf_){
-    if(diffuse_brdf_ != NULL)
+    if(diffuse_brdf_ != nullptr)
         diffuse_brdf = diffuse_brdf_;
 }
 
@@ -109,6 +109,11 @@ void Matte::set_cd(const float r, const float g, const float b){
 void Matte::set_cd(const float a){
     ambient_brdf->set_cd(RGBColor(a));
     diffuse_brdf->set_cd(RGBColor(a));
+}
+
+void Matte::set_sampler(Sampler* s_ptr)
+{
+    diffuse_brdf->set_sampler(s_ptr);
 }
 
 RGBColor Matte::shade(ShadeRec& sr){
@@ -156,4 +161,16 @@ RGBColor Matte::area_light_shade(ShadeRec& sr) {
     }
     return L;
     
+}
+
+RGBColor Matte::path_shade(ShadeRec &sr)
+{
+    Vector3D 	wo = -sr.ray.d;
+    Vector3D 	wi;
+    float 		pdf;
+    RGBColor 	f = diffuse_brdf->sample_f(sr, wo, wi, pdf);
+    float 		ndotwi = sr.normal * wi;
+    Ray 		reflected_ray(sr.hit_point, wi);
+
+    return (f * sr.w.tracer_ptr->trace_ray(reflected_ray, sr.depth + 1) * ndotwi / pdf);
 }

@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef  _PERFECTSPECULAR_H_
+#define _PERFECTSPECULAR_H_
+
 #include "BRDF.hpp"
 
 class PerfectSpecular : public BRDF{
@@ -17,7 +20,11 @@ public:
 
     virtual RGBColor sample_f(const ShadeRec& sr, const Vector3D& wo, Vector3D& wi) const;
 
+	virtual RGBColor sample_f(const ShadeRec& sr, const Vector3D& wo, Vector3D& wi, float& pdf) const;
+
 protected:
     float kr;
     RGBColor cr;
 };
+
+#endif

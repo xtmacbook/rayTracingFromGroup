@@ -19,7 +19,7 @@ MeshTriangle::MeshTriangle(const MeshTriangle& mesh_triangle)
         mesh_ptr = mesh_triangle.mesh_ptr->clone();
     }
     else{
-        mesh_ptr = NULL;
+        mesh_ptr = nullptr;
     }
 }
 
@@ -34,7 +34,7 @@ MeshTriangle& MeshTriangle::operator=(const MeshTriangle& rhs) {
     normal = rhs.normal;
     if(mesh_ptr){
         delete mesh_ptr;
-        mesh_ptr = NULL;
+        mesh_ptr = nullptr;
     }
     if(rhs.mesh_ptr){
         mesh_ptr = rhs.mesh_ptr->clone();
@@ -45,7 +45,7 @@ MeshTriangle& MeshTriangle::operator=(const MeshTriangle& rhs) {
 MeshTriangle::~MeshTriangle(){
     if(mesh_ptr){
         delete mesh_ptr;
-        mesh_ptr = NULL;
+        mesh_ptr = nullptr;
     }
 }
 

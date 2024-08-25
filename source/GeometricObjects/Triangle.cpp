@@ -1,7 +1,7 @@
 #include "Triangle.hpp"
 
 Triangle::Triangle()
-    : GeometricObject(NULL)
+    : GeometricObject(nullptr)
     , v0(0)
     , v1(0)
     , v2(0)

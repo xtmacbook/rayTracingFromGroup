@@ -1,5 +1,9 @@
 #pragma once
 
+
+#ifndef  _THINLENS_H_
+#define _THINLENS_H_
+
 #include "Pinhole.hpp"
 #include "../Samplers/Jittered.hpp"
 
@@ -26,3 +30,5 @@ private:
 
     Vector3D ray_direction(const Point2D& pixel_point, const Point2D& lens_point = Point2D(0, 0)) const;
 };
+
+#endif

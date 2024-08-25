@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef  _CYLINDER_H_
+#define _CYLINDER_H_
+
 #include "Compound.hpp"
 #include "OpenCylinder.hpp"
 #include "Disk.hpp"
@@ -32,3 +35,5 @@ protected:
 
     void set_bbox();
 };
+
+#endif

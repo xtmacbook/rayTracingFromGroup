@@ -4,7 +4,7 @@
 
 class AreaLightingTracer : public Tracer {
 public:
-    AreaLightingTracer(World* world_ptr_ = NULL);
+    AreaLightingTracer(World* world_ptr_ = nullptr);
 
 	virtual RGBColor trace_ray(const Ray& ray) const;
 	virtual RGBColor trace_ray(const Ray ray, const int depth) const;

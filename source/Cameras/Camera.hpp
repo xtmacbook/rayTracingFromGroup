@@ -1,5 +1,9 @@
 #pragma once
 
+
+#ifndef  _CAMERA_H_
+#define _CAMERA_H_
+
 #include "../Utilities/Point3D.hpp"
 #include "../Utilities/Point2D.hpp"
 #include "../Utilities/Vector3D.hpp"
@@ -36,3 +40,5 @@ public:
     void set_exposure_time(const float exposure_t);
     float get_exposure_time() const;
 };
+
+#endif

@@ -1,5 +1,9 @@
 #pragma once
 
+
+#ifndef  _COMPOUND_H_
+#define _COMPOUND_H_
+
 #include "GeometricObject.hpp"
 #include "../Utilities/Debug.hpp"
 #include "../Materials/Material.hpp"
@@ -23,3 +27,5 @@ public:
 protected:
     std::vector<GeometricObject*> objects;
 };
+
+#endif
