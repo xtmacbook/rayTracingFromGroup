@@ -11,4 +11,4 @@ public:
     void init();
 };
 
-void _windowThread(int width, int height, std::vector<unsigned char> *pixels, bool *running);
+//void _windowThread(int width, int height, std::vector<unsigned char> *pixels, bool *running);
