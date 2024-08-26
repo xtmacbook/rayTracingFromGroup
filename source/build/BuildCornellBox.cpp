@@ -26,9 +26,6 @@
 
 void buildCornellBox(World* pWorld) {
 		int num_samples = 1024;		// for Figure 26.7(a)
-//	int num_samples = 100;		// for Figure 26.7(b)
-	//int num_samples = 1024;		// for Figure 26.7(c)
-	//	int num_samples = 10000;	// for Figure 26.7(d)
 
 	pWorld->vp.set_hres(300);
 	pWorld->vp.set_vres(300);
@@ -78,7 +75,7 @@ void buildCornellBox(World* pWorld) {
 	matte_ptr1->set_ka(0.0);
 	matte_ptr1->set_kd(0.6);
 	matte_ptr1->set_cd(0.57, 0.025, 0.025);	 // red
-	matte_ptr1->set_sampler(new MultiJittered(num_samples));
+	matte_ptr1->set_sampler(new MultiJittered(num_samples,83));
 
 	p0 = Point3D(width, 0.0, 0.0);
 	a = Vector3D(0.0, 0.0, depth);
@@ -95,7 +92,7 @@ void buildCornellBox(World* pWorld) {
 	matte_ptr2->set_ka(0.0);
 	matte_ptr2->set_kd(0.6);
 	matte_ptr2->set_cd(0.37, 0.59, 0.2);	 // green   from Photoshop
-	matte_ptr2->set_sampler(new MultiJittered(num_samples));
+	matte_ptr2->set_sampler(new MultiJittered(num_samples,83));
 
 	p0 = Point3D(0.0, 0.0, 0.0);
 	a = Vector3D(0.0, 0.0, depth);
@@ -112,7 +109,7 @@ void buildCornellBox(World* pWorld) {
 	matte_ptr3->set_ka(0.0);
 	matte_ptr3->set_kd(0.6);
 	matte_ptr3->set_cd(1.0);	 // white
-	matte_ptr3->set_sampler(new MultiJittered(num_samples));
+	matte_ptr3->set_sampler(new MultiJittered(num_samples,83));
 
 	p0 = Point3D(0.0, 0.0, depth);
 	a = Vector3D(width, 0.0, 0.0);
