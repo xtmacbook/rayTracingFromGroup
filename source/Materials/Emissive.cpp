@@ -66,3 +66,17 @@ RGBColor Emissive::path_shade(ShadeRec& sr)
     else
         return (black);
 }
+
+/*
+    The light returns the emitted radiance along all rays that hit except those at depth=1.
+    For Not to render the direct illumination twice
+*/
+RGBColor Emissive::global_shade(ShadeRec& sr)
+{
+    if (sr.depth == 1)
+        return black;
+    if (-sr.normal * sr.ray.d > .0)
+        return ls * ce;
+    else
+        return black;
+}
