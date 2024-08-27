@@ -18,6 +18,8 @@ public:
     
     virtual RGBColor shade(ShadeRec& sr);
     virtual RGBColor path_shade(ShadeRec& sr) ;
+    virtual RGBColor global_shade(ShadeRec& sr);
+
 private:
     PerfectSpecular* reflective_brdf;
 };

@@ -69,6 +69,7 @@ void buildFishEyeCameraTest(World* pWorld);
 void buildSingleSphereLight(World* pWorld);
 void buildSphereGrid(World* pWorld);
 void buildCornellBox(World* pWorld);
+void buildGlobalCornellBox(World* pWorld);
 
 
 World::World() :  	
@@ -247,6 +248,6 @@ void World::build(void) {
 	//buildFishEyeCameraTest(this);
 	//buildSingleSphereLight(this);
 	//buildSphereGrid(this);
-
-	buildCornellBox(this);
+	//buildCornellBox(this);
+	buildGlobalCornellBox(this);
 }
