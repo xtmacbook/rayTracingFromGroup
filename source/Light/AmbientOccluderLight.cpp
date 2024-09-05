@@ -99,3 +99,4 @@ RGBColor AmbientOccluderLight::L(ShadeRec& sr){
         return (ls*color);
     }
 }
+

@@ -70,7 +70,7 @@ void buildSingleSphereLight(World* pWorld);
 void buildSphereGrid(World* pWorld);
 void buildCornellBox(World* pWorld);
 void buildGlobalCornellBox(World* pWorld);
-
+void buildTransparentSpere(World* pWorld);
 
 World::World() :  	
 	background_color(black),
@@ -249,5 +249,6 @@ void World::build(void) {
 	//buildSingleSphereLight(this);
 	//buildSphereGrid(this);
 	//buildCornellBox(this);
-	buildGlobalCornellBox(this);
+	//buildGlobalCornellBox(this);
+	buildTransparentSpere(this);
 }

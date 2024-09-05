@@ -6,11 +6,11 @@
 
 cmake_minimum_required ( VERSION 3.1.0...3.27.0 )
 
-set (prjName RayTracing)
+set (projName RayTracing)
 
 
 # Project
-project(${projName} CXX)
+project(${projName})
 
 # Add c++11 flags
 if (CYGWIN) 
@@ -28,12 +28,16 @@ include (cmake/findSDL.cmake)
 set (SOURCE_BRDF_Source
   source/BRDF/BRDF.cpp
   source/BRDF/BRDF.hpp
+  source/BRDF/BTDF.cpp
+  source/BRDF/BTDF.hpp
   source/BRDF/GlossySpecular.hpp
   source/BRDF/GlossySpecular.cpp
   source/BRDF/Lambertian.hpp
   source/BRDF/Lambertian.cpp
   source/BRDF/PerfectSpecular.hpp
   source/BRDF/PerfectSpecular.cpp
+  source/BRDF/PerfectTransmitter.hpp
+  source/BRDF/PerfectTransmitter.cpp
 )
 SOURCE_GROUP("source\\BRDF" FILES ${SOURCE_BRDF_Source})
 
@@ -53,6 +57,7 @@ set (SOURCE_build_Source
   source/build/BuildEnvironemntLight.cpp
   source/build/BuildCornellBox.cpp
   source/build/BuildGlobalCornellBox.cpp
+  source/build/BuildTransparentSphere.cpp
 )
 SOURCE_GROUP("source//build" FILES ${SOURCE_build_Source})
 
@@ -99,7 +104,9 @@ set (SOURCE_Materials_Source
   source/Materials/Phong.cpp 
   source/Materials/Phong.hpp 
   source/Materials/Reflective.cpp 
-  source/Materials/Reflective.hpp 
+  source/Materials/Reflective.hpp
+  source/Materials/Transparent.cpp 
+  source/Materials/Transparent.hpp 
   source/Materials/GlossyReflectorMaterial.cpp
   source/Materials/GlossyReflectorMaterial.hpp 
   source/Materials/SV_Emissive.cpp 
@@ -255,6 +262,12 @@ set (SOURCE_GeometricObjects_Source
 SOURCE_GROUP("source//GeometricObjects" FILES ${SOURCE_GeometricObjects_Source})
  
 
+set (SOURCE_Test_Source
+  source/test/pdf.cpp  
+  source/test/pdf.hpp 
+)
+SOURCE_GROUP("source//test" FILES ${SOURCE_Test_Source})
+
 SET(RayTracing_SRCS
   ${SOURCE_BRDF_Source}
   ${SOURCE_build_Source}
@@ -268,17 +281,18 @@ SET(RayTracing_SRCS
   ${SOURCE_World_Source}
   ${SOURCE_GeometricObjects_Source}
   ${SOURCE_Texture_Source}
+  ${SOURCE_Test_Source}
 
   source/Main/main.cpp 
 )
 
 # Executables
-add_executable(${prjName} ${RayTracing_SRCS})
+add_executable(${projName} ${RayTracing_SRCS})
  
 
 if(SDL_FOUND)
-	target_link_libraries(${prjName} ${SDL_LIBRARY})
-	target_include_directories(${prjName} PUBLIC ${SDL_INCLUDE_PATH})
+	target_link_libraries(${projName} ${SDL_LIBRARY})
+	target_include_directories(${projName} PUBLIC ${SDL_INCLUDE_PATH})
 endif()
 
 include_directories(src/include/)
