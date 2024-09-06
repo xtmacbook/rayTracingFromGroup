@@ -38,6 +38,10 @@ set (SOURCE_BRDF_Source
   source/BRDF/PerfectSpecular.cpp
   source/BRDF/PerfectTransmitter.hpp
   source/BRDF/PerfectTransmitter.cpp
+  source/BRDF/FresnelSpecular.cpp
+  source/BRDF/FresnelSpecular.cpp
+  source/BRDF/FresnelTransmitter.cpp
+  source/BRDF/FresnelTransmitter.cpp
 )
 SOURCE_GROUP("source\\BRDF" FILES ${SOURCE_BRDF_Source})
 
@@ -107,6 +111,8 @@ set (SOURCE_Materials_Source
   source/Materials/Reflective.hpp
   source/Materials/Transparent.cpp 
   source/Materials/Transparent.hpp 
+  source/Materials/Dielectric.hpp 
+  source/Materials/Dielectric.cpp 
   source/Materials/GlossyReflectorMaterial.cpp
   source/Materials/GlossyReflectorMaterial.hpp 
   source/Materials/SV_Emissive.cpp 

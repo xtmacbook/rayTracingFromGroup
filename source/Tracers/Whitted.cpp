@@ -37,9 +37,11 @@ RGBColor Whitted::trace_ray(const Ray ray, float& tmin, const int depth) const{
         if(sr.hit_an_object){
             sr.depth = depth;
             sr.ray = ray;
+            tmin = sr.t;
             return (sr.material_ptr->shade(sr));
         }
         else{
+            tmin = kHugeValue;
             return (world_ptr->background_color);
         }
     }
