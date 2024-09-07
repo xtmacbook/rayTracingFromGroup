@@ -42,6 +42,12 @@ set (SOURCE_BRDF_Source
   source/BRDF/FresnelSpecular.cpp
   source/BRDF/FresnelTransmitter.cpp
   source/BRDF/FresnelTransmitter.cpp
+  source/BRDF/SV_GlossySpecular.cpp 
+  source/BRDF/SV_GlossySpecular.hpp
+  source/BRDF/SV_Lambertian.cpp 
+  source/BRDF/SV_Lambertian.hpp
+  source/BRDF/SV_PerfectSpecular.cpp 
+  source/BRDF/SV_PerfectSpecular.hpp 
 )
 SOURCE_GROUP("source\\BRDF" FILES ${SOURCE_BRDF_Source})
 
@@ -119,14 +125,8 @@ set (SOURCE_Materials_Source
   source/Materials/SV_Emissive.hpp 
   source/Materials/SV_GlossyReflector.cpp 
   source/Materials/SV_GlossyReflector.hpp 
-  source/Materials/SV_GlossySpecular.cpp 
-  source/Materials/SV_GlossySpecular.hpp
-  source/Materials/SV_Lambertian.cpp 
-  source/Materials/SV_Lambertian.hpp 
   source/Materials/SV_Matte.cpp 
   source/Materials/SV_Matte.hpp 
-  source/Materials/SV_PerfectSpecular.cpp 
-  source/Materials/SV_PerfectSpecular.hpp 
   source/Materials/SV_Phong.cpp 
   source/Materials/SV_Phong.hpp 
   source/Materials/SV_PlaneChecker.cpp 
@@ -263,7 +263,8 @@ set (SOURCE_GeometricObjects_Source
   source/GeometricObjects/ConcaveSphere.hpp
   source/GeometricObjects/ConcaveSphere.cpp
   source/GeometricObjects/Grid.cpp
-  source/GeometricObjects/Grid.hpp 
+  source/GeometricObjects/Grid.hpp
+  
 )
 SOURCE_GROUP("source//GeometricObjects" FILES ${SOURCE_GeometricObjects_Source})
  

@@ -2,7 +2,7 @@
 #define SV_MATTE_H
 
 #include "Material.hpp"
-#include "SV_Lambertian.hpp"
+#include "../BRDF/SV_Lambertian.hpp"
 
 class SV_Matte: public Material {
 	public:

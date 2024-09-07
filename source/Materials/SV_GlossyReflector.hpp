@@ -3,7 +3,7 @@
 
 
 #include "SV_Phong.hpp"
-#include "SV_GlossySpecular.hpp"
+#include "../BRDF/SV_GlossySpecular.hpp"
 
 class Texture;
 
