@@ -60,6 +60,7 @@
 
 
 #include <memory>
+#include "../Texture/Checker3D.hpp"
 
 void buildTransparentSpere(World* pWorld) {
 	int num_samples = 16;
@@ -122,7 +123,6 @@ void buildTransparentSpere(World* pWorld) {
 
 
 	// red sphere
-
 	Reflective* reflective_ptr = new Reflective;
 	reflective_ptr->set_ka(0.3);
 	reflective_ptr->set_kd(0.3);
@@ -136,9 +136,19 @@ void buildTransparentSpere(World* pWorld) {
 	pWorld->add_object(sphere_ptr2);
 
 
-	std::shared_ptr<SV_Matte > check3d(new SV_Matte);
+	Checker3D* check_texture = new Checker3D();
+	check_texture->set_size(1.0);
+	check_texture->set_color1(0.5, 0.5, 0.5);
+	check_texture->set_color2(1.0, 1.0, 1.0); 
+	
+
+	SV_Matte* check_matte(new SV_Matte);
+	check_matte->set_ka(0.25);
+	check_matte->set_kd(0.75);
+	check_matte->set_cd(check_texture);
+
 	Rectangle* rectangle_ptr = new Rectangle(Point3D(-20, 2.3, -100), Vector3D(0, 0, 120), Vector3D(40, 0, 0));
-	rectangle_ptr->set_material(check3d.get());
+	rectangle_ptr->set_material(check_matte);
 	pWorld->add_object(rectangle_ptr);
 }
 
