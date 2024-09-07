@@ -2,7 +2,7 @@
 #define _SV_REFLECTIVE_H
 
 #include "SV_Phong.hpp"
-#include "SV_PerfectSpecular.hpp"
+#include "../BRDF/SV_PerfectSpecular.hpp"
 
 class SV_Reflective: public SV_Phong {
 	public:

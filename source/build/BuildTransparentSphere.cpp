@@ -49,6 +49,7 @@
 #include "../Materials/Emissive.hpp"
 #include "../Materials/Reflective.hpp"
 #include "../Materials/Transparent.hpp"
+#include "../Materials/SV_Matte.hpp"
 
 // utilities
 #include "../Utilities/Vector3D.hpp"
@@ -56,6 +57,10 @@
 #include "../Utilities/Point3D.hpp"
 #include "../Utilities/Normal.hpp"
 #include "../Utilities/Maths.hpp"
+
+
+#include <memory>
+#include "../Texture/Checker3D.hpp"
 
 void buildTransparentSpere(World* pWorld) {
 	int num_samples = 16;
@@ -118,7 +123,6 @@ void buildTransparentSpere(World* pWorld) {
 
 
 	// red sphere
-
 	Reflective* reflective_ptr = new Reflective;
 	reflective_ptr->set_ka(0.3);
 	reflective_ptr->set_kd(0.3);
@@ -132,19 +136,19 @@ void buildTransparentSpere(World* pWorld) {
 	pWorld->add_object(sphere_ptr2);
 
 
-	Phong* phong_ptr2 = new Phong;
-	phong_ptr2->set_ka(0.4);
-	phong_ptr2->set_kd(0.8);
-	phong_ptr2->set_cd(0.5, 0.5, 1.0);
-	phong_ptr2->set_ks(0.5);
-	//	phong_ptr2->set_cs(1.0, 1.0, 0.0);
-	phong_ptr2->set_exp(50.0);
+	Checker3D* check_texture = new Checker3D();
+	check_texture->set_size(1.0);
+	check_texture->set_color1(0.5, 0.5, 0.5);
+	check_texture->set_color2(1.0, 1.0, 1.0); 
+	
 
-
-	// rectangle
+	SV_Matte* check_matte(new SV_Matte);
+	check_matte->set_ka(0.25);
+	check_matte->set_kd(0.75);
+	check_matte->set_cd(check_texture);
 
 	Rectangle* rectangle_ptr = new Rectangle(Point3D(-20, 2.3, -100), Vector3D(0, 0, 120), Vector3D(40, 0, 0));
-	rectangle_ptr->set_material(phong_ptr2);
+	rectangle_ptr->set_material(check_matte);
 	pWorld->add_object(rectangle_ptr);
 }
 

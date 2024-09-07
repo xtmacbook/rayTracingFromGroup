@@ -2,8 +2,8 @@
 #define _SV_PHONG_H
 
 #include "Material.hpp"
-#include "SV_Lambertian.hpp"
-#include "SV_GlossySpecular.hpp"
+#include "../BRDF/SV_Lambertian.hpp"
+#include "../BRDF/SV_GlossySpecular.hpp"
 
 class SV_Phong: public Material {
 	public:
