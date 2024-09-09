@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "../World/World.hpp"
 #include "../Utilities/Constants.hpp"
 
@@ -68,11 +68,9 @@ void buildTransparentSpere(World* pWorld) {
 	pWorld->vp.set_hres(300);
 	pWorld->vp.set_vres(300);
 	pWorld->vp.set_samples(num_samples);
-	pWorld->vp.set_max_depth(4);			// for Figure 27.13(a)
-	//	vp.set_max_depth(4);			// for Figure 27.13(b)
-	//	vp.set_max_depth(6);			// for Figure 27.13(c)
-
-	pWorld->background_color = RGBColor(0.0, 0.3, 0.25);
+    pWorld->vp.set_max_depth(5);
+    
+	pWorld->background_color =  black;
 
 	pWorld->tracer_ptr = new Whitted(pWorld);
 
@@ -91,7 +89,6 @@ void buildTransparentSpere(World* pWorld) {
 
 
 	// point light
-
 	PointLight* light_ptr1 = new PointLight;
 	light_ptr1->set_location(30, 50, 10);
 	light_ptr1->scale_radiance(4.5);
@@ -100,7 +97,6 @@ void buildTransparentSpere(World* pWorld) {
 
 
 	// point light
-
 	PointLight* light_ptr2 = new PointLight;
 	light_ptr2->set_location(-30, 50, 10);
 	light_ptr2->scale_radiance(4.5);
@@ -109,11 +105,10 @@ void buildTransparentSpere(World* pWorld) {
 
 
 	// transparent sphere
-
 	Transparent* glass_ptr = new Transparent;
 	glass_ptr->set_ks(0.2);
 	glass_ptr->set_exp(2000.0);
-	glass_ptr->set_ior(0.8);
+	glass_ptr->set_ior(0.7);
 	glass_ptr->set_kr(0.1);
 	glass_ptr->set_kt(0.9);
 
@@ -135,12 +130,10 @@ void buildTransparentSpere(World* pWorld) {
 	sphere_ptr2->set_material(reflective_ptr);
 	pWorld->add_object(sphere_ptr2);
 
-
 	Checker3D* check_texture = new Checker3D();
 	check_texture->set_size(1.0);
 	check_texture->set_color1(0.5, 0.5, 0.5);
 	check_texture->set_color2(1.0, 1.0, 1.0); 
-	
 
 	SV_Matte* check_matte(new SV_Matte);
 	check_matte->set_ka(0.25);

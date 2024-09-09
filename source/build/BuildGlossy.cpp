@@ -94,7 +94,7 @@ void buildGlossy(World *pWorld){
 
 	// large sphere
 
-	GlossyReflectorMaterial* glossy_ptr1 = new GlossyReflectorMaterial;
+	GlossyReflector* glossy_ptr1 = new GlossyReflector;
 	glossy_ptr1->set_samples(num_samples, 100.0);
 	glossy_ptr1->set_ka(0.0);
 	glossy_ptr1->set_kd(0.0);
@@ -139,8 +139,7 @@ void buildGlossy(World *pWorld){
 
 
 	// cylinder
-
-	GlossyReflectorMaterial* glossy_ptr2 = new GlossyReflectorMaterial;
+    GlossyReflector* glossy_ptr2 = new GlossyReflector;
 	glossy_ptr2->set_samples(num_samples, 10.0);
 	glossy_ptr2->set_ka(0.0);
 	glossy_ptr2->set_kd(0.0);

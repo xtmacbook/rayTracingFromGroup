@@ -71,6 +71,7 @@ void buildSphereGrid(World* pWorld);
 void buildCornellBox(World* pWorld);
 void buildGlobalCornellBox(World* pWorld);
 void buildTransparentSpere(World* pWorld);
+void buildDielectric(World* pWorld);
 
 World::World() :  	
 	background_color(black),
@@ -251,4 +252,5 @@ void World::build(void) {
 	//buildCornellBox(this);
 	//buildGlobalCornellBox(this);
 	buildTransparentSpere(this);
+    //buildDielectric(this);
 }

@@ -68,6 +68,7 @@ set (SOURCE_build_Source
   source/build/BuildCornellBox.cpp
   source/build/BuildGlobalCornellBox.cpp
   source/build/BuildTransparentSphere.cpp
+  source/build/BuildDielectric.cpp
 )
 SOURCE_GROUP("source//build" FILES ${SOURCE_build_Source})
 
