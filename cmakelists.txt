@@ -68,6 +68,8 @@ set (SOURCE_build_Source
   source/build/BuildCornellBox.cpp
   source/build/BuildGlobalCornellBox.cpp
   source/build/BuildTransparentSphere.cpp
+  source/build/BuildRealisticTransparent.cpp
+  
 )
 SOURCE_GROUP("source//build" FILES ${SOURCE_build_Source})
 
@@ -203,6 +205,8 @@ set ( SOURCE_Utilities_Source
   source/Utilities/Vector3D.hpp
   source/Utilities/util.cpp
   source/Utilities/util.hpp
+  source/Utilities/ply.hpp
+  source/Utilities/ply.cpp
 
 )
 SOURCE_GROUP("source//utilities" FILES ${SOURCE_Utilities_Source})
@@ -264,6 +268,8 @@ set (SOURCE_GeometricObjects_Source
   source/GeometricObjects/ConcaveSphere.cpp
   source/GeometricObjects/Grid.cpp
   source/GeometricObjects/Grid.hpp
+  source/GeometricObjects/Instance.cpp
+  source/GeometricObjects/Instance.hpp
   
 )
 SOURCE_GROUP("source//GeometricObjects" FILES ${SOURCE_GeometricObjects_Source})

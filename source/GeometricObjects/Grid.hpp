@@ -19,8 +19,10 @@ public:
     void set_number_cells(const int nx_, const int ny_, const int nz_);
     void setup_cells();
  
-    //void read_flat_triangles(char* file_name);
-    //void read_smooth_triangles(char* file_name);
+    void read_flat_triangles(const char* file_name);
+    void read_smooth_triangles(const char* file_name);
+
+    void reverse_mesh_normals(void);
 
     virtual bool hit(const Ray& ray, float& t, ShadeRec& s) const;
 
@@ -35,6 +37,6 @@ protected:
 
     Point3D min_coordinates();
     Point3D max_coordinates();
-    //void read_ply_file(char* file_name, const int triangle_type);
-    //void compute_mesh_normals();
+    void read_ply_file(const char* file_name, const int triangle_type);
+    void compute_mesh_normals();
 };

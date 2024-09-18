@@ -3,7 +3,7 @@
 #include "FlatMeshTriangle.hpp"
 #include "SmoothMeshTriangle.hpp"
 #include "Triangle.hpp"
-
+#include "../Utilities/ply.hpp"
 typedef enum {
 	flat, 
 	smooth
@@ -161,6 +161,17 @@ void Grid::setup_cells(){
     }
     
     counts.clear();  
+}
+
+void Grid::read_smooth_triangles(const char* file_name)
+{
+	read_ply_file(file_name, smooth);
+	compute_mesh_normals();
+}
+
+void Grid::reverse_mesh_normals(void)
+{
+	reverse_normal = true;
 }
 
 bool Grid::hit(const Ray& ray, float& t, ShadeRec& s) const {
@@ -394,8 +405,6 @@ Point3D Grid::max_coordinates(){
     return p1;
 }
 
-/*
-
 void Grid::compute_mesh_normals() {
 	mesh_ptr->normals.reserve(mesh_ptr->num_vertices);
 	
@@ -426,7 +435,7 @@ void Grid::compute_mesh_normals() {
 	std::cout << "finished constructing normals" << std::endl;
 }
 
-void Grid::read_ply_file(char* file_name, const int triangle_type) {
+void Grid::read_ply_file(const char* file_name, const int triangle_type) {
 	// Vertex definition 
 	
 	typedef struct Vertex {
@@ -609,12 +618,6 @@ void Grid::read_ply_file(char* file_name, const int triangle_type) {
 	ply_close (ply);
 }
 
-void Grid::read_flat_triangles(char* file_name) {
+void Grid::read_flat_triangles(const char* file_name) {
   	read_ply_file(file_name, flat);
 }
-
-void Grid::read_smooth_triangles(char* file_name) {
-  	read_ply_file(file_name, smooth);
-  	compute_mesh_normals();
-}
-*/

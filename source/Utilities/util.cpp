@@ -1,5 +1,6 @@
 #include <time.h>
 #include <stdio.h>
+#include "util.hpp"
 
 int clock_gettime( struct timespec* tv)
 {
@@ -9,4 +10,13 @@ int clock_gettime( struct timespec* tv)
     timespec_get(tv, TIME_UTC);
 #endif
     return (0);
+}
+
+std::string getDataPath()
+{
+#ifdef __APPLE__
+    return std::string();
+#else
+    return "../resources/";
+#endif
 }
