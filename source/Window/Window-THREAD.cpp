@@ -9,12 +9,6 @@ Window_THREAD::~Window_THREAD(){
 	pixels.clear();
 }
 
-void Window_THREAD::init(){
-	running = true;
-	std::thread video(_windowThread, w, h, &pixels, &running);
-	video.detach();
-}
-
 void _windowThread(int width, int height, std::vector<unsigned char> *pixels, bool *running){
 	
 	int SCREEN_WIDTH = width;
@@ -62,4 +56,10 @@ void _windowThread(int width, int height, std::vector<unsigned char> *pixels, bo
 			SDL_RenderPresent(renderer);
 		}
 	}
+}
+
+void Window_THREAD::init(){
+	running = true;
+	//std::thread video(_windowThread, w, h, &pixels, &running);
+	//video.detach();
 }
