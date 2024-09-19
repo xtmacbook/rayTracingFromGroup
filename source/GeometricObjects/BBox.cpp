@@ -14,8 +14,8 @@ BBox::BBox(const double _x0, const double _x1,
 	p0.z = _z0;
 
 	p1.x = _x1;
-	p1.x = _y1;
-	p1.x = _z1;
+	p1.y = _y1;
+	p1.z = _z1;
 }
 
 

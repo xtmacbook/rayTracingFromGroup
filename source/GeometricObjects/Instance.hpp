@@ -25,65 +25,45 @@ class Instance: public GeometricObject {
 
 		Instance(const Instance& instance);
 
-		virtual Instance*
-		clone(void) const;
+		virtual Instance* clone(void) const;
 
-		virtual
-		~Instance(void);
+		virtual ~Instance(void);
 
-		Instance&
-		operator= (const Instance& rhs);
+		Instance& operator= (const Instance& rhs);
 
-		void
-		set_object(GeometricObject* obj_ptr);
+		void set_object(GeometricObject* obj_ptr);
 
-		void
-		transform_texture(const bool transform);
+		void transform_texture(const bool transform);
 
-		virtual void
-		compute_bounding_box(void);
+		virtual void compute_bounding_box(void);
 
-		virtual BBox
-		get_bounding_box(void);
+		virtual BBox get_bounding_box(void);
 
-		virtual Material*
-		get_material(void) const;
+		virtual Material* get_material(void) const;
 
-		virtual void
-		set_material(Material* materialPtr);
+		virtual void set_material(Material* materialPtr);
 
-		virtual bool
-		hit(const Ray& ray, float& tmin, ShadeRec& sr) const;
+		virtual bool hit(const Ray& ray, float& tmin, ShadeRec& sr) const;
 
-		virtual bool
-		shadow_hit(const Ray& ray, float& tmin) const;
+		virtual bool shadow_hit(const Ray& ray, float& tmin) const;
 
 
 		// affine tranformation functions
+		void translate(const Vector3D& trans);
 
-		void
-		translate(const Vector3D& trans);
+		void translate(const double dx, const double dy, const double dz);
 
-		void
-		translate(const double dx, const double dy, const double dz);
+		void scale(const Vector3D& s);
 
-		void
-		scale(const Vector3D& s);
+		void scale(const double s);
 
-		void
-		scale(const double s);
+		void scale(const double a, const double b, const double c);
 
-		void
-		scale(const double a, const double b, const double c);
+		virtual void rotate_x(const double r);
 
-		virtual void
-		rotate_x(const double r);
+		virtual void rotate_y(const double r);
 
-		virtual void
-		rotate_y(const double r);
-
-		virtual void
-		rotate_z(const double r);
+		virtual void rotate_z(const double r);
 
 		void
 		shear(const Matrix& m);

@@ -26,15 +26,10 @@ TorusPartConcave::TorusPartConcave(const double _a, const double _b,
 	bbox(-a - b, a + b, -b, b, -a - b, a + b)
 {}
 
-// ---------------------------------------------------------------- clone
-
 TorusPartConcave*
 TorusPartConcave::clone(void) const {
 	return (new TorusPartConcave(*this));
 }
-
-
-// ---------------------------------------------------------------- copy constructor
 
 TorusPartConcave::TorusPartConcave(const TorusPartConcave& torus)
 	: GeometricObject(torus),
@@ -46,9 +41,6 @@ TorusPartConcave::TorusPartConcave(const TorusPartConcave& torus)
 	theta2(torus.theta2),
 	bbox(torus.bbox)
 {}
-
-
-// ---------------------------------------------------------------- assignment operator
 
 TorusPartConcave&
 TorusPartConcave::operator = (TorusPartConcave& rhs) {
@@ -69,14 +61,7 @@ TorusPartConcave::operator = (TorusPartConcave& rhs) {
 }
 
 
-//------------------------------------------------------------------- destructor
-
 TorusPartConcave::~TorusPartConcave(void) {}
-
-
-//------------------------------------------------------------------ FindNormal
-// Find the normal vector at the specified position
-// This works because the torus is defined by a single implicit equation
 
 Normal
 TorusPartConcave::compute_normal(const Point3D& p) const {
