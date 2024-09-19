@@ -1,7 +1,9 @@
 #include "Maths.hpp"
+#include "Constants.hpp"
+
 #include <stdlib.h>
 #include <math.h>
-#include "Constants.hpp"
+
 #ifndef M_PI
 #define M_PI PI
 #endif

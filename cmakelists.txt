@@ -67,7 +67,7 @@ set (SOURCE_Build_Source
   source/build/BuildEnvironemntLight.cpp
   source/build/BuildCornellBox.cpp
   source/build/BuildGlobalCornellBox.cpp
-  source/build/BuildTransparentSphere.cpp
+  source/build/BuildTransparent.cpp
   source/build/BuildRealisticTransparent.cpp
   source/build/BuildTransparentBoxes.cpp
   
@@ -188,6 +188,7 @@ set ( SOURCE_Utilities_Source
   source/Utilities/Debug.hpp
   source/Utilities/Debug.cpp 
   source/Utilities/Maths.hpp  
+  source/Utilities/Maths.cpp  
   source/Utilities/Matrix.cpp 
   source/Utilities/Matrix.hpp 
   source/Utilities/Normal.cpp 

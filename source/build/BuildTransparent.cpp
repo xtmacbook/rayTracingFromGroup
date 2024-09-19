@@ -24,7 +24,6 @@
 #include "../GeometricObjects/Instance.hpp"
 #include "../GeometricObjects/TorusPartConcave.hpp"
 
-
 // Lights
 #include "../Light/Directional.hpp"
 #include "../Light/PointLight.hpp"
@@ -36,8 +35,6 @@
 #include "../Samplers/NRooks.hpp"
 
 // tracers
-//#include "../Tracers/MultipleObjects.hpp"
-//#include "../Tracers/Sinusoid.hpp"
 #include "../Tracers/RayCast.hpp"
 #include "../Tracers/AreaLightingTracer.hpp"
 
