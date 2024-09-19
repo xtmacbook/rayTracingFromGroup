@@ -60,6 +60,6 @@ void _windowThread(int width, int height, std::vector<unsigned char> *pixels, bo
 
 void Window_THREAD::init(){
 	running = true;
-	//std::thread video(_windowThread, w, h, &pixels, &running);
-	//video.detach();
+	std::thread video(_windowThread, w, h, &pixels, &running);
+	video.detach();
 }

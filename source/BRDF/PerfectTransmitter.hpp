@@ -41,10 +41,11 @@ public:
 	virtual RGBColor rho(const ShadeRec& sr, const Vector3D& wo) const;
 
 private:
-
+	/*
+		index of refraction = c/v  (c : light speed that in perfect vacuum,and the v is light speed in the medium)
+	*/
 	float	kt;			// transmission coefficient
-	float	ior;		// index of refraction
-
+	float	ior;		// relative index of refraction
 };
 
 #endif

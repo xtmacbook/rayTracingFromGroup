@@ -19,6 +19,7 @@
 #include "../GeometricObjects/SmoothMeshTriangle.hpp"
 #include "../GeometricObjects/FlatMeshTriangle.hpp"
 #include "../GeometricObjects/Rectangle.hpp"
+#include "../GeometricObjects/ConcaveSphere.hpp"
 
 // Lights
 #include "../Light/Directional.hpp"
@@ -57,21 +58,76 @@
 #include "../Utilities/Point3D.hpp"
 #include "../Utilities/Normal.hpp"
 #include "../Utilities/Maths.hpp"
+#include "../Utilities/util.hpp"
 
 
 #include <memory>
 #include "../Texture/Checker3D.hpp"
 
-void buildTransparentSpere(World* pWorld) {
+/*
+
+regardless of the value of n, no rays transmitted through the sphere are totally internally reflected when they hit the sphere from the inside.
+We therefore have the following result: no total internal reflection occurs from inside a sphere when the sphere is ray traced from the outside.
+This means that all rays that enter the sphere bring back some radiance from the scene through their external transmitted rays, 
+even if it's just the background color. 
+*/
+
+
+void addSphere(World* pWorld)
+{
+	// transparent sphere
+	Transparent* glass_ptr = new Transparent;
+	glass_ptr->set_ks(0.2);
+	glass_ptr->set_exp(2000.0);
+	glass_ptr->set_ior(0.75);
+	glass_ptr->set_kr(0.1);
+	glass_ptr->set_kt(0.9);
+	Sphere* pTransparentSphere = new Sphere(Point3D(3, 3.5, 0), 1);
+	pTransparentSphere->set_material(glass_ptr);
+	pWorld->add_object(pTransparentSphere);
+
+	// red sphere
+	Reflective* reflective_ptr = new Reflective;
+	reflective_ptr->set_ka(0.3);
+	reflective_ptr->set_kd(0.3);
+	reflective_ptr->set_cd(red);
+	reflective_ptr->set_ks(0.2);
+	reflective_ptr->set_exp(2000.0);
+	reflective_ptr->set_kr(0.25);
+	Sphere* sphere_ptr2 = new Sphere(Point3D(4, 4, -6), 1.2);
+	sphere_ptr2->set_material(reflective_ptr);
+	pWorld->add_object(sphere_ptr2);
+}
+
+void addConcaveSphere(World* pWorld)
+{
+	Transparent* glass_ptr = new Transparent;
+	glass_ptr->set_ks(0.2);
+	glass_ptr->set_exp(2000.0);
+	glass_ptr->set_ior(0.75);
+	glass_ptr->set_kr(0.1);
+	glass_ptr->set_kt(0.9);
+
+
+	Matte* matte = new Matte;
+	float ka = 0.25;
+	float kd = 0.75;
+	matte->set_ka(ka);
+	matte->set_kd(kd);
+	matte->set_cd(yellow);
+	ConcaveSphere* pTransparentSphere = new ConcaveSphere(Point3D(3, 3.5, 0), 1);
+	pTransparentSphere->set_material(matte);
+	pWorld->add_object(pTransparentSphere);
+}
+
+void buildTransparent(World* pWorld) {
 	int num_samples = 16;
 
 	pWorld->vp.set_hres(300);
 	pWorld->vp.set_vres(300);
 	pWorld->vp.set_samples(num_samples);
     pWorld->vp.set_max_depth(5);
-    
 	pWorld->background_color =  black;
-
 	pWorld->tracer_ptr = new Whitted(pWorld);
 
 	AmbientLight* ambient_ptr = new AmbientLight;
@@ -79,8 +135,6 @@ void buildTransparentSpere(World* pWorld) {
 	pWorld->set_ambient_light(ambient_ptr);
 
 	Pinhole* pinhole_ptr = new Pinhole;
-
-
 	pinhole_ptr->set_eye(3.5, 5.5, 40);
 	pinhole_ptr->set_lookat(3.5, 4, 0);
 	pinhole_ptr->set_view_distance(2400.0);
@@ -94,8 +148,6 @@ void buildTransparentSpere(World* pWorld) {
 	light_ptr1->scale_radiance(4.5);
 	light_ptr1->set_shadows(true);
 	pWorld->add_light(light_ptr1);
-
-
 	// point light
 	PointLight* light_ptr2 = new PointLight;
 	light_ptr2->set_location(-30, 50, 10);
@@ -104,37 +156,13 @@ void buildTransparentSpere(World* pWorld) {
 	pWorld->add_light(light_ptr2);
 
 
-	// transparent sphere
-	Transparent* glass_ptr = new Transparent;
-	glass_ptr->set_ks(0.2);
-	glass_ptr->set_exp(2000.0);
-	glass_ptr->set_ior(0.7);
-	glass_ptr->set_kr(0.1);
-	glass_ptr->set_kt(0.9);
-
-	Sphere* pTransparentSphere = new Sphere(Point3D(3, 3.5, 0), 1);
-	pTransparentSphere->set_material(glass_ptr);
-	pWorld->add_object(pTransparentSphere);
-
-
-	// red sphere
-	Reflective* reflective_ptr = new Reflective;
-	reflective_ptr->set_ka(0.3);
-	reflective_ptr->set_kd(0.3);
-	reflective_ptr->set_cd(red);
-	reflective_ptr->set_ks(0.2);
-	reflective_ptr->set_exp(2000.0);
-	reflective_ptr->set_kr(0.25);
-
-	Sphere* sphere_ptr2 = new Sphere(Point3D(4, 4, -6), 1.2);
-	sphere_ptr2->set_material(reflective_ptr);
-	pWorld->add_object(sphere_ptr2);
+	//addSphere(pWorld);
+	addConcaveSphere(pWorld);
 
 	Checker3D* check_texture = new Checker3D();
 	check_texture->set_size(1.0);
 	check_texture->set_color1(0.5, 0.5, 0.5);
 	check_texture->set_color2(1.0, 1.0, 1.0); 
-
 	SV_Matte* check_matte(new SV_Matte);
 	check_matte->set_ka(0.25);
 	check_matte->set_kd(0.75);
@@ -145,12 +173,3 @@ void buildTransparentSpere(World* pWorld) {
 	pWorld->add_object(rectangle_ptr);
 }
 
-/*
-	﻿
-In Figure 27.13(a), with max_depth = 2, why does the scene appear slightly darker when seen through the transparent sphere?
-. In Figure 7.13(b), with max_depth = 4, what is the dark disk near the middle of the red sphere? What has happened to it in Figure 27.13(c), where max_depth = 5?
-
-In Figure 27.13(b) and (c), a faint image of the checkers is visible in the top part of the transparent sphere,
-and a faint image of the red sphere is also visible.How are these formed?
-
-*/

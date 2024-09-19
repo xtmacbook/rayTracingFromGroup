@@ -33,3 +33,7 @@ rand_int(int l, int h) {
 inline float clamp(float x, float min, float max){
 	return (x < min ? min : (x > max ? max : x));
 }
+
+int SolveCubic(double c[4], double s[3]);
+int SolveQuartic(double c[5], double s[4]);
+int SolveQuadric(double c[3], double s[2]);

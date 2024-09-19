@@ -70,7 +70,7 @@ void buildSingleSphereLight(World* pWorld);
 void buildSphereGrid(World* pWorld);
 void buildCornellBox(World* pWorld);
 void buildGlobalCornellBox(World* pWorld);
-void buildTransparentSpere(World* pWorld);
+void buildTransparent(World* pWorld);
 void BuildRealisticTransparent(World* pWorld);
 void buildDielectric(World* pWorld);
 
@@ -252,7 +252,6 @@ void World::build(void) {
 	//buildSphereGrid(this);
 	//buildCornellBox(this);
 	//buildGlobalCornellBox(this);
-	//buildTransparentSpere(this);
-	BuildRealisticTransparent(this);
-    //buildDielectric(this);
+	buildTransparent(this);
+	//BuildRealisticTransparent(this);
 }

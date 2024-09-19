@@ -20,6 +20,7 @@
 #include "../GeometricObjects/FlatMeshTriangle.hpp"
 #include "../GeometricObjects/Rectangle.hpp"
 #include "../GeometricObjects/Instance.hpp"
+#include "../GeometricObjects/ConcaveSphere.hpp"
 
 // Lights
 #include "../Light/Directional.hpp"
@@ -63,7 +64,30 @@
 #include <memory>
 #include "../Texture/Checker3D.hpp"
 
-#define TYPE 1
+void addMeshObj(Material* dielectric_ptr, World* pWorld)
+{
+	std::string fileName = getDataPath() + "ply/dragon.ply"; 	    // 10000 triangles
+
+	Grid* bunny_ptr = new Grid(new Mesh);
+	bunny_ptr->reverse_mesh_normals();				// you must use this for the 10K model
+//	bunny_ptr->read_flat_triangles(fileName);		// read PLY file
+	bunny_ptr->read_smooth_triangles(fileName.c_str());		// read PLY file
+	bunny_ptr->setup_cells();
+	bunny_ptr->set_material(dielectric_ptr);
+
+	Instance* instance_ptr = new Instance;
+	instance_ptr->set_object(bunny_ptr);
+	instance_ptr->scale(16.0);
+	instance_ptr->translate(3.0, 2.0, 0.0);
+	pWorld->add_object(instance_ptr);
+}
+
+void addConcaveSphere(Material* dielectric_ptr, World* pWorld)
+{
+	ConcaveSphere* sphere_c_ptr1 = new ConcaveSphere(Point3D(3, 3.5, 0), 1);
+	sphere_c_ptr1->set_material(dielectric_ptr);
+	pWorld->add_object(sphere_c_ptr1);
+}
 void BuildRealisticTransparent(World* pWorld) {
 	
 	int num_samples = 16;
@@ -72,9 +96,7 @@ void BuildRealisticTransparent(World* pWorld) {
 	pWorld->vp.set_vres(300);
 	pWorld->vp.set_samples(num_samples);
 	pWorld->vp.set_max_depth(4);
-
 	pWorld->background_color = RGBColor(0.0, 0.0, 0.0);
-
 	pWorld->tracer_ptr = new Whitted(pWorld);
 
 	AmbientLight* ambient_ptr = new AmbientLight;
@@ -96,7 +118,6 @@ void BuildRealisticTransparent(World* pWorld) {
 	light_ptr1->set_shadows(true);
 	pWorld->add_light(light_ptr1);
 
-
 	// point light
 	PointLight* light_ptr2 = new PointLight;
 	light_ptr2->set_location(-30, 50, 10);
@@ -113,54 +134,11 @@ void BuildRealisticTransparent(World* pWorld) {
 	dielectric_ptr->set_eta_out(1.0);
 	dielectric_ptr->set_cf_in(1.0, 1.0, 0.0);
 	dielectric_ptr->set_cf_out(1.0, 1.0, 1.0);
-
-#if TYPE == 2
-	char* fileName = "/Users/libingzeng/CG/RayTraceGroundUp/PLYFiles/Horse97K.ply";
-
-	Grid* bunny_ptr = new Grid(new Mesh);
-	//	bunny_ptr->read_flat_triangles(fileName);		// read PLY file
-	bunny_ptr->read_smooth_triangles(fileName);		// read PLY file
-	bunny_ptr->setup_cells();
-
-	Instance* instance_ptr = new Instance;
-	instance_ptr->set_object(bunny_ptr);
-	instance_ptr->set_material(dielectric_ptr);
-	instance_ptr->scale(4.0);
-	instance_ptr->translate(3.0, 3.5, 0.0);
-	add_object(instance_ptr);
-#endif // TYPE
-
-#if TYPE == 1
-	std::string fileName = getDataPath() + "ply/dragon.ply"; 	    // 10000 triangles
-
-	Grid* bunny_ptr = new Grid(new Mesh);
-	bunny_ptr->reverse_mesh_normals();				// you must use this for the 10K model
-//	bunny_ptr->read_flat_triangles(fileName);		// read PLY file
-	bunny_ptr->read_smooth_triangles(fileName.c_str());		// read PLY file
-	bunny_ptr->setup_cells();
-	bunny_ptr->set_material(dielectric_ptr);
-
-	Instance* instance_ptr = new Instance;
-	instance_ptr->set_object(bunny_ptr);
-	instance_ptr->scale(16.0);
-	instance_ptr->translate(3.0, 2.0, 0.0);
-	pWorld->add_object(instance_ptr);
-#endif // TYPE
-
-#if TYPE == 0
-	Sphere* sphere_ptr1 = new Sphere(Point3D(3, 3.5, 0), 1);
-	sphere_ptr1->set_material(dielectric_ptr);
-	pWorld->add_object(sphere_ptr1);
-#endif // TYPE
-
-#if TYPE == 3
-	SphereConcave* sphere_c_ptr1 = new SphereConcave(Point3D(3, 3.5, 0), 1);
-	sphere_c_ptr1->set_material(dielectric_ptr);
-	add_object(sphere_c_ptr1);
-#endif // TYPE
+	Sphere* dieSphere = new Sphere(Point3D(3, 3.5, 0), 1);
+	dieSphere->set_material(dielectric_ptr);
+	pWorld->add_object(dieSphere);
 
 	// red sphere
-
 	Reflective* reflective_ptr = new Reflective;
 	reflective_ptr->set_ka(0.3);
 	reflective_ptr->set_kd(0.3);
@@ -169,16 +147,14 @@ void BuildRealisticTransparent(World* pWorld) {
 	reflective_ptr->set_exp(2000.0);
 	reflective_ptr->set_kr(0.25);
 
-	Sphere* sphere_ptr2 = new Sphere(Point3D(4, 4, -6), 1.2);
-	sphere_ptr2->set_material(reflective_ptr);
-	pWorld->add_object(sphere_ptr2);
-
+	Sphere* redSphere = new Sphere(Point3D(4, 4, -6), 1.2);
+	redSphere->set_material(reflective_ptr);
+	pWorld->add_object(redSphere);
 
 	Checker3D* check_texture = new Checker3D();
 	check_texture->set_size(2.0);
 	check_texture->set_color1(0.5, 0.5, 0.5);
 	check_texture->set_color2(1.0, 1.0, 1.0);
-
 	SV_Matte* check_matte(new SV_Matte);
 	check_matte->set_ka(0.25);
 	check_matte->set_kd(0.75);

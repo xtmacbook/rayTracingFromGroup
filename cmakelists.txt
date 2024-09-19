@@ -51,7 +51,7 @@ set (SOURCE_BRDF_Source
 )
 SOURCE_GROUP("source\\BRDF" FILES ${SOURCE_BRDF_Source})
 
-set (SOURCE_build_Source
+set (SOURCE_Build_Source
   source/build/BuildAmbientOcclusion.cpp
   source/build/BuildAreaLight.cpp
   source/build/BuildBBCoverPicLight.cpp
@@ -68,10 +68,11 @@ set (SOURCE_build_Source
   source/build/BuildCornellBox.cpp
   source/build/BuildGlobalCornellBox.cpp
   source/build/BuildTransparentSphere.cpp
-  source/build/BuildDielectric.cpp
   source/build/BuildRealisticTransparent.cpp
+  source/build/BuildTransparentBoxes.cpp
+  
 )
-SOURCE_GROUP("source//build" FILES ${SOURCE_build_Source})
+SOURCE_GROUP("source//build" FILES ${SOURCE_Build_Source})
 
 set (SOURCE_Cameras_Source
   source/Cameras/Camera.cpp 
@@ -270,6 +271,17 @@ set (SOURCE_GeometricObjects_Source
   source/GeometricObjects/Grid.hpp
   source/GeometricObjects/Instance.cpp
   source/GeometricObjects/Instance.hpp
+  source/GeometricObjects/FishBowl.hpp
+  source/GeometricObjects/FishBowl.cpp
+  source/GeometricObjects/SpherePartConvex.hpp
+  source/GeometricObjects/SpherePartConvex.cpp
+  source/GeometricObjects/SpherePartConcave.hpp
+  source/GeometricObjects/SpherePartConcave.cpp
+  source/GeometricObjects/TorusPartConvex.hpp
+  source/GeometricObjects/TorusPartConvex.cpp
+  source/GeometricObjects/TorusPartConcave.hpp
+  source/GeometricObjects/TorusPartConcave.cpp
+  
   
 )
 SOURCE_GROUP("source//GeometricObjects" FILES ${SOURCE_GeometricObjects_Source})
@@ -283,7 +295,7 @@ SOURCE_GROUP("source//test" FILES ${SOURCE_Test_Source})
 
 SET(RayTracing_SRCS
   ${SOURCE_BRDF_Source}
-  ${SOURCE_build_Source}
+  ${SOURCE_Build_Source}
   ${SOURCE_Cameras_Source}
   ${SOURCE_Light_Soruce}
   ${SOURCE_Materials_Source}
