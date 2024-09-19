@@ -103,7 +103,7 @@ void addSphere(World* pWorld)
 	pWorld->add_object(sphere_ptr2);
 }
 
-void addConcaveSphere(World* pWorld)
+void addTorus(World* pWorld)
 {
 	Transparent* glass_ptr = new Transparent;
 	glass_ptr->set_ks(0.2);
@@ -112,28 +112,31 @@ void addConcaveSphere(World* pWorld)
 	glass_ptr->set_kr(0.1);
 	glass_ptr->set_kt(0.9);
 
-
-	Matte* matte = new Matte;
-	float ka = 0.25;
-	float kd = 0.75;
-	matte->set_ka(ka);
-	matte->set_kd(kd);
-	matte->set_cd(yellow);
-
-	Point3D modelPos(4, 4, -8);
+	Point3D modelPos(3, 4, -6);
 	Torus* pTransparentSphere = new Torus(2,0.5);
-	pTransparentSphere->set_material(matte);
+	pTransparentSphere->set_material(glass_ptr);
 	Instance* instance_ptr = new Instance;
 	instance_ptr->set_object(pTransparentSphere);
 	instance_ptr->rotate_z(60.0);
 	instance_ptr->rotate_y(30.0);
-	//instance_ptr->scale(0.3);
+	instance_ptr->scale(0.8);
 	instance_ptr->translate(modelPos);
 
 	pWorld->add_object(instance_ptr);
+
+	Reflective* reflective_ptr = new Reflective;
+	reflective_ptr->set_ka(0.3);
+	reflective_ptr->set_kd(0.3);
+	reflective_ptr->set_cd(red);
+	reflective_ptr->set_ks(0.2);
+	reflective_ptr->set_exp(2000.0);
+	reflective_ptr->set_kr(0.25);
+	Sphere* sphere_ptr2 = new Sphere(Point3D(4, 4, -8), 1.2);
+	sphere_ptr2->set_material(reflective_ptr);
+	pWorld->add_object(sphere_ptr2);
 }
 
-void buildTransparent1(World* pWorld) {
+void buildTransparent(World* pWorld) {
 	int num_samples = 16;
 
 	pWorld->vp.set_hres(300);
@@ -170,7 +173,7 @@ void buildTransparent1(World* pWorld) {
 
 
 	//addSphere(pWorld);
-	addConcaveSphere(pWorld);
+	addTorus(pWorld);
 
 	Checker3D* check_texture = new Checker3D();
 	check_texture->set_size(1.0);
@@ -186,77 +189,4 @@ void buildTransparent1(World* pWorld) {
 	pWorld->add_object(rectangle_ptr);
 }
 
-#define TYPE 4
-
-void buildTransparent(World* pWorld)
-{
-	int num_samples = 1;
-
-	pWorld->vp.set_hres(300);
-	pWorld->vp.set_vres(300);
-	pWorld->vp.set_samples(num_samples);
-	pWorld->tracer_ptr = new RayCast(pWorld);
-
-	Pinhole* pinhole_ptr = new Pinhole;
-	pinhole_ptr->set_eye(0, 10, 20);
-	pinhole_ptr->set_lookat(0, 0, 0);
-	pinhole_ptr->set_view_distance(500);
-	pinhole_ptr->compute_uvw();
-	pWorld->set_camera(pinhole_ptr);
-
-	Directional* light_ptr = new Directional;
-	light_ptr->set_direction(-10, 20, 20);
-	light_ptr->scale_radiance(3.0);
-	light_ptr->set_shadows(false);
-	pWorld->add_light(light_ptr);
-
-	ConstantColor* cc_ptr = new ConstantColor;
-	cc_ptr->set_color(0.0, 1.0, 0.0);
-
-	SV_Matte* matte_ptr = new SV_Matte;
-	matte_ptr->set_ka(0.25);
-	matte_ptr->set_kd(0.75);
-	matte_ptr->set_cd(cc_ptr);
-
-#if TYPE == 0
-	Disk* disk_ptr = new Disk(Point3D(0, 0, 0), Normal(0, 0, 1),2);
-	disk_ptr->set_material(matte_ptr);
-	pWorld->add_object(disk_ptr);
-#endif // TYPE
-
-#if TYPE == 1
-	Annulus* annulus_ptr = new Annulus(Point3D(0, 0, 0), Normal(0, 0, 1), 1, 2);
-	annulus_ptr->set_material(matte_ptr);
-	add_object(annulus_ptr);
-#endif // TYPE
-
-#if TYPE == 2
-	OpenCylinderConvex* oclinder_convex_ptr = new OpenCylinderConvex(-2, 2, 2);
-	oclinder_convex_ptr->set_material(matte_ptr);
-	add_object(oclinder_convex_ptr);
-#endif // TYPE
-
-#if TYPE == 3
-	OpenCylinderConcave* oclinder_concave_ptr = new OpenCylinderConcave(-2, 2, 2);
-	oclinder_concave_ptr->set_material(matte_ptr);
-	add_object(oclinder_concave_ptr);
-#endif // TYPE
-
-#if TYPE == 4
-	Torus* torus_ptr = new Torus(2, 0.5);
-	torus_ptr->set_material(matte_ptr);
-	pWorld->add_object(torus_ptr);
-#endif // TYPE
-
-#if TYPE == 5
-	TorusPart* tp_ptr = new TorusPart(2.0, 0.5, 0.0, 270.0, 90.0, 360.0);
-	tp_ptr->set_material(matte_ptr);
-	add_object(tp_ptr);
-#endif // TYPE
-
-#if TYPE == 6
-	TorusPartConcave* tpc_ptr = new TorusPartConcave(2.0, 0.5, 0.0, 360.0, 270.0, 360.0);
-	tpc_ptr->set_material(matte_ptr);
-	pWorld->add_object(tpc_ptr);
-#endif // TYPE
-}
+ 
