@@ -82,11 +82,32 @@ void addMeshObj(Material* dielectric_ptr, World* pWorld)
 	pWorld->add_object(instance_ptr);
 }
 
-void addConcaveSphere(Material* dielectric_ptr, World* pWorld)
+void addRSphere(World* pWorld)
 {
-	ConcaveSphere* sphere_c_ptr1 = new ConcaveSphere(Point3D(3, 3.5, 0), 1);
-	sphere_c_ptr1->set_material(dielectric_ptr);
-	pWorld->add_object(sphere_c_ptr1);
+	// transparent sphere
+	Dielectric* dielectric_ptr = new Dielectric;
+	dielectric_ptr->set_ks(0.2);
+	dielectric_ptr->set_exp(2000.0);
+	dielectric_ptr->set_eta_in(1.6);
+	dielectric_ptr->set_eta_out(1.0);
+	dielectric_ptr->set_cf_in(1.0);
+	dielectric_ptr->set_cf_out(1.0);
+	Sphere* dieSphere = new Sphere(Point3D(3, 3.5, 0), 1);
+	dieSphere->set_material(dielectric_ptr);
+	pWorld->add_object(dieSphere);
+
+	// red sphere
+	Reflective* reflective_ptr = new Reflective;
+	reflective_ptr->set_ka(0.3);
+	reflective_ptr->set_kd(0.3);
+	reflective_ptr->set_cd(red);
+	reflective_ptr->set_ks(0.2);
+	reflective_ptr->set_exp(2000.0);
+	reflective_ptr->set_kr(0.25);
+
+	Sphere* redSphere = new Sphere(Point3D(4, 4, -6), 1.2);
+	redSphere->set_material(reflective_ptr);
+	pWorld->add_object(redSphere);
 }
 void BuildRealisticTransparent(World* pWorld) {
 	
@@ -96,7 +117,7 @@ void BuildRealisticTransparent(World* pWorld) {
 	pWorld->vp.set_vres(300);
 	pWorld->vp.set_samples(num_samples);
 	pWorld->vp.set_max_depth(4);
-	pWorld->background_color = RGBColor(0.0, 0.0, 0.0);
+	pWorld->background_color = black;
 	pWorld->tracer_ptr = new Whitted(pWorld);
 
 	AmbientLight* ambient_ptr = new AmbientLight;
@@ -125,31 +146,7 @@ void BuildRealisticTransparent(World* pWorld) {
 	light_ptr2->set_shadows(true);
 	pWorld->add_light(light_ptr2);
 
-
-	// transparent sphere
-	Dielectric* dielectric_ptr = new Dielectric;
-	dielectric_ptr->set_ks(0.2);
-	dielectric_ptr->set_exp(2000.0);
-	dielectric_ptr->set_eta_in(1.6);
-	dielectric_ptr->set_eta_out(1.0);
-	dielectric_ptr->set_cf_in(1.0, 1.0, 0.0);
-	dielectric_ptr->set_cf_out(1.0, 1.0, 1.0);
-	Sphere* dieSphere = new Sphere(Point3D(3, 3.5, 0), 1);
-	dieSphere->set_material(dielectric_ptr);
-	pWorld->add_object(dieSphere);
-
-	// red sphere
-	Reflective* reflective_ptr = new Reflective;
-	reflective_ptr->set_ka(0.3);
-	reflective_ptr->set_kd(0.3);
-	reflective_ptr->set_cd(red);
-	reflective_ptr->set_ks(0.2);
-	reflective_ptr->set_exp(2000.0);
-	reflective_ptr->set_kr(0.25);
-
-	Sphere* redSphere = new Sphere(Point3D(4, 4, -6), 1.2);
-	redSphere->set_material(reflective_ptr);
-	pWorld->add_object(redSphere);
+	addRSphere(pWorld);
 
 	Checker3D* check_texture = new Checker3D();
 	check_texture->set_size(2.0);

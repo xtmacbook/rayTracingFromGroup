@@ -252,6 +252,6 @@ void World::build(void) {
 	//buildSphereGrid(this);
 	//buildCornellBox(this);
 	//buildGlobalCornellBox(this);
-	buildTransparent(this);
-	//BuildRealisticTransparent(this);
+	//buildTransparent(this);
+	BuildRealisticTransparent(this);
 }
