@@ -80,7 +80,7 @@ void addSphere(World* pWorld)
 	Transparent* glass_ptr = new Transparent;
 	glass_ptr->set_ks(0.2);
 	glass_ptr->set_exp(2000.0);
-	glass_ptr->set_ior(0.75);
+	glass_ptr->set_ior(1.5);
 	glass_ptr->set_kr(0.1);
 	glass_ptr->set_kt(0.9);
 	Sphere* pTransparentSphere = new Sphere(Point3D(3, 3.5, 0), 1);
@@ -169,8 +169,8 @@ void buildTransparent(World* pWorld) {
 	pWorld->add_light(light_ptr2);
 
 
-	//addSphere(pWorld);
-	addTorus(pWorld);
+	addSphere(pWorld);
+	//addTorus(pWorld);
 
 	Checker3D* check_texture = new Checker3D();
 	check_texture->set_size(1.0);

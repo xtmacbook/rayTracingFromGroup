@@ -42,6 +42,7 @@
 #include "../Cameras/Pinhole.hpp"
 #include "../Cameras/Orthographic.hpp"
 #include "../Cameras/ThinLens.hpp"
+#include "../Cameras/FishEye.hpp"
 
 // Materials
 #include "../Materials/Matte.hpp"
@@ -51,7 +52,6 @@
 #include "../Materials/Transparent.hpp"
 #include "../Materials/Dielectric.hpp"
 #include "../Materials/SV_Matte.hpp"
-
 
 // utilities
 #include "../Utilities/Vector3D.hpp"
@@ -64,9 +64,38 @@
 #include <memory>
 #include "../Texture/Checker3D.hpp"
 
-void addMeshObj(Material* dielectric_ptr, World* pWorld)
+void addMeshObj(World* pWorld)
 {
+	Pinhole* pinhole_ptr = new Pinhole;
+	pinhole_ptr->set_eye(3.5, 5.5, 40);
+	pinhole_ptr->set_lookat(3.5, 4, 0);
+	pinhole_ptr->set_view_distance(2400.0);
+	pinhole_ptr->compute_uvw();
+	pWorld->set_camera(pinhole_ptr);
+
+	// point light
+	PointLight* light_ptr1 = new PointLight;
+	light_ptr1->set_location(30, 50, 10);
+	light_ptr1->scale_radiance(4.5);
+	light_ptr1->set_shadows(true);
+	pWorld->add_light(light_ptr1);
+
+	// point light
+	PointLight* light_ptr2 = new PointLight;
+	light_ptr2->set_location(-30, 50, 10);
+	light_ptr2->scale_radiance(4.5);
+	light_ptr2->set_shadows(true);
+	pWorld->add_light(light_ptr2);
+
 	std::string fileName = getDataPath() + "ply/dragon.ply"; 	    // 10000 triangles
+
+	Dielectric* dielectric_ptr = new Dielectric;
+	dielectric_ptr->set_ks(0.2);
+	dielectric_ptr->set_exp(2000.0);
+	dielectric_ptr->set_eta_in(1.6);
+	dielectric_ptr->set_eta_out(1.0);
+	dielectric_ptr->set_cf_in(1.0);
+	dielectric_ptr->set_cf_out(1.0);
 
 	Grid* bunny_ptr = new Grid(new Mesh);
 	bunny_ptr->reverse_mesh_normals();				// you must use this for the 10K model
@@ -84,6 +113,27 @@ void addMeshObj(Material* dielectric_ptr, World* pWorld)
 
 void addRSphere(World* pWorld)
 {
+	Pinhole* pinhole_ptr = new Pinhole;
+	pinhole_ptr->set_eye(3.5, 5.5, 40);
+	pinhole_ptr->set_lookat(3.5, 4, 0);
+	pinhole_ptr->set_view_distance(2400.0);
+	pinhole_ptr->compute_uvw();
+	pWorld->set_camera(pinhole_ptr);
+
+	// point light
+	PointLight* light_ptr1 = new PointLight;
+	light_ptr1->set_location(30, 50, 10);
+	light_ptr1->scale_radiance(4.5);
+	light_ptr1->set_shadows(true);
+	pWorld->add_light(light_ptr1);
+
+	// point light
+	PointLight* light_ptr2 = new PointLight;
+	light_ptr2->set_location(-30, 50, 10);
+	light_ptr2->scale_radiance(4.5);
+	light_ptr2->set_shadows(true);
+	pWorld->add_light(light_ptr2);
+
 	// transparent sphere
 	Dielectric* dielectric_ptr = new Dielectric;
 	dielectric_ptr->set_ks(0.2);
@@ -108,7 +158,96 @@ void addRSphere(World* pWorld)
 	Sphere* redSphere = new Sphere(Point3D(4, 4, -6), 1.2);
 	redSphere->set_material(reflective_ptr);
 	pWorld->add_object(redSphere);
+
+	Checker3D* check_texture = new Checker3D();
+	check_texture->set_size(2.0);
+	check_texture->set_color1(0.5, 0.5, 0.5);
+	check_texture->set_color2(1.0, 1.0, 1.0);
+	SV_Matte* check_matte(new SV_Matte);
+	check_matte->set_ka(0.25);
+	check_matte->set_kd(0.75);
+	check_matte->set_cd(check_texture);
+
+	Rectangle* rectangle_ptr = new Rectangle(Point3D(-20, 2.3, -100), Vector3D(0, 0, 120), Vector3D(40, 0, 0));
+	rectangle_ptr->set_material(check_matte);
+	pWorld->add_object(rectangle_ptr);
 }
+
+void addFlatSurface(World* pWorld)
+{
+	PointLight* light_ptr1 = new PointLight;
+	light_ptr1->set_location(30, 50, 80);
+	light_ptr1->scale_radiance(4.5);
+	light_ptr1->set_shadows(true);
+	pWorld->add_light(light_ptr1);
+
+	// point light
+	PointLight* light_ptr2 = new PointLight;
+	light_ptr2->set_location(-30, 50, 80);
+	light_ptr2->scale_radiance(4.5);
+	light_ptr2->set_shadows(true);
+	pWorld->add_light(light_ptr2);
+
+	Point3D eye(0.0, 0.0, 40);
+	Point3D lookAt(0.0, 0.0, 0);
+	FishEyeCamera* pFishCamera = new FishEyeCamera(eye, lookAt);
+	pFishCamera->set_view_distance(240.0); //
+	pFishCamera->compute_uvw();
+	pFishCamera->set_psi_max(10);
+	pWorld->set_camera(pFishCamera);
+
+	float ka = 0.25;
+	float kd = 0.75;
+	Matte* matte_ptr = new Matte;
+	matte_ptr->set_ka(ka);
+	matte_ptr->set_kd(kd);
+	matte_ptr->set_cd(dark_green);
+
+	Material* transparentMaterial = nullptr;
+	if(1)
+	{
+		Transparent* glass_ptr = new Transparent;
+		glass_ptr->set_ks(0.2);
+		glass_ptr->set_exp(2000.0);
+		glass_ptr->set_ior(1.1);
+		glass_ptr->set_kr(0.1);
+		glass_ptr->set_kt(0.9);
+		transparentMaterial = glass_ptr;
+	}
+	else
+	{
+		Dielectric* dielectric_ptr = new Dielectric;
+		dielectric_ptr->set_ks(0.2);
+		dielectric_ptr->set_exp(2000.0);
+		dielectric_ptr->set_eta_in(1.5);
+		dielectric_ptr->set_eta_out(1.0);
+		dielectric_ptr->set_cf_in(1.0);
+		dielectric_ptr->set_cf_out(1.0);
+		transparentMaterial = dielectric_ptr;
+	}
+	
+
+	Cylinder* cylinder = new Cylinder(0.001, 0.002, 5.0);
+	cylinder->set_material(transparentMaterial);
+	Instance* instance_ptr = new Instance;
+	instance_ptr->set_object(cylinder);
+	instance_ptr->rotate_x(90.0);
+	pWorld->add_object(instance_ptr);
+
+	Checker3D* check_texture = new Checker3D();
+	check_texture->set_size(1.0);
+	check_texture->set_color1(black);
+	check_texture->set_color2(orange);
+	SV_Matte* check_matte(new SV_Matte);
+	check_matte->set_ka(0.25);
+	check_matte->set_kd(0.75);
+	check_matte->set_cd(check_texture);
+
+	Rectangle* rectangle_ptr = new Rectangle(Point3D(-500, -500, 0), Vector3D(1200, 0, 0), Vector3D(0, 1000, 0));
+	rectangle_ptr->set_material(check_matte);
+	pWorld->add_object(rectangle_ptr);
+}
+
 void BuildRealisticTransparent(World* pWorld) {
 	
 	int num_samples = 16;
@@ -124,42 +263,10 @@ void BuildRealisticTransparent(World* pWorld) {
 	ambient_ptr->scale_radiance(0.25);
 	pWorld->set_ambient_light(ambient_ptr);
 
-	Pinhole* pinhole_ptr = new Pinhole;
-	pinhole_ptr->set_eye(3.5, 5.5, 40);
-	pinhole_ptr->set_lookat(3.5, 4, 0);
-	pinhole_ptr->set_view_distance(2400.0);
-	pinhole_ptr->compute_uvw();
-	pWorld->set_camera(pinhole_ptr);
 
-
-	// point light
-	PointLight* light_ptr1 = new PointLight;
-	light_ptr1->set_location(30, 50, 10);
-	light_ptr1->scale_radiance(4.5);
-	light_ptr1->set_shadows(true);
-	pWorld->add_light(light_ptr1);
-
-	// point light
-	PointLight* light_ptr2 = new PointLight;
-	light_ptr2->set_location(-30, 50, 10);
-	light_ptr2->scale_radiance(4.5);
-	light_ptr2->set_shadows(true);
-	pWorld->add_light(light_ptr2);
-
-	addRSphere(pWorld);
-
-	Checker3D* check_texture = new Checker3D();
-	check_texture->set_size(2.0);
-	check_texture->set_color1(0.5, 0.5, 0.5);
-	check_texture->set_color2(1.0, 1.0, 1.0);
-	SV_Matte* check_matte(new SV_Matte);
-	check_matte->set_ka(0.25);
-	check_matte->set_kd(0.75);
-	check_matte->set_cd(check_texture);
-
-	Rectangle* rectangle_ptr = new Rectangle(Point3D(-20, 2.3, -100), Vector3D(0, 0, 120), Vector3D(40, 0, 0));
-	rectangle_ptr->set_material(check_matte);
-	pWorld->add_object(rectangle_ptr);
+	//addFlatSurface(pWorld);
+	//addRSphere(pWorld);
+	addMeshObj(pWorld);
 }
 
  
