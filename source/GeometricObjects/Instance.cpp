@@ -218,7 +218,7 @@ Instance::get_bounding_box(void) {
 //---------------------------------------------------------------- get_material
 
 Material*
-Instance::get_material(void) const {
+Instance::get_material() const {
 	return (material_ptr);
 }
 

@@ -17,6 +17,15 @@ Triangle::Triangle(const Point3D& a, const Point3D& b, const Point3D& c, Materia
     normal.normalize();
 }
 
+Triangle::Triangle(const Point3D& a, const Point3D& b, const Point3D& c, const bool reverse_normal)
+	: GeometricObject(),
+	v0(a),
+	v1(b),
+	v2(c)
+{
+	compute_normal(reverse_normal);
+}
+
 Triangle::Triangle(const Triangle& triangle)
     : GeometricObject(triangle)
     , v0(triangle.v0)
@@ -132,4 +141,14 @@ bool Triangle::shadow_hit(const Ray& ray, float& tmin) const {
 void Triangle::compute_normal(){
     normal = (v1 - v0) ^ (v2 - v0);  
 	normal.normalize();
+}
+
+void Triangle::compute_normal(const bool reverse_normal)
+{
+	normal = (v1 - v0) ^ (v2 - v0);
+	normal.normalize();
+
+	if (reverse_normal) {
+		normal = -normal;
+	}
 }

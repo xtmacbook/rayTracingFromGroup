@@ -97,16 +97,25 @@ void addMeshObj(World* pWorld)
 	dielectric_ptr->set_cf_in(1.0);
 	dielectric_ptr->set_cf_out(1.0);
 
+	float ka = 0.25;
+	float kd = 0.75;
+	Matte* matte_ptr = new Matte;
+	matte_ptr->set_ka(ka);
+	matte_ptr->set_kd(kd);
+	matte_ptr->set_cd(dark_green);
+
+	Material* bunyMaterial = dielectric_ptr;
+
 	Grid* bunny_ptr = new Grid(new Mesh);
 	bunny_ptr->reverse_mesh_normals();				// you must use this for the 10K model
-//	bunny_ptr->read_flat_triangles(fileName);		// read PLY file
 	bunny_ptr->read_smooth_triangles(fileName.c_str());		// read PLY file
+	bunny_ptr->set_material(bunyMaterial);
 	bunny_ptr->setup_cells();
-	bunny_ptr->set_material(dielectric_ptr);
 
 	Instance* instance_ptr = new Instance;
 	instance_ptr->set_object(bunny_ptr);
-	instance_ptr->scale(16.0);
+	instance_ptr->set_material(bunyMaterial);
+	instance_ptr->scale(1.0);
 	instance_ptr->translate(3.0, 2.0, 0.0);
 	pWorld->add_object(instance_ptr);
 }

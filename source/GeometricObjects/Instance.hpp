@@ -39,7 +39,7 @@ class Instance: public GeometricObject {
 
 		virtual BBox get_bounding_box(void);
 
-		virtual Material* get_material(void) const;
+		virtual Material* get_material() const;
 
 		virtual void set_material(Material* materialPtr);
 

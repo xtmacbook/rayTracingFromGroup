@@ -282,7 +282,12 @@ set (SOURCE_GeometricObjects_Source
   source/GeometricObjects/TorusPartConvex.cpp
   source/GeometricObjects/TorusPartConcave.hpp
   source/GeometricObjects/TorusPartConcave.cpp
-  
+  source/GeometricObjects/FlatUVMeshTriangle.hpp
+  source/GeometricObjects/FlatUVMeshTriangle.cpp
+  source/GeometricObjects/SmoothUVMeshTriangle.hpp
+  source/GeometricObjects/SmoothUVMeshTriangle.cpp
+  source/GeometricObjects/SmoothTriangle.hpp
+  source/GeometricObjects/SmoothTriangle.cpp
   
 )
 SOURCE_GROUP("source//GeometricObjects" FILES ${SOURCE_GeometricObjects_Source})

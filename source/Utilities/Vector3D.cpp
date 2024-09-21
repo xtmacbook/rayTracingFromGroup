@@ -130,3 +130,49 @@ Vector3D& Vector3D::operator+= (const Vector3D& v) {
 Vector3D operator* (const double a, const Vector3D& v) {
 	return (Vector3D(a * v.x, a * v.y, a * v.z));	
 }
+
+// ----------------------------------------------------------  matrix_4_4_multiply_4_4
+
+void matrix_4_4_multiply_4_4(const float matrix1[4][4], const float matrix2[4][4], float(&result)[4][4]) {
+	for (int k = 0; k < 4; k++) {
+		for (int i = 0; i < 4; i++) {
+			result[i][k] = 0.0;
+			for (int j = 0; j < 4; j++) {
+				result[i][k] = result[i][k] + matrix1[i][j] * matrix2[j][k];
+			}
+		}
+	}
+}
+
+
+// ----------------------------------------------------------  matrix_4_4_multiply_4_1
+
+void matrix_4_4_multiply_4_1(const float matrix1[4][4], const float matrix2[4][1], float(&result)[4][1]) {
+	for (int i = 0; i < 4; i++) {
+		result[i][0] = 0.0;
+		for (int j = 0; j < 4; j++) {
+			result[i][0] = result[i][0] + matrix1[i][j] * matrix2[j][0];
+		}
+	}
+}
+
+// ----------------------------------------------------------  matrix_1_4_multiply_4_4
+
+void matrix_1_4_multiply_4_4(const float matrix1[1][4], const float matrix2[4][4], float(&result)[1][4]) {
+	for (int k = 0; k < 4; k++) {
+		result[0][k] = 0.0;
+		for (int j = 0; j < 4; j++) {
+			result[0][k] = result[0][k] + matrix1[0][j] * matrix2[j][k];
+		}
+	}
+}
+
+
+// ----------------------------------------------------------  matrix_1_4_multiply_4_1
+
+void matrix_1_4_multiply_4_1(const float matrix1[1][4], const float matrix2[4][1], float& result) {
+	result = 0.0;
+	for (int j = 0; j < 4; j++) {
+		result = result + matrix1[0][j] * matrix2[j][0];
+	}
+}
