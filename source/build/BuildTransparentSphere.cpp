@@ -62,6 +62,10 @@
 #include <memory>
 #include "../Texture/Checker3D.hpp"
 
+/*
+    no total internal reflection occurs from inside a sphere when the sphere is ray traced from the outside
+ **/
+
 void buildTransparentSpere(World* pWorld) {
 	int num_samples = 16;
 
@@ -106,7 +110,7 @@ void buildTransparentSpere(World* pWorld) {
 
 	// transparent sphere
 	Transparent* glass_ptr = new Transparent;
-	glass_ptr->set_ks(0.2);
+	glass_ptr->set_ks(1.0);
 	glass_ptr->set_exp(2000.0);
 	glass_ptr->set_ior(0.7);
 	glass_ptr->set_kr(0.1);
@@ -145,12 +149,3 @@ void buildTransparentSpere(World* pWorld) {
 	pWorld->add_object(rectangle_ptr);
 }
 
-/*
-	﻿
-In Figure 27.13(a), with max_depth = 2, why does the scene appear slightly darker when seen through the transparent sphere?
-. In Figure 7.13(b), with max_depth = 4, what is the dark disk near the middle of the red sphere? What has happened to it in Figure 27.13(c), where max_depth = 5?
-
-In Figure 27.13(b) and (c), a faint image of the checkers is visible in the top part of the transparent sphere,
-and a faint image of the red sphere is also visible.How are these formed?
-
-*/
