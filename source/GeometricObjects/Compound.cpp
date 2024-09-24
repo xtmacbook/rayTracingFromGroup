@@ -47,8 +47,11 @@ void Compound::add_object(GeometricObject* object_ptr){
 }
 
 void Compound::set_material(Material* material_p){
-   int num_objects = objects.size();
-
+    
+    material_ptr = material_p;
+    
+    int num_objects = objects.size();
+    
 	for (int j = 0; j < num_objects; j++)
 		objects[j]->set_material(material_ptr);
 }

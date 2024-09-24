@@ -40,7 +40,13 @@ void Pinhole::render_scene(World& w){
     Point2D pp;
     int depth = 0;
 	int n = (int)sqrt(vp->num_samples);
+    
+#ifdef __APPLE__
+    w.openWindow(vp->hres, vp->vres);
+#else
     w.openWindow(vp->hres, vp->vres,true);
+#endif
+    
     vp->m_pixelSize /= zoom;
     ray.o = eye;
 	    

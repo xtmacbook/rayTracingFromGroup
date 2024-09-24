@@ -26,7 +26,7 @@ int clock_gettime( struct timespec* tv)
 std::string getDataPath()
 {
 #ifdef __APPLE__
-    return "~/Documents/workspace/rayTracingFromGroup/resources/";
+    return "../../resources/";
 #else
     return "../resources/";
 #endif
