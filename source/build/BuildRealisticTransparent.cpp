@@ -167,19 +167,6 @@ void addRSphere(World* pWorld)
 	Sphere* redSphere = new Sphere(Point3D(4, 4, -6), 1.2);
 	redSphere->set_material(reflective_ptr);
 	pWorld->add_object(redSphere);
-
-	Checker3D* check_texture = new Checker3D();
-	check_texture->set_size(2.0);
-	check_texture->set_color1(0.5, 0.5, 0.5);
-	check_texture->set_color2(1.0, 1.0, 1.0);
-	SV_Matte* check_matte(new SV_Matte);
-	check_matte->set_ka(0.25);
-	check_matte->set_kd(0.75);
-	check_matte->set_cd(check_texture);
-
-	Rectangle* rectangle_ptr = new Rectangle(Point3D(-20, 2.3, -100), Vector3D(0, 0, 120), Vector3D(40, 0, 0));
-	rectangle_ptr->set_material(check_matte);
-	pWorld->add_object(rectangle_ptr);
 }
 
 void addFlatSurface(World* pWorld)
@@ -242,19 +229,6 @@ void addFlatSurface(World* pWorld)
 	instance_ptr->set_object(cylinder);
 	instance_ptr->rotate_x(90.0);
 	pWorld->add_object(instance_ptr);
-
-	Checker3D* check_texture = new Checker3D();
-	check_texture->set_size(1.0);
-	check_texture->set_color1(black);
-	check_texture->set_color2(orange);
-	SV_Matte* check_matte(new SV_Matte);
-	check_matte->set_ka(0.25);
-	check_matte->set_kd(0.75);
-	check_matte->set_cd(check_texture);
-
-	Rectangle* rectangle_ptr = new Rectangle(Point3D(-500, -500, 0), Vector3D(1200, 0, 0), Vector3D(0, 1000, 0));
-	rectangle_ptr->set_material(check_matte);
-	pWorld->add_object(rectangle_ptr);
 }
 
 void BuildRealisticTransparent(World* pWorld) {
@@ -272,10 +246,22 @@ void BuildRealisticTransparent(World* pWorld) {
 	ambient_ptr->scale_radiance(0.25);
 	pWorld->set_ambient_light(ambient_ptr);
 
-
 	//addFlatSurface(pWorld);
 	//addRSphere(pWorld);
 	addMeshObj(pWorld);
+
+	Checker3D* check_texture = new Checker3D();
+	check_texture->set_size(2.0);
+	check_texture->set_color1(0.5, 0.5, 0.5);
+	check_texture->set_color2(1.0, 1.0, 1.0);
+	SV_Matte* check_matte(new SV_Matte);
+	check_matte->set_ka(0.25);
+	check_matte->set_kd(0.75);
+	check_matte->set_cd(check_texture);
+
+	Rectangle* rectangle_ptr = new Rectangle(Point3D(-20, 2.3, -100), Vector3D(0, 0, 120), Vector3D(40, 0, 0));
+	rectangle_ptr->set_material(check_matte);
+	//pWorld->add_object(rectangle_ptr);
 }
 
  

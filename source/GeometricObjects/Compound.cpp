@@ -47,12 +47,10 @@ void Compound::add_object(GeometricObject* object_ptr){
 }
 
 void Compound::set_material(Material* material_p){
-    if(objects.size() > 0){
-        objects[0]->set_material(material_p);
-    }
-    for(int i = 1; i < objects.size(); i++){
-        objects[i]->set_material(material_p->clone());
-    }
+   int num_objects = objects.size();
+
+	for (int j = 0; j < num_objects; j++)
+		objects[j]->set_material(material_ptr);
 }
 
 void Compound::delete_objects(){

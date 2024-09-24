@@ -19,6 +19,9 @@ Dielectric::Dielectric(const Dielectric& dm) : Phong(dm) {
         fresnel_btdf = dm.fresnel_btdf->clone();
     else
         fresnel_btdf = nullptr;
+
+    cf_in = dm.cf_in;
+    cf_out = dm.cf_out;
 }
 
 Dielectric& Dielectric::operator=(const Dielectric& rhs)
@@ -43,6 +46,9 @@ Dielectric& Dielectric::operator=(const Dielectric& rhs)
 
     if (rhs.fresnel_btdf)
         fresnel_btdf = rhs.fresnel_btdf->clone();
+
+    cf_in = rhs.cf_in;
+    cf_out = rhs.cf_out;
 
     return (*this);
 }
