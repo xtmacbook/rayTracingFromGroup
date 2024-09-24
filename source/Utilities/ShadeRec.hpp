@@ -21,6 +21,8 @@ public:
 	int depth;
 	float t;
 
+	double              u, v;               // texture parameters
+
 	ShadeRec(World& wr);			// constructor
 	ShadeRec(const ShadeRec& sr);	// copy constructor
 	~ShadeRec();

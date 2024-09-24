@@ -51,7 +51,7 @@ set (SOURCE_BRDF_Source
 )
 SOURCE_GROUP("source\\BRDF" FILES ${SOURCE_BRDF_Source})
 
-set (SOURCE_build_Source
+set (SOURCE_Build_Source
   source/build/BuildAmbientOcclusion.cpp
   source/build/BuildAreaLight.cpp
   source/build/BuildBBCoverPicLight.cpp
@@ -67,10 +67,12 @@ set (SOURCE_build_Source
   source/build/BuildEnvironemntLight.cpp
   source/build/BuildCornellBox.cpp
   source/build/BuildGlobalCornellBox.cpp
-  source/build/BuildTransparentSphere.cpp
-  source/build/BuildDielectric.cpp
+  source/build/BuildTransparent.cpp
+  source/build/BuildRealisticTransparent.cpp
+  source/build/BuildTransparentBoxes.cpp
+  
 )
-SOURCE_GROUP("source//build" FILES ${SOURCE_build_Source})
+SOURCE_GROUP("source//build" FILES ${SOURCE_Build_Source})
 
 set (SOURCE_Cameras_Source
   source/Cameras/Camera.cpp 
@@ -186,6 +188,7 @@ set ( SOURCE_Utilities_Source
   source/Utilities/Debug.hpp
   source/Utilities/Debug.cpp 
   source/Utilities/Maths.hpp  
+  source/Utilities/Maths.cpp  
   source/Utilities/Matrix.cpp 
   source/Utilities/Matrix.hpp 
   source/Utilities/Normal.cpp 
@@ -204,6 +207,8 @@ set ( SOURCE_Utilities_Source
   source/Utilities/Vector3D.hpp
   source/Utilities/util.cpp
   source/Utilities/util.hpp
+  source/Utilities/ply.hpp
+  source/Utilities/ply.cpp
 
 )
 SOURCE_GROUP("source//utilities" FILES ${SOURCE_Utilities_Source})
@@ -265,6 +270,24 @@ set (SOURCE_GeometricObjects_Source
   source/GeometricObjects/ConcaveSphere.cpp
   source/GeometricObjects/Grid.cpp
   source/GeometricObjects/Grid.hpp
+  source/GeometricObjects/Instance.cpp
+  source/GeometricObjects/Instance.hpp
+  source/GeometricObjects/FishBowl.hpp
+  source/GeometricObjects/FishBowl.cpp
+  source/GeometricObjects/SpherePartConvex.hpp
+  source/GeometricObjects/SpherePartConvex.cpp
+  source/GeometricObjects/SpherePartConcave.hpp
+  source/GeometricObjects/SpherePartConcave.cpp
+  source/GeometricObjects/TorusPartConvex.hpp
+  source/GeometricObjects/TorusPartConvex.cpp
+  source/GeometricObjects/TorusPartConcave.hpp
+  source/GeometricObjects/TorusPartConcave.cpp
+  source/GeometricObjects/FlatUVMeshTriangle.hpp
+  source/GeometricObjects/FlatUVMeshTriangle.cpp
+  source/GeometricObjects/SmoothUVMeshTriangle.hpp
+  source/GeometricObjects/SmoothUVMeshTriangle.cpp
+  source/GeometricObjects/SmoothTriangle.hpp
+  source/GeometricObjects/SmoothTriangle.cpp
   
 )
 SOURCE_GROUP("source//GeometricObjects" FILES ${SOURCE_GeometricObjects_Source})
@@ -278,7 +301,7 @@ SOURCE_GROUP("source//test" FILES ${SOURCE_Test_Source})
 
 SET(RayTracing_SRCS
   ${SOURCE_BRDF_Source}
-  ${SOURCE_build_Source}
+  ${SOURCE_Build_Source}
   ${SOURCE_Cameras_Source}
   ${SOURCE_Light_Soruce}
   ${SOURCE_Materials_Source}

@@ -35,7 +35,6 @@
 //#include "../Tracers/Sinusoid.hpp"
 #include "../Tracers/RayCast.hpp"
 #include "../Tracers/AreaLightingTracer.hpp"
-
 #include "../Tracers/Whitted.hpp"
 
 // Cameras
@@ -55,6 +54,7 @@
 #include "../Utilities/Point3D.hpp"
 #include "../Utilities/Normal.hpp"
 #include "../Utilities/Maths.hpp"
+#include "../Utilities/util.hpp"
 
 void buildBuildBox(World*pWorld){
 	// view plane
@@ -70,17 +70,6 @@ void buildBuildBox(World*pWorld){
 	//set_ambient_light(ambient_ptr);
 
 	pWorld->tracer_ptr = new RayCast(pWorld);
-
- 	RGBColor yellow(1, 1, 0);
-	RGBColor brown(0.71, 0.40, 0.16);
-	RGBColor dark_green(0.0, 0.41, 0.41);
-	RGBColor orange(1, 0.75, 0);
-	RGBColor green(0, 0.6, 0.3);
-	RGBColor light_green(0.65, 1, 0.30);
-	RGBColor dark_yellow(0.61, 0.61, 0);
-    RGBColor blue(0, 0, 1);
-	RGBColor light_purple(0.65, 0.3, 1);
-	RGBColor dark_purple(0.5, 0, 1);
 
 	ThinLens* pinhole_ptr = new ThinLens(Point3D(10, 60, 60), Point3D(0, -10, -100));
 	pinhole_ptr->set_view_distance(100);

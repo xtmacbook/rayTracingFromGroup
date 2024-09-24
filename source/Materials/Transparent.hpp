@@ -33,7 +33,7 @@ public:
 
 	void set_kt(const float k);
 
-	void set_ior(const float i);
+	void set_ior(const float i); //set 
 
 	virtual RGBColor shade(ShadeRec& s);
 

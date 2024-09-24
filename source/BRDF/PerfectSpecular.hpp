@@ -7,7 +7,7 @@
 
 class PerfectSpecular : public BRDF{
 public:
-    PerfectSpecular(float kr_ = 0.0, RGBColor cr_ = RGBColor(0));
+    PerfectSpecular(float kr_ = 0.0, RGBColor cr_ = RGBColor(1.0));
     PerfectSpecular(const PerfectSpecular& perf);
     virtual PerfectSpecular* clone() const;
     PerfectSpecular& operator=(const PerfectSpecular& rhs);

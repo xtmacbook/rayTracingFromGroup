@@ -13,7 +13,7 @@
 Pinhole::Pinhole(Point3D eye_p, Point3D lookat):
     Camera(eye_p, lookat),
     m_distanceWithViewPlane(1),
-    zoom(1)
+    zoom(1.0)
 {}
 
 void Pinhole::set_view_distance(const float dist){
@@ -33,7 +33,6 @@ float Pinhole::get_zoom() const{
 }
 
 void Pinhole::render_scene(World& w){
-	debug_print("Pinhole rendering.\n");
     RGBColor L;
     ViewPlane* vp = &w.vp;
     Ray ray;
@@ -41,17 +40,20 @@ void Pinhole::render_scene(World& w){
     Point2D pp;
     int depth = 0;
 	int n = (int)sqrt(vp->num_samples);
-    w.openWindow(vp->hres, vp->vres);
+    w.openWindow(vp->hres, vp->vres,true);
     vp->m_pixelSize /= zoom;
     ray.o = eye;
 	    
 	// TIME MANAGER
-	debug_print("Joining entering 2d-for.\n");
     for (int r = 0; r < vp->vres; r++) {	
 		for (int c = 0; c <= vp->hres; c++) {					
 
 			// PROCESSING STUFF	
 			// ANTI ALIASING
+			if (r == 137 && (c == 162))
+			{
+				int a = 3;
+			}
 			L = black;
 			debug_print("Getting anti aliasing samples.\n");
 			for(int p = 0; p < n; p++) {
@@ -62,8 +64,8 @@ void Pinhole::render_scene(World& w){
 					L += w.tracer_ptr->trace_ray(ray, depth);
 				}
 			}
-			debug_print("Anti aliasing samples get.\n");
 			L /= vp->num_samples;
+			
 			
 			// DISPLAYING STUFF
 			w.display_pixel(r, c, L);
@@ -80,6 +82,8 @@ void Pinhole::render_scene(World& w){
 		w.window->update();
 	}	
 }
+
+ 
 
 Vector3D Pinhole::ray_direction(const Point2D& pixel_point) const {
     Vector3D dir = pixel_point.x*u + pixel_point.y*v - m_distanceWithViewPlane*w;

@@ -41,3 +41,22 @@ public:
 
 Vector3D operator* (const double a, const Vector3D& v);
 Vector3D operator* (const Matrix& mat, const Vector3D& v);
+
+// ----------------------------------------------------------  matrix_4_4_multiply_4_4
+
+void matrix_4_4_multiply_4_4(const float matrix1[4][4], const float matrix2[4][4], float(&result)[4][4]);
+
+
+// ----------------------------------------------------------  matrix_4_4_multiply_4_1
+
+void matrix_4_4_multiply_4_1(const float matrix1[4][4], const float matrix2[4][1], float(&result)[4][1]);
+
+
+// ----------------------------------------------------------  matrix_1_4_multiply_4_4
+
+void matrix_1_4_multiply_4_4(const float matrix1[1][4], const float matrix2[4][4], float(&result)[1][4]);
+
+
+// ----------------------------------------------------------  matrix_1_4_multiply_4_1
+
+void matrix_1_4_multiply_4_1(const float matrix1[1][4], const float matrix2[4][1], float& result);

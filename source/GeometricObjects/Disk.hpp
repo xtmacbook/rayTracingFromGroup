@@ -9,7 +9,9 @@
 class Disk : public GeometricObject {
 public:
     Disk(Material* material_p = nullptr);
+    
     Disk(Point3D center_, Normal normal_, float radius_, Material* material_p = nullptr);
+
     Disk(const Disk& disk);
 
     Disk& operator=(const Disk& rhs);
