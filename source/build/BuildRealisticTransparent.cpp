@@ -67,8 +67,8 @@
 void addMeshObj(World* pWorld)
 {
 	Pinhole* pinhole_ptr = new Pinhole;
-	pinhole_ptr->set_eye(3.5, 5.5, 40);
-	pinhole_ptr->set_lookat(3.5, 4, 0);
+	pinhole_ptr->set_eye(2.5, 5.5, 24);
+	pinhole_ptr->set_lookat(2.5, 3, 0);
 	pinhole_ptr->set_view_distance(2400.0);
 	pinhole_ptr->compute_uvw();
 	pWorld->set_camera(pinhole_ptr);
@@ -94,8 +94,8 @@ void addMeshObj(World* pWorld)
 	dielectric_ptr->set_exp(2000.0);
 	dielectric_ptr->set_eta_in(1.6);
 	dielectric_ptr->set_eta_out(1.0);
-	dielectric_ptr->set_cf_in(1.0);
-	dielectric_ptr->set_cf_out(1.0);
+	dielectric_ptr->set_cf_in(0.3,0.5,0.3);
+	dielectric_ptr->set_cf_out(0.2, 0.4, 0.6);
 
 	float ka = 0.25;
 	float kd = 0.75;
@@ -115,8 +115,8 @@ void addMeshObj(World* pWorld)
 	Instance* instance_ptr = new Instance;
 	instance_ptr->set_object(bunny_ptr);
 	instance_ptr->set_material(bunyMaterial);
-	instance_ptr->scale(1.0);
-	instance_ptr->translate(3.0, 2.0, 0.0);
+	instance_ptr->scale(10.0);
+	instance_ptr->translate(2.5, 1.5, 0.0);
 	pWorld->add_object(instance_ptr);
 }
 
@@ -238,7 +238,7 @@ void BuildRealisticTransparent(World* pWorld) {
 	pWorld->vp.set_hres(300);
 	pWorld->vp.set_vres(300);
 	pWorld->vp.set_samples(num_samples);
-	pWorld->vp.set_max_depth(4);
+	pWorld->vp.set_max_depth(6);
 	pWorld->background_color = black;
 	pWorld->tracer_ptr = new Whitted(pWorld);
 
@@ -259,9 +259,9 @@ void BuildRealisticTransparent(World* pWorld) {
 	check_matte->set_kd(0.75);
 	check_matte->set_cd(check_texture);
 
-	Rectangle* rectangle_ptr = new Rectangle(Point3D(-20, 2.3, -100), Vector3D(0, 0, 120), Vector3D(40, 0, 0));
+	Rectangle* rectangle_ptr = new Rectangle(Point3D(-20, 1.3, -100), Vector3D(0, 0, 120), Vector3D(40, 0, 0));
 	rectangle_ptr->set_material(check_matte);
-	//pWorld->add_object(rectangle_ptr);
+	pWorld->add_object(rectangle_ptr);
 }
 
  
