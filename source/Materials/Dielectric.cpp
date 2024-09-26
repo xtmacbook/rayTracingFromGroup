@@ -120,7 +120,7 @@ RGBColor Dielectric::shade(ShadeRec& sr)
     Vector3D 	wo(-sr.ray.d);
     RGBColor 	fr = fresnel_brdf->sample_f(sr, wo, wi);  	// computes wi
     Ray 		reflected_ray(sr.hit_point, wi);
-    float 		t;
+    float 		t = .0;
     RGBColor 	Lr, Lt;
     float 		ndotwi = sr.normal * wi;
 

@@ -200,7 +200,6 @@ void buildTransparentCube(World* pWorld)
 	pWorld->add_object(rectangle_ptr);
 }
 
-
 void addRSphere(World* pWorld)
 {
 	Pinhole* pinhole_ptr = new Pinhole;
@@ -332,7 +331,7 @@ void BuildRealisticTransparent(World* pWorld) {
 	pWorld->vp.set_hres(300);
 	pWorld->vp.set_vres(300);
 	pWorld->vp.set_samples(num_samples);
-	pWorld->vp.set_max_depth(6);
+	pWorld->vp.set_max_depth(2);
 	pWorld->background_color = black;
 	pWorld->tracer_ptr = new Whitted(pWorld);
 
