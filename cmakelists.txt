@@ -69,8 +69,7 @@ set (SOURCE_Build_Source
   source/build/BuildGlobalCornellBox.cpp
   source/build/BuildTransparent.cpp
   source/build/BuildRealisticTransparent.cpp
-  source/build/BuildTransparentBoxes.cpp
-  
+  source/build/BuildGeometries.cpp
 )
 SOURCE_GROUP("source//build" FILES ${SOURCE_Build_Source})
 
@@ -288,7 +287,18 @@ set (SOURCE_GeometricObjects_Source
   source/GeometricObjects/SmoothUVMeshTriangle.cpp
   source/GeometricObjects/SmoothTriangle.hpp
   source/GeometricObjects/SmoothTriangle.cpp
-  
+  source/GeometricObjects/GlassOfWater.hpp
+  source/GeometricObjects/GlassOfWater.cpp
+  source/GeometricObjects/OpenCylinderConcave.hpp
+  source/GeometricObjects/OpenCylinderConcave.cpp
+  source/GeometricObjects/OpenCylinderConvex.hpp
+  source/GeometricObjects/OpenCylinderConvex.cpp
+  source/GeometricObjects/OpenCylinderPartConcave.hpp
+  source/GeometricObjects/OpenCylinderPartConcave.cpp
+  source/GeometricObjects/OpenCylinderPartConvex.hpp
+  source/GeometricObjects/OpenCylinderPartConvex.cpp
+  source/GeometricObjects/Annulus.hpp
+  source/GeometricObjects/Annulus.cpp
 )
 SOURCE_GROUP("source//GeometricObjects" FILES ${SOURCE_GeometricObjects_Source})
  

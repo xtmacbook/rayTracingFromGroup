@@ -53,7 +53,7 @@ void Compound::set_material(Material* material_p){
     int num_objects = objects.size();
     
 	for (int j = 0; j < num_objects; j++)
-		objects[j]->set_material(material_ptr);
+		objects[j]->set_material(material_p);
 }
 
 void Compound::delete_objects(){
