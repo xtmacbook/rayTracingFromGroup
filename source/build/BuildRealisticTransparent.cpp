@@ -21,6 +21,7 @@
 #include "../GeometricObjects/Rectangle.hpp"
 #include "../GeometricObjects/Instance.hpp"
 #include "../GeometricObjects/ConcaveSphere.hpp"
+#include "../GeometricObjects/GlassOfWater.hpp"
 
 // Lights
 #include "../Light/Directional.hpp"
@@ -305,6 +306,114 @@ void addFlatSurface(World* pWorld)
 	instance_ptr->set_object(cylinder);
 	instance_ptr->rotate_x(90.0);
 	pWorld->add_object(instance_ptr);
+}
+
+
+void buildGlassOfWater(World* pWorld)
+{
+	int num_samples = 16;
+
+	pWorld->vp.set_hres(600);
+	pWorld->vp.set_vres(600);
+	pWorld->vp.set_samples(num_samples);
+	pWorld->vp.set_max_depth(10);
+	pWorld->background_color = RGBColor(0.5);
+	pWorld->tracer_ptr = new Whitted(pWorld);
+
+	AmbientLight* ambient_ptr = new AmbientLight;
+	ambient_ptr->scale_radiance(0.5);
+	pWorld->set_ambient_light(ambient_ptr);
+
+
+	Pinhole* pinhole_ptr = new Pinhole;
+	pinhole_ptr->set_eye(5, 6, 10);   
+	pinhole_ptr->set_lookat(0, 1, 0);
+	pinhole_ptr->set_view_distance(2000.0); // for a, c
+	pinhole_ptr->compute_uvw();
+	pWorld->set_camera(pinhole_ptr);
+
+
+	PointLight* light_ptr1 = new PointLight;
+	light_ptr1->set_location(40, 50, 30);
+	light_ptr1->scale_radiance(3.0);
+	light_ptr1->set_shadows(true); // a: false; c: true
+	pWorld->add_light(light_ptr1);
+
+
+	// materials for the glass of water
+	// glass-air boundary
+	RGBColor glass_color(0.65, 1, 0.75);
+	RGBColor water_color(1, 0.25, 1);
+
+	Dielectric* glass_ptr = new Dielectric;
+	glass_ptr->set_eta_in(1.50);			// glass
+	glass_ptr->set_eta_out(1.0);			// air
+	glass_ptr->set_cf_in(glass_color);
+	glass_ptr->set_cf_out(white);
+
+	// water-air boundary
+	Dielectric* water_ptr = new Dielectric;
+	water_ptr->set_eta_in(1.33);			// water
+	water_ptr->set_eta_out(1.0);			// air
+	water_ptr->set_cf_in(water_color);
+	water_ptr->set_cf_out(white);
+
+	// water-glass boundary
+	Dielectric* dielectric_ptr = new Dielectric;
+	dielectric_ptr->set_eta_in(1.33); 		// water
+	dielectric_ptr->set_eta_out(1.50); 		// glass
+	dielectric_ptr->set_cf_in(water_color);
+	dielectric_ptr->set_cf_out(glass_color);
+
+	// Define the GlassOfWater object
+	// The parameters below are the default values, but using the constructor that
+	// takes these as arguments makes it easier to experiment with different values
+
+	float height = 2.0;
+	float inner_radius = 0.9;
+	float wall_thickness = 0.1;
+	float base_thickness = 0.3;
+	float water_height = 1.5;
+	float meniscus_radius = 0.1;
+
+	GlassOfWater* glass_of_water_ptr = new GlassOfWater(height,
+		inner_radius,
+		wall_thickness,
+		base_thickness,
+		water_height,
+		meniscus_radius);
+
+	glass_of_water_ptr->set_glass_air_material(glass_ptr);
+	glass_of_water_ptr->set_water_air_material(water_ptr);
+	glass_of_water_ptr->set_water_glass_material(dielectric_ptr);
+	pWorld->add_object(glass_of_water_ptr);
+
+	// define the straw
+	Matte* matte_ptr = new Matte;
+	matte_ptr->set_cd(1, 1, 0);
+	matte_ptr->set_ka(0.25);
+	matte_ptr->set_kd(0.65);
+
+	auto straw = new OpenCylinder(-1.2, 1.7, 0.05);
+	straw->set_casts_shadows(true);
+	Instance* straw_ptr = new Instance(straw);
+	straw_ptr->set_material(matte_ptr);
+	straw_ptr->rotate_z(40);
+	straw_ptr->translate(0, 1.25, 0);
+	pWorld->add_object(straw_ptr);
+
+	// ground plane
+	Phong* phong_ptr2 = new Phong;
+	phong_ptr2->set_ka(0.4);
+	phong_ptr2->set_kd(0.8);
+	phong_ptr2->set_cd(0.5, 0.5, 1.0);
+	phong_ptr2->set_ks(0.5);
+	//	phong_ptr2->set_cs(1.0, 1.0, 0.0);
+	phong_ptr2->set_exp(50.0);
+
+	Plane* plane_ptr = new Plane(Point3D(0, -0.01, 0), Normal(0, 1, 0));
+	plane_ptr->set_material(phong_ptr2);
+	pWorld->add_object(plane_ptr);
 }
 
 void BuildRealisticTransparent(World* pWorld) {

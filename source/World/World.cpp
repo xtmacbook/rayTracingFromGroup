@@ -72,7 +72,7 @@ void buildCornellBox(World* pWorld);
 void buildGlobalCornellBox(World* pWorld);
 void buildTransparent(World* pWorld);
 void BuildRealisticTransparent(World* pWorld);
-void buildDielectric(World* pWorld);
+void buildGlassOfWater(World* pWorld);
 
 World::World() :  	
 	background_color(black),
@@ -253,5 +253,6 @@ void World::build(void) {
 	//buildCornellBox(this);
 	//buildGlobalCornellBox(this);
 	//buildTransparent(this);
-	BuildRealisticTransparent(this);
+	//BuildRealisticTransparent(this);
+	buildGlassOfWater(this);
 }
