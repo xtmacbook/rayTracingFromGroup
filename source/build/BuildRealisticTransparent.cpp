@@ -308,7 +308,6 @@ void addFlatSurface(World* pWorld)
 	pWorld->add_object(instance_ptr);
 }
 
-
 void buildGlassOfWater(World* pWorld)
 {
 	int num_samples = 16;

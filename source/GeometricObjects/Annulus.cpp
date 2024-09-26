@@ -3,8 +3,6 @@
 
 const double Annulus::kEpsilon = 0.001;
 
-// ----------------------------------------------------------------------  default constructor
-
 Annulus::Annulus(void)
 	: 	GeometricObject(),
 		center(0.0),
@@ -12,9 +10,6 @@ Annulus::Annulus(void)
 		inner_radius(0.5),
 		outer_radius(1.0)
 {}
-
-
-// ----------------------------------------------------------------------  constructor
 
 Annulus::Annulus(const Point3D& c, const Normal& n, const double& i_r, const double& o_r)
 	:	GeometricObject(),
@@ -27,8 +22,6 @@ Annulus::Annulus(const Point3D& c, const Normal& n, const double& i_r, const dou
 }
 
 
-// ---------------------------------------------------------------- copy constructor
-
 Annulus::Annulus(const Annulus& annulus)
 	:	GeometricObject(annulus),
 		center(annulus.center),
@@ -38,15 +31,10 @@ Annulus::Annulus(const Annulus& annulus)
 {}
 
 
-// ---------------------------------------------------------------- clone
-
 Annulus*
 Annulus::clone(void) const {
 	return (new Annulus(*this));
 }
-
-
-// ---------------------------------------------------------------- assignment operator
 
 Annulus&
 Annulus::operator= (const Annulus& rhs)	{
@@ -65,13 +53,9 @@ Annulus::operator= (const Annulus& rhs)	{
 }
 
 
-// ---------------------------------------------------------------- destructor
-
 Annulus::~Annulus(void)
 {}
 
-
-// ---------------------------------------------------------------- get_bounding_box
 
 BBox
 Annulus::get_bounding_box(void) {
@@ -86,10 +70,7 @@ Annulus::get_bounding_box(void) {
 }
 
 
-// ----------------------------------------------------------------- hit
-
-bool
-Annulus::hit(const Ray& ray, float& tmin, ShadeRec& sr) const {
+bool Annulus::hit(const Ray& ray, float& tmin, ShadeRec& sr) const {
 
 	double t = (center - ray.o) * normal / (ray.d * normal);
 
@@ -110,10 +91,7 @@ Annulus::hit(const Ray& ray, float& tmin, ShadeRec& sr) const {
 }
 
 
-// ----------------------------------------------------------------- shadow_hit
-
-bool
-Annulus::shadow_hit(const Ray& ray, float& tmin) const {
+bool Annulus::shadow_hit(const Ray& ray, float& tmin) const {
 
 	double t = (center - ray.o) * normal / (ray.d * normal);
 
