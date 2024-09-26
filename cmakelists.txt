@@ -69,7 +69,6 @@ set (SOURCE_Build_Source
   source/build/BuildGlobalCornellBox.cpp
   source/build/BuildTransparent.cpp
   source/build/BuildRealisticTransparent.cpp
-  source/build/BuildTransparentBoxes.cpp
   
 )
 SOURCE_GROUP("source//build" FILES ${SOURCE_Build_Source})

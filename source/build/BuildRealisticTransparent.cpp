@@ -133,30 +133,13 @@ void addMeshObj(World* pWorld)
 	pWorld->add_object(rectangle_ptr);
 }
 
-/*
-
-Figure 28.20 shows a transparent cube with n=1.5,
-where the camera is close to the box and is looking directly through the middle.
-In Figure 28.20(a), max_depth-2, and rays that don't hit any of the faces adjacent to the face near-est the camera go
-through the box. The dark areas are where the rays do hit the adjacent faces and undergo total internal reflection
-but don't get out of the box because of the extra bounce or bounces.
-In Figure 28.20(b), where max depth = 3,
-most of these rays do get out the opposite face and bring back the color of
-either the background or the plane. I'll leave it as a question for you to explain
-the four dark squares at the corners of the box (see Question 28.3).
-In Figure 28.20(c), where max_depth4, all of the rays get out. Because of total internal
-reflection, the background color is reflected from the bottom surface and
-the checker plane from the top surface.
-
-To demonstrate the effects of total internal reflection in more detail, Figure 28.21 shows the cube with a sphere that's partly inside it. This cre-
-*/
-
-
 void buildTransparentCube(World* pWorld)
 {
+	pWorld->background_color = white;
+
 	Pinhole* pinhole_ptr = new Pinhole;
-	pinhole_ptr->set_eye(2.5, 5.5, 24);
-	pinhole_ptr->set_lookat(2.5, 3, 0);
+	pinhole_ptr->set_eye(2.5, 2.5, 24);
+	pinhole_ptr->set_lookat(2.5, 2.5, 0);
 	pinhole_ptr->set_view_distance(2400.0);
 	pinhole_ptr->compute_uvw();
 	pWorld->set_camera(pinhole_ptr);
@@ -178,16 +161,16 @@ void buildTransparentCube(World* pWorld)
 	Dielectric* dielectric_ptr = new Dielectric;
 	dielectric_ptr->set_ks(0.2);
 	dielectric_ptr->set_exp(2000.0);
-	dielectric_ptr->set_eta_in(1.3);
+	dielectric_ptr->set_eta_in(1.5);
 	dielectric_ptr->set_eta_out(1.0);
-	dielectric_ptr->set_cf_in(0.4, 0.6, 0.3);
+	dielectric_ptr->set_cf_in(0.9, 0.6, 0.7);
 	dielectric_ptr->set_cf_out(1.0);
 
-	Box* box_ptr = new Box(Point3D(2, 2, -3), Point3D(3, 3, -1), dielectric_ptr);
+	Box* box_ptr = new Box(Point3D(2, 2, 5), Point3D(3, 3,10), dielectric_ptr);
 	pWorld->add_object(box_ptr);
 
 	Checker3D* check_texture = new Checker3D();
-	check_texture->set_size(2.0);
+	check_texture->set_size(4.0);
 	check_texture->set_color1(0.5, 0.5, 0.5);
 	check_texture->set_color2(1.0, 1.0, 1.0);
 	SV_Matte* check_matte(new SV_Matte);
@@ -331,7 +314,7 @@ void BuildRealisticTransparent(World* pWorld) {
 	pWorld->vp.set_hres(300);
 	pWorld->vp.set_vres(300);
 	pWorld->vp.set_samples(num_samples);
-	pWorld->vp.set_max_depth(2);
+	pWorld->vp.set_max_depth(4); 
 	pWorld->background_color = black;
 	pWorld->tracer_ptr = new Whitted(pWorld);
 
