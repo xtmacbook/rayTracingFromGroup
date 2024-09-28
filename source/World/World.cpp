@@ -74,6 +74,7 @@ void buildTransparent(World* pWorld);
 void BuildRealisticTransparent(World* pWorld);
 void buildGlassOfWater(World* pWorld);
 void buildGometries(World* pWorld);
+void buildFishBlows(World*pWorld);
 
 World::World() :  	
 	background_color(black),
@@ -255,5 +256,6 @@ void World::build(void) {
 	//buildGlobalCornellBox(this);
 	//buildTransparent(this);
 	//BuildRealisticTransparent(this);
-	buildGlassOfWater(this);
+	//buildGlassOfWater(this);
+    buildFishBlows(this);
 }

@@ -315,7 +315,7 @@ void buildGlassOfWater(World* pWorld)
     pWorld->vp.set_hres(600);
     pWorld->vp.set_vres(600);
     pWorld->vp.set_samples(num_samples);
-    pWorld->vp.set_max_depth(10);
+    pWorld->vp.set_max_depth(15);
     pWorld->background_color = RGBColor(0.5);
     pWorld->tracer_ptr = new Whitted(pWorld);
 
@@ -417,6 +417,7 @@ void buildGlassOfWater(World* pWorld)
     
     
 }
+
 
 void BuildRealisticTransparent(World* pWorld) {
 

@@ -70,6 +70,7 @@ set (SOURCE_Build_Source
   source/build/BuildTransparent.cpp
   source/build/BuildRealisticTransparent.cpp
   source/build/BuildGeometries.cpp
+  source/build/BuildFlshBlow.cpp
 )
 SOURCE_GROUP("source//build" FILES ${SOURCE_Build_Source})
 
